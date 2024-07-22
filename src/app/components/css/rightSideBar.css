@@ -1,0 +1,410 @@
+.rsb-bodys {
+  display: block;
+}
+
+.rsb-body {
+  margin-top: 20px;
+}
+
+.rsb-balances {
+  background: #191939;
+  padding: 20px 0;
+}
+
+.rsb-balance {
+  display: flex;
+  align-items: center;
+  height: 36px;
+  border-radius: 10px;
+  background: #2c2852;
+  padding: 0px 12px;
+  justify-content: space-between;
+}
+
+.rsb-balance-text {
+  display: flex;
+  gap: 6px;
+}
+
+.rsb-balance-text p {
+  font-family: "Roboto", sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 16.8px;
+}
+.rsb-balance-price {
+  font-family: "Roboto", sans-serif;
+  font-size: 13.18px;
+  font-weight: 400;
+  line-height: 16.8px;
+}
+
+.rsb-slips {
+  margin: 1.2em 0;
+}
+
+.rsb-slip {
+  width: 80%;
+  margin: auto;
+}
+.rsb-slip-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  height: 22px;
+}
+.rsb-slip-content span {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  align-items: center;
+}
+
+.rsb-slip-content span p {
+  font-family: "Roboto";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16.8px;
+}
+
+.rsb-singlebets {
+  margin-top: 1.2em;
+  margin-bottom: 0.3em;
+}
+
+.rsb-singlebet {
+  background: #2c2852;
+}
+
+.rsb-sb-head {
+  padding-top: 25px;
+}
+
+.rsb-sb-head h2 {
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16.8px;
+  padding-left: 20px;
+}
+.rsbsbhlline {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  flex: 1;
+  height: 10px;
+}
+
+.rsbsbhlline span {
+  height: 2px;
+  margin: 1em 0;
+  display: flex;
+}
+.uittlyoi {
+  flex: 0.7;
+  display: flex;
+  background: #102923;
+}
+.dfulij5k {
+  flex: 0.3;
+  display: flex;
+  box-shadow: 0px 6px 12px 0px #00000040;
+  background: #6fff6f;
+}
+
+.rsb-bet-games {
+  margin: 1.8em 0;
+}
+
+.rsb-bet-game {
+  padding: 12px;
+  background: var(--n-primary);
+  border-radius: 5px;
+}
+.rsb-bet-team {
+}
+
+.rsb-bet-team span {
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16.8px;
+}
+.rsb-betteams {
+  margin-top: 1.3em;
+}
+
+.rsb-betteam {
+  position: relative;
+  height: 50px;
+}
+
+.rsbt-teamnames {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.rsbt-teamname {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+}
+
+.rsbt-winner {
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 16.8px;
+}
+.rsbt-winner p {
+  margin-top: 5px;
+}
+.rsbt-team-odds {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.rsbt-team-odd {
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+  display: flex;
+}
+
+.rsbt-team-odd p {
+  font-family: "Roboto", sans-serif;
+  font-size: 13.67px;
+  font-weight: 600;
+  line-height: 16.8px;
+}
+.rsb-bet-offer-des {
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 15px;
+  margin-top: 0.8em;
+  margin-bottom: 0.7em;
+}
+
+/* components/ProgressBar.css */
+.rsb-progress-container {
+  position: relative;
+  display: block;
+  width: 150px;
+}
+
+.rsb-progressBar {
+  border-radius: 4px;
+  height: 4px;
+  background: #1a2825;
+  overflow: hidden;
+}
+
+.rsb-p-filled {
+  background-color: var(--digital-lavender);
+  height: 100%;
+  transition: width 0.3s ease;
+}
+
+.rsb-p-labels {
+  position: relative;
+  top: -20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.rsb-p-labels span {
+  position: absolute;
+  transform: translateX(-40%);
+  top: 22px;
+  font-family: "Inter", sans-serif;
+  font-size: 8px;
+  font-weight: 400;
+  line-height: 13px;
+}
+/* end */
+
+.rsbt-total-odds {
+}
+
+.rsbt-total-odds h3 {
+  font-family: "Roboto", sans-serif;
+  font-size: 13.56px;
+  font-weight: 400;
+  line-height: 16.8px;
+}
+
+.rsb-accept {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 20px;
+}
+
+.rsb-accept p {
+  font-family: "Roboto", sans-serif;
+  font-size: 13.89px;
+  font-weight: 400;
+  line-height: 16.8px;
+}
+
+/* ToggleSwitch */
+.rsba-toggle-switch {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.rsba-switch {
+  width: 25px;
+  height: 12px;
+  border-radius: 25px;
+  position: relative;
+  background: #191939;
+  transition: background-color 0.3s ease;
+  border: 0.2px solid var(--secondary-white);
+}
+
+.rsba-switch.on {
+  background-color: var(--white);
+}
+
+.rsba-circle {
+  width: 9px;
+  height: 9px;
+  background-color: var(--bright-orange);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 2px;
+  transform: translateY(-50%);
+  transition: transform 0.3s ease;
+}
+
+.rsba-switch.on .rsba-circle {
+  transform: translate(10px, -50%);
+}
+
+.rsba-label {
+  margin-left: 10px;
+  font-weight: bold;
+}
+/* ends */
+
+.rsb-bet-amount {
+  display: block;
+  margin-top: 1em;
+}
+.rsb-bet-button {
+  height: 35px;
+  border: 1px solid var(--bright-orange);
+  background: #2c2852;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 12px;
+  border-radius: 5px;
+}
+
+.rsb-bet-button p {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  line-height: 16.28px;
+}
+
+.rsb-pos-win {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.rsb-pos-win p {
+  font-family: "Roboto", sans-serif;
+  font-size: 13.78px;
+  font-weight: 400;
+  line-height: 16.8px;
+}
+
+.rsb-submit {
+  margin-top: 24px;
+}
+
+.rsb-submit button {
+  height: 30px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  background: #fccc07;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 19px;
+  text-align: center;
+  width: 100%;
+  color: var(--white);
+}
+
+/* settings dropdown */
+.rsba-setting {
+  margin: 1.5em 0;
+}
+.rsba-settings {
+  background: #2c2852;
+  border-radius: 5px;
+  height: 56px;
+  padding: 10px;
+  width: 100%;
+}
+
+.rsba-settings-header {
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  align-items: center;
+  height: 100%;
+}
+
+.rsba-settings-header h2 {
+  font-family: "Roboto";
+  font-size: 13.89px;
+  font-weight: 400;
+  line-height: 16.8px;
+}
+
+.rsba-dropdown-arrow {
+  transition: transform 0.3s ease;
+}
+
+.rsba-dropdown-arrow.open {
+  transform: rotate(180deg);
+}
+
+.rsba-settings-options {
+  margin-top: 10px;
+  padding: 5px;
+  border-radius: 5px;
+  background: #2c2852;
+}
+
+.rsba-option {
+  padding: 5px 0;
+  font-family: "Roboto";
+  font-size: 13.89px;
+  font-weight: 400;
+  line-height: 16.8px;
+  cursor: pointer;
+}
+
+.rsba-option:hover {
+  background-color: var(--bright-orange);
+  padding-left: 8px;
+}
+
+/* end */

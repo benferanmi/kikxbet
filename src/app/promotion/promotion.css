@@ -1,0 +1,509 @@
+.hero-sections {
+  display: block;
+  width: 100%;
+}
+
+.hero-section {
+  background-image: url(/assets/hero.png);
+  height: 560px;
+  border-radius: 12px 0px 0px 0px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  text-align: center;
+  display: block;
+  width: 100%;
+  padding-top: 6em;
+  position: relative;
+}
+
+.hero-content {
+  width: 50%;
+  margin: auto;
+}
+
+.hero-content h1 {
+  font-family: "Raleway", sans-serif;
+  font-size: 66px;
+  font-weight: 800;
+  line-height: 66.8px;
+  text-align: center;
+  color: var(--white);
+  margin-bottom: 0.4em;
+}
+.hero-content p {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  text-align: center;
+  color: var(--white);
+  margin-bottom: 1.2em;
+}
+.hero-button {
+  width: 173px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  background: #fccc07;
+  border: none;
+  outline: none;
+  margin-top: 1.2em;
+}
+
+.hero-button span {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 19px;
+  color: var(--purple-text);
+}
+
+/* our challenges css starts */
+.challenges {
+  display: block;
+  width: 100%;
+}
+
+.challange {
+  width: 85%;
+  margin: auto;
+  padding: 40.81px 26.18px 27.55px 31.25px;
+  border-radius: 28.78px 0px 0px 0px;
+  background: var(--side-bar-popup);
+  padding: 4em 0;
+}
+
+.challange-head {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+.challange-head h2 {
+  font-family: "Raleway", sans-serif;
+  font-size: 49px;
+  font-weight: 600;
+  line-height: 58.8px;
+  color: var(--white);
+}
+.challange-head p {
+  font-family: "Raleway", sans-serif;
+  font-size: 16.7px;
+  font-weight: 400;
+  line-height: 21.71px;
+  letter-spacing: 0.556545078754425px;
+}
+.challange-subs {
+  width: 87%;
+  margin: auto;
+}
+
+.challange-sub {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 1.4em 0;
+}
+
+.challange-subgrid {
+  display: grid;
+  grid-template-columns: repeat(3, 33.3%);
+  justify-content: space-between;
+  gap: 0.5em;
+}
+
+.challange-subeach {
+  height: 412px;
+}
+
+.cseach {
+  display: block;
+  text-align: left;
+}
+
+.cseach h4 {
+  font-family: "Raleway", sans-serif;
+  font-size: 12.06px;
+  font-weight: 700;
+  line-height: 15.68px;
+  letter-spacing: 0.556545078754425px;
+  margin-top: 10px;
+}
+
+.cseach p {
+  font-family: "Assistant", sans-serif;
+  font-size: 14.84px;
+  font-weight: 400;
+  line-height: 22.26px;
+  letter-spacing: 0.9275751113891602px;
+  margin-top: 10px;
+}
+
+/* step by step css */
+
+.step-bys {
+  margin-top: 4em;
+  display: block;
+  background: #191939;
+  padding: 2.7em 0;
+}
+
+.step-by {
+  width: 85%;
+  margin: auto;
+}
+.step-byhead {
+  display: block;
+  text-align: center;
+}
+
+.step-byhead p {
+  color: var(--green);
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19.36px;
+  margin-bottom: 0.8em;
+}
+.step-byhead h2 {
+  font-family: "Raleway", sans-serif;
+  font-size: 49px;
+  font-weight: 600;
+  line-height: 58.8px;
+}
+
+.stepby-list {
+  margin-top: 3em;
+}
+.stepby-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 25%);
+  gap: 1em;
+}
+.sbyg-each {
+  background: #342669;
+  border-radius: 10px;
+  height: 280px;
+}
+
+.sbyg-content {
+  padding: 20px 25px;
+  padding-right: 5px;
+  display: block;
+}
+.sbyg-icon {
+  height: 70px;
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
+.sbyg-icon .sybg-one {
+  height: 64px;
+  width: 64px;
+  border-radius: 14px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sbyg-icon .sybg-one::after {
+  position: absolute;
+  top: 0px;
+  text-align: center;
+  line-height: 32px;
+  right: -15px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  background-color: var(--green);
+  color: var(--purple-text);
+}
+
+.sybg-blue {
+  background: #3d81c2;
+  box-shadow: 0px 8px 24px 0px #3d81c23d;
+}
+.sbyg-icon .sybg-blue::after {
+  content: "1";
+}
+.sybg-lime {
+  box-shadow: 0px 8px 24px 0px #a6cf4a3d;
+  background: #a6cf4a;
+}
+.sbyg-icon .sybg-lime::after {
+  content: "2";
+}
+
+.sybg-pink {
+  box-shadow: 0px 8px 24px 0px #ff60a83d;
+  background: #ff60a8;
+}
+.sbyg-icon .sybg-pink::after {
+  content: "3";
+}
+
+.sybg-orange {
+  box-shadow: 0px 8px 24px 0px #ff60a83d;
+  background: #fb6238;
+}
+.sbyg-icon .sybg-orange::after {
+  content: "4";
+}
+
+.sbyg-icon .arrowUpLongDotted {
+  position: absolute;
+  left: 110px;
+  top: 60px;
+}
+
+.sbyg-icon .arrowDownLongDotted {
+  position: absolute;
+  left: 110px;
+  bottom: 20px;
+}
+
+.sbyg-cont {
+  margin-top: 1.3em;
+}
+
+.sbyg-cont h3 {
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24.2px;
+}
+
+.sbyg-cont p {
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  margin-top: 1em;
+}
+
+/* what we offer/opportunity */
+
+.offers {
+  display: block;
+  width: 100%;
+  margin: 4em 0;
+  background: var(--side-bar-popup);
+}
+
+.offer {
+  width: 85%;
+  margin: auto;
+  padding-top: 6em;
+  padding-bottom: 3em;
+}
+
+.offer-cont {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  gap: 3em;
+}
+
+.offer-image {
+  display: flex;
+  flex: 0.4;
+}
+
+.offer-body {
+  display: flex;
+  flex: 0.6;
+}
+
+.offer-content {
+  width: 450px;
+}
+
+.offer-content p {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19.36px;
+  color: var(--green);
+  margin-bottom: 0.5em;
+}
+
+.offer-content h2 {
+  font-family: "Inter", sans-serif;
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 54px;
+}
+
+.offer-list {
+  margin-top: 2em;
+}
+
+.offer-each {
+  display: flex;
+  flex-direction: row;
+  gap: 18px;
+  align-items: center;
+  height: 48px;
+  margin-top: 1.5em;
+}
+
+.offer-each p {
+  font-family: "Inter", sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 32px;
+  color: var(--white);
+}
+
+.offer-button {
+  width: 209px;
+  height: 48px;
+  border-radius: 24px;
+  background-color: var(--bright-orange);
+  line-height: 48px;
+  text-align: center;
+  margin-top: 4em;
+}
+
+.offer-button a {
+  color: var(--purple-text);
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 36px;
+  text-align: center;
+}
+
+.offer-button a img {
+  margin-left: 10px;
+}
+
+/* trading objective section */
+
+.trading-objs {
+  display: block;
+  margin-bottom: 2em;
+}
+
+.trading-obj {
+  width: 85%;
+  margin: auto;
+  padding: 1em 0;
+}
+
+.trading-obj-body {
+  display: block;
+  text-align: center;
+}
+
+.trading-obj-body h2 {
+  font-family: "Raleway", sans-serif;
+  font-size: 49px;
+  font-weight: 700;
+  line-height: 58.8px;
+}
+
+.trading-obj-body p {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19px;
+  margin-top: 1em;
+}
+
+.trading-obj-table {
+  margin-top: 2.2em;
+}
+
+/* crypto objective section starts here */
+
+.crypto-obj-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 33%);
+  gap: 0.7em;
+}
+
+.cryobj-each {
+  padding: 30px 30px;
+  text-align: left;
+  display: block;
+  height: 200px;
+  background-color: var(--teal);
+}
+
+.cryobj-each h3 {
+  font-family: "Raleway", sans-serif;
+  font-size: 25.09px;
+  font-weight: 600;
+  line-height: 28.73px;
+  letter-spacing: 0.638454794883728px;
+}
+
+.cryobj-each p {
+  font-family: "Roboto", sans-serif;
+  font-size: 18.12px;
+  font-weight: 300;
+  line-height: 27.87px;
+  letter-spacing: 0.638454794883728px;
+}
+
+/* payout system css */
+
+.payout-systems {
+  background: var(--side-bar-back);
+  display: block;
+}
+
+.payout-system {
+  width: 85%;
+  margin: auto;
+  padding: 3em 0;
+  height: 650px;
+  display: flex;
+  align-items: center;
+}
+
+.payout-system-body {
+  display: flex;
+  flex-direction: row;
+  gap: 3em;
+  flex: 1;
+}
+.payout-system-content {
+  display: flex;
+  flex: 0.5;
+}
+
+.payout-system-content span {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+}
+.payout-system-content span h2 {
+  font-family: "Raleway", sans-serif;
+  font-size: 55.81px;
+  font-weight: 600;
+  line-height: 72.55px;
+  letter-spacing: 0.8370968103408813px;
+}
+.payout-system-content span p {
+  font-family: "Assistant", sans-serif;
+  font-size: 22.32px;
+  font-weight: 300;
+  line-height: 40.18px;
+  letter-spacing: 0.8370968103408813px;
+  color: #ffffffbf;
+}
+
+.payout-system-image {
+  display: flex;
+  flex: 0.5;
+}

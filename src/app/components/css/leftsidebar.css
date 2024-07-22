@@ -1,0 +1,124 @@
+.lsb-bodys {
+}
+
+.lsb-body {
+}
+
+.lsb-search {
+  margin-top: 10px;
+  display: block;
+}
+.lsb-search form {
+  height: 55px;
+  width: 100%;
+}
+
+.lsb-search form input {
+  border: none;
+  background: #463e7a;
+  border-radius: 4px;
+  outline: none;
+  width: inherit;
+  color: white;
+  padding-left: 20px;
+  line-height: 50px;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+}
+.lsb-head {
+  display: block;
+}
+
+.lsbh-home {
+  border-radius: 4px;
+  height: 46px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding: 0px 1.6em;
+  border: 1px solid #ffffff66;
+  background: #fccc07;
+  margin-bottom: 7px;
+}
+
+.lsbh-live {
+  border-radius: 4px;
+  height: 46px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding: 0px 0.6em;
+  border: 1px solid #ffffff66;
+  background: inherit;
+  margin-bottom: 7px;
+}
+.lsbhl-img {
+  position: relative;
+}
+.lsbhl-img::before {
+  background: #ff0000;
+  content: "10";
+  position: absolute;
+  top: -7px;
+  height: 15px;
+  width: 15px;
+  left: -31px;
+  font-size: 8px;
+  border-radius: 50%;
+  line-height: 15px;
+  text-align: center;
+}
+.lsbh-favorite {
+  border-radius: 4px;
+  height: 46px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding: 0px 0.6em;
+  border: 1px solid #ffffff66;
+  background: inherit;
+  margin-bottom: 7px;
+}
+
+.lshb-text {
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 19.2px;
+}
+
+/* game menu list */
+
+.lsb-games {
+  margin-top: 60px;
+}
+
+.lsb-game {
+}
+
+.lsbg-head {
+  margin: 20px 0;
+}
+
+.lsbg-head h2 {
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+  color: var(--white);
+}
+.lsbh-game-list {
+}
+
+.lsbh-each-game {
+  border-radius: 4px;
+  height: 46px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding: 0px 0.6em;
+  border: 1px solid #ffffff66;
+  background: inherit;
+  margin-bottom: 7px;
+}

@@ -1,0 +1,40 @@
+.hagmel-matchs {
+  margin-top: 5px;
+}
+
+.hagmel-match {
+  display: grid;
+  grid-template-columns: repeat(3, 30%);
+  justify-content: space-between;
+}
+
+.hag-odd-each {
+  background: #7841ee;
+  border: 1px solid #ffffff66;
+  width: 100px;
+  height: 80px;
+  border-radius: 5px;
+}
+.hag-odd-each div {
+  width: inherit;
+  height: inherit;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.hag-odd-each div p {
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 30px;
+  color: var(--secondary-white);
+}
+
+.hag-odd-each div span {
+  font-family: "Roboto", sans-serif;
+  font-size: 19.38px;
+  font-weight: 700;
+  line-height: 24px;
+}

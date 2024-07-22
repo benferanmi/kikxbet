@@ -1,0 +1,142 @@
+header {
+  height: 100px;
+  background: var(--background);
+  color: white;
+}
+
+.nav-content {
+  width: 100%;
+  display: block;
+}
+.nav-flex {
+  display: flex;
+  width: 90%;
+  height: 100px;
+  margin: auto;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-left {
+  display: flex;
+  flex-direction: row;
+  gap: 3.8em;
+}
+
+.nav-logo {
+  display: block;
+}
+
+.nav-logo span {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  align-items: center;
+}
+
+.nav-logo span h1 {
+  font-family: "Roboto", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 26px;
+}
+
+.nav-menu {
+  display: block;
+}
+.nav-menu ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  gap: 1.8em;
+}
+
+.nav-menu ul li {
+  width: fit-content;
+}
+.nav-menu ul li a {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19.2px;
+}
+.nav-right {
+  margin-left: 0;
+}
+
+.navr-buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 2em;
+}
+
+.accessibility {
+}
+
+.accessible-each {
+  display: grid;
+  grid-template-columns: 100px repeat(2, 100%);
+  align-items: center;
+  gap: 0.4em;
+}
+
+.lang {
+  width: 95px;
+  height: 38px;
+  background: #7841ee;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.lang select {
+  background-color: inherit;
+  border: none;
+  outline: none;
+  color: white;
+  width: 50px;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.light {
+  display: flex;
+  box-shadow: 0px 6px 12px 0px #00000040;
+  background: var(--digital-lavender);
+  width: 57px;
+  height: 31px;
+  border-radius: 50px;
+  align-items: center;
+  justify-content: left;
+  padding-left: 10px;
+}
+
+.nav-buttons {
+}
+
+.nav-button {
+  width: 95px;
+  height: 38px;
+  border-radius: 5px;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19px;
+}
+
+.login {
+  border: 1px solid var(--side-bar-popup);
+  background: #2c2852;
+  margin-right: 5px;
+}
+
+.signup {
+  margin-left: 5px;
+  background-color: inherit;
+  border: 1px solid #ffffff66;
+}

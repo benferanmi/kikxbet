@@ -1,0 +1,301 @@
+.hero-sections {
+  display: block;
+  width: 100%;
+}
+
+.hero-section {
+  background-image: url(/assets/challangebg.png);
+  height: 430px;
+  border-radius: 12px 0px 0px 0px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  text-align: center;
+  display: block;
+  width: 100%;
+  padding-top: 6em;
+  position: relative;
+}
+
+.hero-content {
+  width: 65%;
+  margin: auto;
+}
+
+.hero-content h1 {
+  font-family: "Raleway", sans-serif;
+  font-size: 66px;
+  font-weight: 800;
+  line-height: 66.8px;
+  text-align: center;
+  color: var(--white);
+  margin-bottom: 0.4em;
+}
+.hero-content p {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  text-align: center;
+  color: var(--white);
+  margin-bottom: 1.2em;
+}
+.hero-button {
+  width: 173px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  background: #fccc07;
+  border: none;
+  outline: none;
+  margin-top: 1.2em;
+}
+
+.hero-button span {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 19px;
+  color: var(--purple-text);
+}
+.challange-head {
+  margin-top: 3em;
+  margin-bottom: 3em;
+}
+
+.challange-head-cont {
+  display: block;
+  text-align: center;
+  width: 60%;
+  margin: auto;
+}
+
+.challange-head-cont h2 {
+  font-family: "Raleway", sans-serif;
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 66.8px;
+  text-align: center;
+}
+
+.challange-head-cont p {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22px;
+  text-align: center;
+  display: block;
+  margin-top: 12px;
+}
+
+.challange-info-eachs {
+  margin-top: 5em;
+}
+
+.challange-info-each {
+  display: block;
+  text-align: center;
+  width: 70%;
+  margin: auto;
+}
+
+.challange-info-each h2 {
+  font-family: "Roboto", sans-serif;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 19px;
+  text-align: center;
+  color: var(--green);
+  display: block;
+  margin-bottom: 1.64em;
+}
+.challange-info-each ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+.challange-info-each ul li {
+  font-family: "Roboto", sans-serif;
+  color: white;
+  text-align: left;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 19px;
+}
+
+.challange-info-each span ol {
+  display: block;
+}
+
+.challange-info-each span ol li {
+  font-family: "Roboto", sans-serif;
+  margin-top: 28px;
+  color: white;
+  text-align: left;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 19px;
+}
+
+.challange-info-each p {
+  font-family: "Roboto";
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 38px;
+  text-align: center;
+}
+
+/*  */
+
+.challange-abouts {
+  margin-top: 4em;
+}
+
+.challange-about {
+  width: 80%;
+  margin: auto;
+}
+
+.challange-a-head {
+  display: block;
+  text-align: center;
+  margin-bottom: 5.3em;
+}
+
+.challange-a-head h2 {
+  font-family: "Roboto", sans-serif;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 19px;
+  text-align: center;
+  color: var(--n-primary);
+  padding-bottom: 2.5px;
+  text-decoration: underline;
+
+}
+.challange-a-body {
+  display: block;
+  width: 100%;
+}
+
+.challange-a-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  gap: 35px;
+}
+.challange-agleft {
+  display: block;
+}
+.challange-agl {
+  display: block;
+}
+.challange-agl p {
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
+  display: block;
+  margin-top: 20px;
+}
+.challange-agl h2 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 47.6px;
+  text-align: left;
+}
+
+.challange-agl h2 span {
+  font-weight: 400;
+}
+.challange-agright {
+  display: block;
+  position: relative;
+}
+.chaagr-uder-swhite {
+  height: 220px;
+  width: 520px;
+  background: var(--secondary-white);
+  transform: rotate(-6deg);
+  border-radius: 4px;
+  top: 0;
+  left: 15px;
+  position: absolute;
+  z-index: 999;
+}
+.cagright-imgf {
+  top: 20px;
+  right: 20px;
+  position: absolute;
+}
+.challange-agr {
+  display: block;
+  position: relative;
+  padding: 20px;
+  height: 220px;
+  border-radius: 4px;
+  z-index: 99999;
+  background: var(--teal);
+}
+
+.challange-agr p {
+  font-family: "Roboto", sans-serif;
+  display: block;
+  margin-top: 30px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
+  text-align: left;
+}
+
+.challange-agr-profile {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  width: fit-content;
+  align-items: center;
+  height: 100px;
+}
+
+.challange-agr-profile img {
+  border: 4px solid #ffffff;
+}
+.chaagpname {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
+  text-align: left;
+}
+.chaagpname span {
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  text-align: left;
+}
+.challange-buttons {
+  width: 80%;
+  margin: auto;
+}
+
+.challange-button {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin-top: 4em;
+}
+
+.challange-but-each {
+  height: 60px;
+  border-radius: 4px;
+  background: #fccc07;
+  border: 1px solid var(--secondary-white);
+  width: 100%;
+  font-family: "Roboto";
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 55px;
+  color: var(--purple-text);
+}

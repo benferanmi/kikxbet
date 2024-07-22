@@ -1,0 +1,99 @@
+footer {
+  margin: 3em 0;
+}
+
+.fots {
+  width: 78%;
+  margin: auto;
+  background-color: var(--side-bar-back);
+  height: 250px;
+  padding: 2em 8em;
+}
+
+.fot {
+  background-color: var(--side-bar-popup);
+  padding: 28px 50px;
+  height: 100%;
+}
+
+.fot-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex: 1;
+  position: relative;
+}
+.fotc-left {
+}
+
+.fotcl {
+  display: block;
+  width: 180px;
+}
+
+.fotcl h2 {
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 26.76px;
+  text-align: left;
+}
+
+.fotcl p {
+  font-family: "Roboto", sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 18px;
+  text-align: left;
+  color: var(--secondary-white);
+  margin-top: 0.7em;
+}
+
+.fotcl-social {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  margin-top: 1.3em;
+}
+
+.fotcl-social a {
+  height: 29px;
+  width: 29px;
+  border: 0.69px solid #ffffff;
+  border-radius: 50%;
+  line-height: 29px;
+  text-align: center;
+  display: block;
+}
+
+.fotcl-social a svg {
+  width: 12px;
+}
+
+.fotc-menu {
+  display: flex;
+  flex-direction: row;
+  gap: 3.4em;
+}
+
+.fotc-menu a {
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 30px;
+  word-wrap: break-word;
+  text-align: center;
+}
+.copyright {
+  position: absolute;
+  bottom: -28px;
+  left: 26%;
+}
+
+.copyright p {
+  color: var(--secondary-white);
+  font-family: "Roboto", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 25.5px;
+}
