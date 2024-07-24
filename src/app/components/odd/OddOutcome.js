@@ -1,3 +1,4 @@
+
 import './css/oddOutcome.css';
 
 const OddOutcome = ({ gap, home, draw, away }) => {

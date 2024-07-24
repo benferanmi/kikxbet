@@ -216,7 +216,7 @@ const Challange = () => {
 
             <Footer />
         </main>
-    )
-}
+    );
+};
 
-export default Challange
+export default Challange;

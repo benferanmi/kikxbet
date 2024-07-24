@@ -1,0 +1,116 @@
+/*  */
+.lsb-bodys {
+  width: 100%;
+}
+.fots {
+  width: 100% !important;
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+  height: 280px !important;
+}
+.fotc-menu {
+  gap: 2em !important;
+}
+.kik-payrflex h2 {
+  padding-bottom: 1em !important;
+}
+/*  */
+
+.kik-payments {
+  display: block;
+  width: 100%;
+}
+
+.kik-payment {
+  padding: 0 10px;
+  display: flex;
+}
+.kik-payment-flex {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.kik-payflex-left {
+  display: flex;
+  flex: 0.18;
+}
+.kik-payflex-mid {
+  display: flex;
+  flex: 0.18;
+  background: var(--side-bar-back);
+}
+
+.kik-paymid {
+  display: block;
+  width: 100%;
+  padding: 30px 0;
+}
+
+.kik-paymid {
+}
+
+.kik-paymid-content {
+  display: block;
+}
+
+.kik-paymid-content .active {
+  background-color: var(--side-bar-popup);
+}
+.kik-paymid-each {
+  border-radius: 4px;
+  width: 90%;
+  margin: auto;
+  display: block;
+  text-align: center;
+  cursor: pointer;
+  padding: 14px 0;
+}
+
+.kik-paymid-each p {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: left;
+  padding-left: 20px;
+}
+.kik-payflex-right {
+  display: flex;
+  background: var(--side-bar-back);
+
+  flex: 0.6;
+}
+.kik-payrflex {
+  display: block;
+  padding-top: 30px;
+}
+.kik-payrflex h2 {
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  padding-bottom: 40px;
+  padding-left: 14px;
+}
+.kik-payright {
+  display: block;
+}
+
+.kik-payright-imgs {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+
+.kik-payright-imgs button {
+  height: 60px;
+  width: 100%;
+  padding: 8px;
+  background: none;
+  border: none;
+  outline: none;
+}
+.kik-payright-imgs button img {
+  width: 100% !important;
+}

@@ -1,0 +1,56 @@
+.sport324-head {
+  display: block;
+  height: 150px;
+  padding: 20px;
+  background-color: var(--side-bar-back);
+}
+
+.sport324-head h2 {
+  margin-top: 10px;
+  margin-bottom: 15px;
+  display: block;
+  text-align: left;
+  font-family: "Inter", sans-serif;
+  font-size: 49px;
+  font-weight: 700;
+  line-height: 58.8px;
+}
+
+.sport324-head span {
+  display: flex;
+  align-items: center;
+  height: 30px;
+  gap: 6px;
+}
+
+.sport324-head span p {
+  font-family: "Roboto";
+  font-size: 17.86px;
+  font-weight: 400;
+  line-height: 30px;
+  text-align: left;
+  display: block;
+}
+
+.sport324-head span svg {
+  height: 16px;
+  width: 16px;
+}
+
+.hkik-oddline-head {
+  margin-top: 1.2em;
+  margin-bottom: 1em;
+}
+.hkik-oddlines {
+    margin: 1.2em 0;
+}
+
+.hkik-oddline-head h1 {
+  font-family: "Inter", sans-serif;
+  font-size: 31px;
+  font-weight: 700;
+  line-height: 40px;
+}
+.hag-odd-each {
+    width: 90px;
+}

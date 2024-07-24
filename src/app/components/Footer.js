@@ -1,5 +1,5 @@
 
-import './css/footer.css'
+import './css/footer.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faInstagram, faTwitter, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import Link from 'next/link';
@@ -60,17 +60,5 @@ export default function Footer() {
                 </section>
             </footer>
         </>
-    )
-}
-
-const styles = {
-    f1: {
-        width: '66px'
-    },
-    f2: {
-        width: '82px'
-    },
-    f3: {
-        width: '118px'
-    }
+    );
 };

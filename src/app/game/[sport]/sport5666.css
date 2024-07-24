@@ -1,0 +1,12 @@
+
+  .hkik-oddline-econt {
+    justify-content: space-between !important;
+}
+
+.lst_two {
+  flex: 0.4 !important;
+}
+
+.lst_one {
+  flex: 0.5 !important;
+}

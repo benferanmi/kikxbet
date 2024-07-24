@@ -1,9 +1,10 @@
-import Image from "next/image"
-import './css/sporttype.css'
-import OddOutcome from "./odd/OddOutcome"
+
+import Image from 'next/image';
+import './css/sporttype.css';
+import OddOutcome from './odd/OddOutcome';
 
 
-const SportType = ({ leagueName, leagueTypeOfJson }) => {
+const SportType = ({ leagueName, leagueTypeOfJson, svg }) => {
 
 
     return (
@@ -19,7 +20,7 @@ const SportType = ({ leagueName, leagueTypeOfJson }) => {
                                         <div className="hkik-oddline-ehead">
                                             <div className="hkik-ol-eheadl">
                                                 <Image
-                                                    src="/assets/ufeaIcon.png"
+                                                    src={`/assets/${svg}.png`}
                                                     alt="des"
                                                     width={17}
                                                     height={17}
@@ -39,7 +40,7 @@ const SportType = ({ leagueName, leagueTypeOfJson }) => {
                                     </div>
                                     <div className="hkik-oddline-econts">
                                         <div className="hkik-oddline-econt">
-                                            <div className="hkik-oddline-econt-lefts">
+                                            <div className="lst_two hkik-oddline-econt-lefts ">
                                                 <div className="hkik-oddline-econt-left">
                                                     <span>
                                                         <p>scotland</p>
@@ -71,13 +72,13 @@ const SportType = ({ leagueName, leagueTypeOfJson }) => {
                                         </div>
                                     </div>
                                 </div>
-                            )
+                            );
                         })
                     }
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default SportType
+export default SportType;

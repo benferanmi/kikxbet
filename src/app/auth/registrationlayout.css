@@ -1,0 +1,54 @@
+.reg-layout {
+  display: block;
+}
+
+.reg-position {
+  display: block;
+  width: 60%;
+  margin: auto;
+  height: inherit;
+}
+.reg-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: inherit;
+}
+
+.reg-content {
+  padding: 3em 5em;
+  width: 100%;
+  background-color: var(--side-bar-back);
+}
+.reg-cont-tih {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+}
+.reg-cont-head {
+  display: flex;
+  flex-direction: row;
+  gap: 6px;
+  align-items: center;
+  margin-bottom: 3em;
+}
+
+.reg-cont-head h2 {
+  font-family: "Roboto", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 26px;
+}
+
+.reg-spec-head {
+    display: block;
+    text-align: center;
+    margin-bottom: 2.7em;
+}
+.reg-spec-head h2 {
+  font-family: 'Poppins';
+  font-size: 48px;
+  font-weight: 700;
+  text-align: center;
+}

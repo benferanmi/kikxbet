@@ -1,23 +1,23 @@
 
-import Header from "../components/Header";
-import './promotion.css'
+import Header from '../components/Header';
+import './promotion.css';
 import Link from 'next/link';
 import Image from 'next/image';
-import Footer from "../components/Footer";
-import Faq from "../components/Faq";
-import StepToPlay from "../components/StepsToPlay";
-import Testimonial from "../components/testimonial";
+import Footer from '../components/Footer';
+import Faq from '../components/Faq';
+import StepToPlay from '../components/StepsToPlay';
+import Testimonial from '../components/testimonial';
 
 export default function PromotionPage() {
 
-  const tradingHeader = ["Metric", "bitfunded Challenge", "bitfunded Challenge", "bitfunded Account"];
+  const tradingHeader = ['Metric', 'bitfunded Challenge', 'bitfunded Challenge', 'bitfunded Account'];
   const tradingRows = [
-    ["Time limits", "45 Days", "60 Days", "-"],
-    [" Minimum Trading Days", "5 Days ", " 5 Days", " -"],
-    [" Profit Target", " 12% ", " 6%", " 12%"],
-    [" Daily Drawdown", " 5%", "5% ", " 5%"],
-    [" Maximum Loss", " 12%", " 12%", "12% "],
-    ["Refundable Fee ", " Challenge Fee", " Free", " Refund"],
+    ['Time limits', '45 Days', '60 Days', '-'],
+    [' Minimum Trading Days', '5 Days ', ' 5 Days', ' -'],
+    [' Profit Target', ' 12% ', ' 6%', ' 12%'],
+    [' Daily Drawdown', ' 5%', '5% ', ' 5%'],
+    [' Maximum Loss', ' 12%', ' 12%', '12% '],
+    ['Refundable Fee ', ' Challenge Fee', ' Free', ' Refund'],
   ];
 
   return (
@@ -466,7 +466,7 @@ export default function PromotionPage() {
       <Footer />
     </>
   );
-}
+};
 
 const styles = {
   table: {

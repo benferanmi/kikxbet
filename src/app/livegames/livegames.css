@@ -25,9 +25,12 @@
   align-items: center;
 }
 .l-selected-hright {
-  transform: rotate(90deg);
-  font-size: 30px;
-  font-weight: 800;
+}
+
+.l-selected-hright svg {
+  color: white ;
+  height: 30px;
+  width: 30px;
 }
 .l-selected-hleft h3 {
   font-family: "Roboto", sans-serif;
@@ -68,26 +71,4 @@
   font-weight: 600;
   line-height: 19.2px;
   color: #bbbbbb;
-}
-
-.bankIcons {
-  display: block;
-  margin-top: 50px;
-}
-
-.bankIcon {
-  width: 100%;
-  margin: auto;
-  height: 120px;
-  background-color: var(--side-bar-popup);
-}
-
-.bankIconImg {
-  display: flex;
-  height: 100%;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  flex-wrap: wrap;
-  flex-direction: row;
 }

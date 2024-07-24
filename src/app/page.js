@@ -1,68 +1,67 @@
 
-import Link from "next/link";
-import Faq from "./components/Faq";
-import Footer from "./components/Footer";
-import Header from "./components/Header";
-import StepToPlay from "./components/StepsToPlay";
-import Testimonial from "./components/testimonial";
-import './css/home.css'
-import PageLayout from "./pageLayout";
-import Image from "next/image";
-import OddOutcome from "./components/odd/OddOutcome";
+import Link from 'next/link';
+import Faq from './components/Faq';
+import Footer from './components/Footer';
+import Header from './components/Header';
+import StepToPlay from './components/StepsToPlay';
+import Testimonial from './components/testimonial';
+import './css/home.css';
+import PageLayout from './pageLayout';
+import Image from 'next/image';
+import OddOutcome from './components/odd/OddOutcome';
 import { AmericanFootballSvg, ArenaOfValorSvg, BaseballSvg, BasketballSvg, BoxingSvg, CricketSvg, CsgoSvg, DotaSvg, EHockey, EtennisSvg, FootballSvg, FrustalSvg, HandBallSvg, IceHockeySvg, MmaSvg, OwSvg, RainbowSvg, RocketLeagueSvg, RugbySvg, Sc2Svg, StarSvg, TableTennisSvg, TennisSvg, VolleyBallSvg } from './components/Svgs';
-import SportType from "./components/SportType";
+import SportType from './components/SportType';
 
 // src/app/promotion/page.js
 export default function Home() {
   const sportListArray = [
-    { id: 1, imgSrc: <FootballSvg color="var(--green)" height={40} width={40} />, text: "eFootball", url: "favourite" },
-    { id: 2, imgSrc: <CsgoSvg color="var(--green)" height={40} width={40} />, text: "CS:GO", url: "/cs-go" },
-    { id: 3, imgSrc: <BasketballSvg color="var(--green)" height={40} width={40} />, text: "BasketBall", url: "/basketball" },
-    { id: 4, imgSrc: <BasketballSvg color="var(--green)" height={40} width={40} />, text: "eBasketball", url: "/ebasketball" },
-    { id: 5, imgSrc: <TennisSvg color="var(--green)" height={40} width={40} />, text: "Tennis", url: "/tennis" },
-    { id: 6, imgSrc: <EtennisSvg color="var(--green)" height={40} width={40} />, text: "eTennis", url: "/etennis" },
-    { id: 7, imgSrc: <DotaSvg color="var(--green)" height={40} width={40} />, text: "Dota 2", url: "/dota" },
-    { id: 8, imgSrc: <StarSvg color="var(--green)" height={40} width={40} />, text: "LOL", url: "/lol" },
-    { id: 9, imgSrc: <IceHockeySvg color="var(--green)" height={40} width={40} />, text: "Ice hockey", url: "/ice-hockey" },
-    { id: 10, imgSrc: <EHockey color="var(--green)" height={40} width={40} />, text: "eHockey", url: "/ehockey" },
+    { id: 1, imgSrc: <FootballSvg color="var(--green)" height={40} width={40} />, text: 'eFootball', url: '/game/efootball' },
+    { id: 2, imgSrc: <CsgoSvg color="var(--green)" height={40} width={40} />, text: 'CS:GO', url: '/game/cs-go' },
+    { id: 3, imgSrc: <BasketballSvg color="var(--green)" height={40} width={40} />, text: 'BasketBall', url: '/game/basketball' },
+    { id: 4, imgSrc: <BasketballSvg color="var(--green)" height={40} width={40} />, text: 'eBasketball', url: '/game/ebasketball' },
+    { id: 5, imgSrc: <TennisSvg color="var(--green)" height={40} width={40} />, text: 'Tennis', url: '/game/tennis' },
+    { id: 6, imgSrc: <EtennisSvg color="var(--green)" height={40} width={40} />, text: 'eTennis', url: '/game/etennis' },
+    { id: 7, imgSrc: <DotaSvg color="var(--green)" height={40} width={40} />, text: 'Dota 2', url: '/game/dota' },
+    { id: 8, imgSrc: <StarSvg color="var(--green)" height={40} width={40} />, text: 'LOL', url: '/game/lol' },
+    { id: 9, imgSrc: <IceHockeySvg color="var(--green)" height={40} width={40} />, text: 'Ice hockey', url: '/game/ice-hockey' },
+    { id: 10, imgSrc: <EHockey color="var(--green)" height={40} width={40} />, text: 'eHockey', url: '/game/ehockey' },
 
-    { id: 11, imgSrc: <TableTennisSvg color="var(--green)" height={40} width={40} />, text: "Table Tennis", url: "/table-tennis" },
-    { id: 12, imgSrc: <VolleyBallSvg color="var(--green)" height={40} width={40} />, text: "Volleyball", url: "/volleyball" },
-    { id: 13, imgSrc: <BaseballSvg color="var(--green)" height={40} width={40} />, text: "Baseball", url: "/baseball" },
-    { id: 14, imgSrc: <RugbySvg color="var(--green)" height={40} width={40} />, text: "Rugby", url: "/rugby" },
-    { id: 15, imgSrc: <MmaSvg color="var(--green)" height={40} width={40} />, text: "MMA", url: "/mma" },
-    { id: 16, imgSrc: <AmericanFootballSvg color="var(--green)" height={40} width={40} />, text: "American Football", url: "/americanfootball" },
-    { id: 17, imgSrc: <HandBallSvg color="var(--green)" height={40} width={40} />, text: "Handball", url: "/handball" },
-    { id: 18, imgSrc: <RocketLeagueSvg color="var(--green)" height={40} width={40} />, text: "Rocket League", url: "/rocketleague" },
-    { id: 19, imgSrc: <BoxingSvg color="var(--green)" height={40} width={40} />, text: "Boxing", url: "/boxing" },
-    { id: 20, imgSrc: <RainbowSvg color="var(--green)" height={40} width={40} />, text: "Rainbow 6", url: "/rainbow" },
-    { id: 21, imgSrc: <FrustalSvg color="var(--green)" height={40} width={40} />, text: "Futsal", url: "/futsal" },
-    { id: 40, imgSrc: <CricketSvg color="var(--green)" height={40} width={40} />, text: "Cricket", url: "/cricket" },
-    { id: 23, imgSrc: <Sc2Svg color="var(--green)" height={40} width={40} />, text: "SC 2", url: "/sc" },
-    { id: 24, imgSrc: <OwSvg color="var(--green)" height={40} width={40} />, text: "OW", url: "/ow" },
-    { id: 25, imgSrc: <ArenaOfValorSvg color="var(--green)" height={40} width={40} />, text: "Arena Of Valor", url: "/arenaofvalor" },
+    { id: 11, imgSrc: <TableTennisSvg color="var(--green)" height={40} width={40} />, text: 'Table Tennis', url: '/game/table-tennis' },
+    { id: 12, imgSrc: <VolleyBallSvg color="var(--green)" height={40} width={40} />, text: 'Volleyball', url: '/game/volleyball' },
+    { id: 13, imgSrc: <BaseballSvg color="var(--green)" height={40} width={40} />, text: 'Baseball', url: '/game/baseball' },
+    { id: 14, imgSrc: <RugbySvg color="var(--green)" height={40} width={40} />, text: 'Rugby', url: '/game/rugby' },
+    { id: 15, imgSrc: <MmaSvg color="var(--green)" height={40} width={40} />, text: 'MMA', url: '/game/mma' },
+    { id: 16, imgSrc: <AmericanFootballSvg color="var(--green)" height={40} width={40} />, text: 'American Football', url: '/game/americanfootball' },
+    { id: 17, imgSrc: <HandBallSvg color="var(--green)" height={40} width={40} />, text: 'Handball', url: '/game/handball' },
+    { id: 18, imgSrc: <RocketLeagueSvg color="var(--green)" height={40} width={40} />, text: 'Rocket League', url: '/game/rocketleague' },
+    { id: 19, imgSrc: <BoxingSvg color="var(--green)" height={40} width={40} />, text: 'Boxing', url: '/game/boxing' },
+    { id: 20, imgSrc: <RainbowSvg color="var(--green)" height={40} width={40} />, text: 'Rainbow 6', url: '/game/rainbow' },
+    { id: 21, imgSrc: <FrustalSvg color="var(--green)" height={40} width={40} />, text: 'Futsal', url: '/game/futsal' },
+    { id: 40, imgSrc: <CricketSvg color="var(--green)" height={40} width={40} />, text: 'Cricket', url: '/game/cricket' },
+    { id: 23, imgSrc: <Sc2Svg color="var(--green)" height={40} width={40} />, text: 'SC 2', url: '/game/sc' },
+    { id: 24, imgSrc: <OwSvg color="var(--green)" height={40} width={40} />, text: 'OW', url: '/game/ow' },
+    { id: 25, imgSrc: <ArenaOfValorSvg color="var(--green)" height={40} width={40} />, text: 'Arena Of Valor', url: '/game/arenaofvalor' },
   ];
 
-  
   const leagueTypeOfJson = [
     {},
     {},
     {},
-   
-  ]
+  ];
 
-  const topPlayersHeaders = ["GAME", "USERNAME", "TIME", "WAGER", "MULTIPLIER", "PAYOUT"];
+  const topPlayersHeaders = ['GAME', 'USERNAME', 'TIME', 'WAGER', 'MULTIPLIER', 'PAYOUT'];
 
   const topPlayersRows = [
-    [{ img: '/assets/robert.png', text: 'Roobet First Person …', height: '23px' }, "", "7:06 AM", { img: '/assets/usdt.png', text: '$230.00', height: '12px' }, "0.00x", "$0.00"],
-    [{ img: '/assets/retro.png', text: 'Retro Sweets', height: '23px' }, "", "7:06 AM", { img: '/assets/eth.png', text: '$200.00', height: '12px' }, "", ""],
-    [{ img: '/assets/mines.png', text: 'MInes', height: '23px' }, "", "7:06 AM", { img: '/assets/eth.png', text: '$36.00', height: '12px' }, "0.00x", "$"],
-    [{ img: '/assets/rooolette.png', text: 'Rooolette', height: '23px' }, "", "7:06 AM", { img: '/assets/ltc.png', text: '$290.00', height: '12px' }, "0.00x", "$0.00"],
-    [{ img: '/assets/blackjack.png', text: 'Blackjack VIP Platin…', height: '23px' }, "Aghori6198", "7:06 AM", { img: '/ltc/coin.png', text: '$60.00', height: '12px' }, "", "$0.00"],
-    [{ img: '/assets/towers.png', text: ' Towers', height: '23px' }, "", "7:06 AM", { img: '/assets/clipa.png', text: '$0.29.00', height: '12px' }, "", ""],
-    [{ img: '/assets/riseof.png', text: 'Rise of Merlin …', height: '23px' }, "Himsuan3324", "7:06 AM", { img: '/assets/clipa.png', text: '$230.00', height: '12px' }, "0.00x", "$0.00"],
-    [{ img: '/assets/plinko.png', text: 'Plinko', height: '23px' }, "Joshua45", "7:06 AM", { img: '/assets/btc.png', text: '$230.00', height: '12px' }, "0.00x", "$0.00"],
+    [{ img: '/assets/robert.png', text: 'Roobet First Person …', height: '23px' }, '', '7:06 AM', { img: '/assets/usdt.png', text: '$230.00', height: '12px' }, '0.00x', '$0.00'],
+    [{ img: '/assets/retro.png', text: 'Retro Sweets', height: '23px' }, '', '7:06 AM', { img: '/assets/eth.png', text: '$200.00', height: '12px' }, '', ''],
+    [{ img: '/assets/mines.png', text: 'MInes', height: '23px' }, '', '7:06 AM', { img: '/assets/eth.png', text: '$36.00', height: '12px' }, '0.00x', '$'],
+    [{ img: '/assets/rooolette.png', text: 'Rooolette', height: '23px' }, '', '7:06 AM', { img: '/assets/ltc.png', text: '$290.00', height: '12px' }, '0.00x', '$0.00'],
+    [{ img: '/assets/blackjack.png', text: 'Blackjack VIP Platin…', height: '23px' }, 'Aghori6198', '7:06 AM', { img: '/ltc/coin.png', text: '$60.00', height: '12px' }, '', '$0.00'],
+    [{ img: '/assets/towers.png', text: ' Towers', height: '23px' }, '', '7:06 AM', { img: '/assets/clipa.png', text: '$0.29.00', height: '12px' }, '', ''],
+    [{ img: '/assets/riseof.png', text: 'Rise of Merlin …', height: '23px' }, 'Himsuan3324', '7:06 AM', { img: '/assets/clipa.png', text: '$230.00', height: '12px' }, '0.00x', '$0.00'],
+    [{ img: '/assets/plinko.png', text: 'Plinko', height: '23px' }, 'Joshua45', '7:06 AM', { img: '/assets/btc.png', text: '$230.00', height: '12px' }, '0.00x', '$0.00'],
   ];
+
   const LiveGame = () => {
     return (
       <div className="home-all-gmeachs">
@@ -148,8 +147,9 @@ export default function Home() {
           <OddOutcome gap={18} draw={3.99} home={2.21} away={4.50} />
         </div>
       </div>
-    )
-  }
+    );
+  };
+
   return (
     <>
       <Header />
@@ -353,7 +353,7 @@ export default function Home() {
               <div className="hkik-oddline-head">
                 <h1>Football</h1>
               </div>
-              <SportType leagueTypeOfJson={leagueTypeOfJson}  leagueName='League Nations UEFA' />
+              <SportType leagueTypeOfJson={leagueTypeOfJson} svg='ufeaIcon' leagueName='League Nations UEFA' />
             </div>
 
 
@@ -606,4 +606,4 @@ export default function Home() {
       <Footer />
     </>
   );
-}
+};

@@ -1,16 +1,16 @@
 
-'use client'
+'use client';
 
-import Image from 'next/image'
-import './css/rightSideBar.css'
-import Link from 'next/link'
-import { useState, useEffect } from 'react'
-import ProgressBar from './ProgressBar'
+import Image from 'next/image';
+import './css/rightSideBar.css';
+import Link from 'next/link';
+import { useState } from 'react';
+import ProgressBar from './ProgressBar';
 
 
 const RightSideBar = () => {
   const [isLoggedIn] = useState(true);
-  const [progress, setProgress] = useState(20)
+  const [progress] = useState(20);
   const [isOn, setIsOn] = useState(false);
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
 
@@ -269,7 +269,7 @@ const RightSideBar = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default RightSideBar
+export default RightSideBar;

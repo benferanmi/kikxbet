@@ -1,6 +1,6 @@
 
 const ProgressBar = ({ progress }) => {
-    const intervals = ["x1.08", "x1.15", "1.2", "x1.5"];
+    const intervals = ['x1.08', 'x1.15', '1.2', 'x1.5'];
 
     return (
         <div className='rsb-progress-container'>
@@ -21,4 +21,4 @@ const ProgressBar = ({ progress }) => {
     );
 };
 
-export default ProgressBar
+export default ProgressBar;

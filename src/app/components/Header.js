@@ -1,4 +1,4 @@
-import './css/header.css'
+import './css/header.css';
 import Image from 'next/image';
 
 export default function Header() {
@@ -69,4 +69,4 @@ export default function Header() {
       </header>
     </>
   );
-}
+};

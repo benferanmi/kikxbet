@@ -1,10 +1,10 @@
-import Image from "next/image"
-import './css/livesporttype.css'
-import OddOutcome from "./OddOutcome"
+
+import Image from 'next/image';
+import './css/livesporttype.css';
+import OddOutcome from './OddOutcome';
 
 
-const LiveSportType = ({ leagueName, leagueTypeOfJson }) => {
-
+const LiveSportType = ({ leagueName, leagueTypeOfJson, svg }) => {
 
     return (
         <div className="hkik-oddlines">
@@ -19,7 +19,7 @@ const LiveSportType = ({ leagueName, leagueTypeOfJson }) => {
                                         <div className="hkik-oddline-ehead">
                                             <div className="hkik-ol-eheadl">
                                                 <Image
-                                                    src="/assets/ufeaIcon.png"
+                                                    src={`/assets/${svg}.png`}
                                                     alt="des"
                                                     width={17}
                                                     height={17}
@@ -33,13 +33,13 @@ const LiveSportType = ({ leagueName, leagueTypeOfJson }) => {
                                                 />
                                             </div>
                                             <div className="hkik-ol-eheadr">
-                                                <span>Quarter 3 '18</span>
+                                                <span>Quarter 3 &apos;18</span>
                                             </div>
                                         </div>
                                     </div>
                                     <div className="hkik-oddline-econts">
                                         <div className="hkik-oddline-econt">
-                                            <div className="hkik-oddline-econt-lefts">
+                                            <div className="hkik-oddline-econt-lefts lst_one">
                                                 <div className="hkik-oddline-econt-left">
                                                     <div className="hkik-oddecontl-team">
                                                         <span className="hkoddete-one">
@@ -79,13 +79,13 @@ const LiveSportType = ({ leagueName, leagueTypeOfJson }) => {
                                         </div>
                                     </div>
                                 </div>
-                            )
+                            );
                         })
                     }
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default LiveSportType
+export default LiveSportType;

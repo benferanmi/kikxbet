@@ -1,0 +1,234 @@
+.reg-reg-form {
+  padding-top: 7px;
+}
+
+.reg-reg-form form {
+}
+
+.reg-input-group {
+  display: flex;
+  flex-direction: column;
+  margin-top: 28px;
+}
+
+.reg-input-group label {
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 14.59px;
+  letter-spacing: 0.01em;
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.reg-input-group input {
+  height: 64px;
+  border-radius: 6px;
+  padding-left: 14px;
+  width: 100%;
+  border: 1px solid #ffffff66;
+  color: white;
+  background: var(--side-bar-popup);
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 14.59px;
+  letter-spacing: 0.01em;
+  text-align: left;
+}
+.reg-forgotpass {
+  display: block;
+  text-align: right;
+  margin-top: 5px;
+}
+
+.reg-forgotpass a {
+  color: var(--bright-orange);
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 14.59px;
+  letter-spacing: 0.01em;
+  text-align: left;
+}
+.reg-sub-button {
+  width: 100%;
+  display: block;
+  text-align: center;
+  background-color: var(--bright-orange);
+  border-radius: 6px;
+  margin-top: 45px;
+}
+
+.reg-sub-button button {
+  height: 64px;
+  font-family: "Poppins", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 14.59px;
+  letter-spacing: 0.01em;
+  text-align: center;
+  background: inherit;
+  color: var(--purple-text);
+  border: none;
+  outline: none;
+}
+
+.reg-quests {
+  margin-top: 40px;
+}
+.reg-reg-question {
+  display: flex;
+  align-items: center;
+  width: 100;
+  justify-content: center;
+}
+
+.reg-reg-question p {
+  font-family: "Poppins";
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 14.59px;
+  letter-spacing: 0.01em;
+  padding-right: 12px;
+}
+
+.reg-reg-question span a {
+  font-family: "Poppins";
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 14.59px;
+  letter-spacing: 0.01em;
+  color: var(--bright-orange);
+}
+
+.reg-other-methods {
+  margin-top: 65px;
+  display: block;
+}
+
+.reg-methods {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.reg-met-each {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  box-shadow: 0px 10px 30px 0px #40bfff3d;
+  border: 1px solid #ebf0ff;
+  height: 60px;
+  border-radius: 5px;
+  padding: 0 25px;
+}
+
+.reg-met-each p {
+  color: #9098b1;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 25.2px;
+  letter-spacing: 0.5px;
+}
+
+/* forgot password page additional css */
+.forgotPassword-button {
+  display: flex;
+  width: 100%;
+  margin-top: 50px;
+}
+
+.forgotPassword-button span {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.reg-forgot-cancel {
+  display: flex;
+  flex: 0.45;
+  border: 1px solid #fccc07;
+  border-radius: 5px;
+}
+
+.reg-forgot-cancel button,
+.regforbut button {
+  border: none;
+  outline: none;
+  height: 60px;
+  width: 100%;
+  text-align: center;
+  background: inherit;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 14.59px;
+  letter-spacing: 0.01em;
+  border-radius: 5px;
+}
+
+.regforbut {
+  display: flex;
+  flex: 0.45;
+  border-radius: 5px;
+  background: var(--bright-orange);
+}
+
+/* signup additional code */
+.reg-ref-code {
+  width: 70%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.reg-ref-code p {
+  padding-left: 30px;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 14.59px;
+  letter-spacing: 0.01em;
+  text-align: left;
+  margin-top: 43px;
+}
+
+.reg-check-group {
+  display: block;
+  margin-top: 40px;
+}
+.reg-check-g {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  align-items: center;
+}
+
+.reg-check-g input {
+  border: 1px solid #fccc07;
+  height: 28px;
+  width: 28px;
+  border-radius: 5px;
+  background: inherit;
+}
+.reg-check-g p {
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  text-align: left;
+  color: white;
+}
+.reg-check-g p a {
+  color: var(--bright-orange);
+}

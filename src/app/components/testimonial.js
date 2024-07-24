@@ -1,6 +1,6 @@
 
 import Image from 'next/image';
-import './css/testimonial.css'
+import './css/testimonial.css';
 
 export default function Testimonial() {
     return (
@@ -35,7 +35,7 @@ export default function Testimonial() {
 
                                     <h3>John D</h3>
 
-                                    <div className="testimonial-des">"I've been playing at this casino for months now, and it's fantastic! The games are exciting, the payouts are quick, and the customer service!"</div>
+                                    <div className="testimonial-des">I&quot;ve been playing at this casino for months now, and it&quot;s fantastic! The games are exciting, the payouts are quick, and the customer service!</div>
 
                                     <div className="testimonial-location">
                                         <Image
@@ -72,7 +72,7 @@ export default function Testimonial() {
 
                                     <h3>Sarah M</h3>
 
-                                    <div className="testimonial-des">"This casino is the best! The variety of games is amazing, and I love the bonuses and promotions. It's my go-to place for online gaming."</div>
+                                    <div className="testimonial-des">This casino is the best! The variety of games is amazing, and I love the bonuses and promotions. It&quot;s my go-to place for online gaming.</div>
 
                                     <div className="testimonial-location">
                                         <Image
@@ -109,7 +109,7 @@ export default function Testimonial() {
 
                                     <h3>Mike L</h3>
 
-                                    <div className="testimonial-des">"I was skeptical at first, but this casino has exceeded my expectations. The user interface is easy to navigate, and I've had great luck with my winnings.</div>
+                                    <div className="testimonial-des">I was skeptical at first, but this casino has exceeded my expectations. The user interface is easy to navigate, and I&quot;ve had great luck with my winnings.</div>
 
                                     <div className="testimonial-location">
                                         <Image
@@ -137,5 +137,5 @@ export default function Testimonial() {
                 </div>
             </div>
         </section>
-    )
-}
+    );
+};

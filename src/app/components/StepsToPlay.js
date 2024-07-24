@@ -1,6 +1,6 @@
 
 import Image from 'next/image';
-import './css/steptoplay.css'
+import './css/steptoplay.css';
 
 export default function StepToPlay() {
   return (
@@ -59,5 +59,5 @@ export default function StepToPlay() {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
