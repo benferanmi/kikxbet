@@ -21,3 +21,13 @@
   background: #191939;
   height: fit-content;
 }
+
+@media screen and (max-width: 500px) {
+  .sidebarLeft,
+  .sidebarRight {
+    display: none;
+  }
+  .plcontainer {
+    flex: 1;
+  }
+}

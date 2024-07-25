@@ -327,8 +327,8 @@ export default function Home() {
                       <li><Link href=''>6h</Link></li>
                       <li><Link href=''>12h</Link></li>
                       <li><Link href=''>24h</Link></li>
-                      <li class="calendar-input">
-                        <div class="calender-text56656">Calender</div>
+                      <li className="calendar-input">
+                        <div className="calender-text56656">Calender</div>
                         <input type="date" id="date" name="date" placeholder="Calender" />
                       </li>
                     </ul>
