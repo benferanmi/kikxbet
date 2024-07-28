@@ -157,268 +157,274 @@ export default function Home() {
       <PageLayout >
         <section>
 
-          <main>
-            <div className="home-reminders">
-              <div className="home-reminder">
-                <div className="home-reminder-content">
-                  <span className="home-reminder-text">
-                    <h2 className="horetextone">NEXT MATCH</h2>
-                    <h2 className="horetexttwo">vs Bluebirds FC</h2>
-                  </span>
-                  <div className="home-reminder-countdowns">
-                    <div className="home-reminder-countdown">
-                      <div className="home-r-count-each">
-                        <span>
-                          05
-                        </span>
-                        <p>Days</p>
-                      </div>
-
-                      <div className="home-r-count-each">
-                        <span>
-                          12
-                        </span>
-                        <p>Hrs</p>
-                      </div>
-
-                      <div className="home-r-count-each">
-                        <span>
-                          42
-                        </span>
-                        <p>Min</p>
-                      </div>
-
-                      <div className="home-r-count-each">
-                        <span>
-                          10
-                        </span>
-                        <p>Secs</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="home-hero-games">
-              <div className="home-hero-game">
-                <div className="home-hero-gcontents">
-                  <div className="home-hero-gcontent">
-                    <div className="home-hero-gceachs">
-                      <div className="home-hero-gceach">
-                        <span className="home-hero-gsedate">July 18, 2024</span>
-                        <div className="home-hero-gseteam">
-                          <Image
-                            src="/assets/teamone.png"
-                            alt="des"
-                            width={44}
-                            height={44}
-                          />
-                          <span className="hhgseteam-score">
-                            1 - 1
-                          </span>
-                          <Image
-                            src="/assets/teamtwo.png"
-                            alt="des"
-                            width={44}
-                            height={44}
-                          />
-                        </div>
-                        <span className="home-hero-gsedate">Premier Leauge</span>
-                      </div>
-                    </div>
-
-                    <div className="home-hero-gceachs">
-                      <div className="home-hero-gceach">
-                        <span className="home-hero-gsedate">July 18, 2024</span>
-                        <div className="home-hero-gseteam">
-                          <Image
-                            src="/assets/teamone.png"
-                            alt="des"
-                            width={44}
-                            height={44}
-                          />
-                          <span className="hhgseteam-score">
-                            1 - 1
-                          </span>
-                          <Image
-                            src="/assets/teamtwo.png"
-                            alt="des"
-                            width={44}
-                            height={44}
-                          />
-                        </div>
-                        <span className="home-hero-gsedate">Premier Leauge</span>
-                      </div>
-                    </div>
-
-                    <div className="home-hero-gceachs">
-                      <div className="home-hero-gceach">
-                        <span className="home-hero-gsedate">July 18, 2024</span>
-                        <div className="home-hero-gseteam">
-                          <Image
-                            src="/assets/teamone.png"
-                            alt="des"
-                            width={44}
-                            height={44}
-                          />
-                          <span className="hhgseteam-score">
-                            1 - 1
-                          </span>
-                          <Image
-                            src="/assets/teamtwo.png"
-                            alt="des"
-                            width={44}
-                            height={44}
-                          />
-                        </div>
-                        <span className="home-hero-gsedate">Premier Leauge</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-
-
-            <div className="home-heros">
-              <div className="home-hero">
-                <div className="home-hero-banner">
-                  <div className="home-hero-bancontent">
-                    <h1>Cashback Bonus</h1>
-                    <p>10% up to $500</p>
-
-                    <div className="hherbancon-but">
-                      <button><Link href='/register' >Registration</Link></button>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="home-hero-sports">
-                  <div className="home-hero-sport">
-                    <div className="home-herosports-container">
-                      {sportListArray.map(sport => (
-                        <div key={sport.id} className="home-herosports-item">
-                          <Link href={sport.url}>
-                            {sport.imgSrc}
-                            <p>{sport.text}</p>
-                          </Link>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-
-            <div className="home-all-games">
-              <div className="home-all-game">
-                <div className="home-all-gmenus">
-                  <div className="home-all-gmenu">
-                    <ul>
-                      <li><Link href=''>All</Link></li>
-                      <li><Link href=''>Live</Link></li>
-                      <li><Link href=''>Today</Link></li>
-                      <li><Link href=''>Tomorrow</Link></li>
-                      <li><Link href=''>1h</Link></li>
-                      <li><Link href=''>3h</Link></li>
-                      <li><Link href=''>6h</Link></li>
-                      <li><Link href=''>12h</Link></li>
-                      <li><Link href=''>24h</Link></li>
-                      <li className="calendar-input">
-                        <div className="calender-text56656">Calender</div>
-                        <input type="date" id="date" name="date" placeholder="Calender" />
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-
-
-                <div className="home-all-gmatchs">
-                  <div className="home-all-gmatch">
-                    <LiveGame />
-                    <LiveGame />
-                    <LiveGame />
-                    <LiveGame />
-                    <LiveGame />
-                  </div>
-                </div>
-              </div>
-            </div>
-
-
+          <div>
             <div>
-              <div className="hkik-oddline-head">
-                <h1>Football</h1>
-              </div>
-              <SportType leagueTypeOfJson={leagueTypeOfJson} svg='ufeaIcon' leagueName='League Nations UEFA' />
-            </div>
+              <div>
+                <div>
+                  <div className="home-reminders">
+                    <div className="home-reminder">
+                      <div className="home-reminder-content">
+                        <span className="home-reminder-text">
+                          <h2 className="horetextone">NEXT MATCH</h2>
+                          <h2 className="horetexttwo">vs Bluebirds FC</h2>
+                        </span>
+                        <div className="home-reminder-countdowns">
+                          <div className="home-reminder-countdown">
+                            <div className="home-r-count-each">
+                              <span>
+                                05
+                              </span>
+                              <p>Days</p>
+                            </div>
 
+                            <div className="home-r-count-each">
+                              <span>
+                                12
+                              </span>
+                              <p>Hrs</p>
+                            </div>
 
-            <div className="home-sectionfours">
-              <div className="home-sectionfour">
-                <div className="home-secfour-head">
-                  <h2>Popular Sports</h2>
-                  <p>Permanent live, fast pacing matches, immediate settlement</p>
-                </div>
+                            <div className="home-r-count-each">
+                              <span>
+                                42
+                              </span>
+                              <p>Min</p>
+                            </div>
 
-                <div className="home-secfour-grids">
-                  <div className="home-secfour-grid">
-                    <div className="home-secfour-g-each">
-                      <div className="home-sfgeach">
-                        <Image
-                          src="/assets/basketballgreen.png"
-                          alt="des"
-                          width={55}
-                          height={55}
-                        />
-                        <p>eBasketball</p>
-                      </div>
-                    </div>
-
-                    <div className="home-secfour-g-each">
-                      <div className="home-sfgeach">
-                        <Image
-                          src="/assets/hockeygreen.png"
-                          alt="des"
-                          width={55}
-                          height={55}
-                        />
-                        <p>eHockey</p>
-                      </div>
-                    </div>
-
-                    <div className="home-secfour-g-each">
-                      <div className="home-sfgeach">
-                        <Image
-                          src="/assets/tennisgreen.png"
-                          alt="des"
-                          width={55}
-                          height={55}
-                        />
-                        <p>eTennis</p>
-                      </div>
-                    </div>
-
-                    <div className="home-secfour-g-each">
-                      <div className="home-sfgeach">
-                        <Image
-                          src="/assets/footballgreen.png"
-                          alt="des"
-                          width={55}
-                          height={55}
-                        />
-                        <p>eFootball</p>
+                            <div className="home-r-count-each">
+                              <span>
+                                10
+                              </span>
+                              <p>Secs</p>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
 
+                  <div className="home-hero-games">
+                    <div className="home-hero-game">
+                      <div className="home-hero-gcontents">
+                        <div className="home-hero-gcontent">
+                          <div className="home-hero-gceachs">
+                            <div className="home-hero-gceach">
+                              <span className="home-hero-gsedate">July 18, 2024</span>
+                              <div className="home-hero-gseteam">
+                                <Image
+                                  src="/assets/teamone.png"
+                                  alt="des"
+                                  width={44}
+                                  height={44}
+                                />
+                                <span className="hhgseteam-score">
+                                  1 - 1
+                                </span>
+                                <Image
+                                  src="/assets/teamtwo.png"
+                                  alt="des"
+                                  width={44}
+                                  height={44}
+                                />
+                              </div>
+                              <span className="home-hero-gsedate">Premier Leauge</span>
+                            </div>
+                          </div>
+
+                          <div className="home-hero-gceachs">
+                            <div className="home-hero-gceach">
+                              <span className="home-hero-gsedate">July 18, 2024</span>
+                              <div className="home-hero-gseteam">
+                                <Image
+                                  src="/assets/teamone.png"
+                                  alt="des"
+                                  width={44}
+                                  height={44}
+                                />
+                                <span className="hhgseteam-score">
+                                  1 - 1
+                                </span>
+                                <Image
+                                  src="/assets/teamtwo.png"
+                                  alt="des"
+                                  width={44}
+                                  height={44}
+                                />
+                              </div>
+                              <span className="home-hero-gsedate">Premier Leauge</span>
+                            </div>
+                          </div>
+
+                          <div className="home-hero-gceachs">
+                            <div className="home-hero-gceach">
+                              <span className="home-hero-gsedate">July 18, 2024</span>
+                              <div className="home-hero-gseteam">
+                                <Image
+                                  src="/assets/teamone.png"
+                                  alt="des"
+                                  width={44}
+                                  height={44}
+                                />
+                                <span className="hhgseteam-score">
+                                  1 - 1
+                                </span>
+                                <Image
+                                  src="/assets/teamtwo.png"
+                                  alt="des"
+                                  width={44}
+                                  height={44}
+                                />
+                              </div>
+                              <span className="home-hero-gsedate">Premier Leauge</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+
+
+                  <div className="home-heros">
+                    <div className="home-hero">
+                      <div className="home-hero-banner">
+                        <div className="home-hero-bancontent">
+                          <h1>Cashback Bonus</h1>
+                          <p>10% up to $500</p>
+
+                          <div className="hherbancon-but">
+                            <button><Link href='/register' >Registration</Link></button>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="home-hero-sports">
+                        <div className="home-hero-sport">
+                          <div className="home-herosports-container">
+                            {sportListArray.map(sport => (
+                              <div key={sport.id} className="home-herosports-item">
+                                <Link href={sport.url}>
+                                  {sport.imgSrc}
+                                  <p>{sport.text}</p>
+                                </Link>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <div className="home-all-games">
+                    <div className="home-all-game">
+                      <div className="home-all-gmenus">
+                        <div className="home-all-gmenu">
+                          <ul>
+                            <li><Link href=''>All</Link></li>
+                            <li><Link href=''>Live</Link></li>
+                            <li><Link href=''>Today</Link></li>
+                            <li><Link href=''>Tomorrow</Link></li>
+                            <li><Link href=''>1h</Link></li>
+                            <li><Link href=''>3h</Link></li>
+                            <li><Link href=''>6h</Link></li>
+                            <li><Link href=''>12h</Link></li>
+                            <li><Link href=''>24h</Link></li>
+                            <li className="calendar-input">
+                              <div className="calender-text56656">Calender</div>
+                              <input type="date" id="date" name="date" placeholder="Calender" />
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+
+
+                      <div className="home-all-gmatchs">
+                        <div className="home-all-gmatch">
+                          <LiveGame />
+                          <LiveGame />
+                          <LiveGame />
+                          <LiveGame />
+                          <LiveGame />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <div>
+                    <div className="hkik-oddline-head">
+                      <h1>Football</h1>
+                    </div>
+                    <SportType leagueTypeOfJson={leagueTypeOfJson} svg='ufeaIcon' leagueName='League Nations UEFA' />
+                  </div>
+
+
+                  <div className="home-sectionfours">
+                    <div className="home-sectionfour">
+                      <div className="home-secfour-head">
+                        <h2>Popular Sports</h2>
+                        <p>Permanent live, fast pacing matches, immediate settlement</p>
+                      </div>
+
+                      <div className="home-secfour-grids">
+                        <div className="home-secfour-grid">
+                          <div className="home-secfour-g-each">
+                            <div className="home-sfgeach">
+                              <Image
+                                src="/assets/basketballgreen.png"
+                                alt="des"
+                                width={55}
+                                height={55}
+                              />
+                              <p>eBasketball</p>
+                            </div>
+                          </div>
+
+                          <div className="home-secfour-g-each">
+                            <div className="home-sfgeach">
+                              <Image
+                                src="/assets/hockeygreen.png"
+                                alt="des"
+                                width={55}
+                                height={55}
+                              />
+                              <p>eHockey</p>
+                            </div>
+                          </div>
+
+                          <div className="home-secfour-g-each">
+                            <div className="home-sfgeach">
+                              <Image
+                                src="/assets/tennisgreen.png"
+                                alt="des"
+                                width={55}
+                                height={55}
+                              />
+                              <p>eTennis</p>
+                            </div>
+                          </div>
+
+                          <div className="home-secfour-g-each">
+                            <div className="home-sfgeach">
+                              <Image
+                                src="/assets/footballgreen.png"
+                                alt="des"
+                                width={55}
+                                height={55}
+                              />
+                              <p>eFootball</p>
+                            </div>
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-          </main>
+          </div>
 
 
         </section>

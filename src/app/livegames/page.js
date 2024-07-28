@@ -1,4 +1,6 @@
 
+'use client';
+import { useState } from 'react';
 import BankImagesContainer from '../components/BankImagesContainer';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
@@ -9,10 +11,36 @@ import './livegames.css';
 
 
 export default function LiveGames() {
+    const [selectedDiscipline, setSelectedDiscipline] = useState([]);
+
+    const disciplines = [
+        { name: 'Basketball', icon: <BasketballSvg color='#ffffff' height="16" width='16px' /> },
+        { name: 'eBasketball', icon: <BasketballSvg color='#ffffff' height="16" width='16px' /> },
+        { name: 'CS:GO', icon: <CsgoSvg color='#ffffff' height="16" width='16px' /> },
+        { name: 'BaseBall', icon: <BaseballSvg color='#ffffff' height="16" width='16px' /> },
+        { name: 'Tennis', icon: <TennisSvg color='#ffffff' height="16" width='16px' /> },
+        { name: 'eTennis', icon: <EtennisSvg color='#ffffff' height="16" width='16px' /> },
+        { name: 'TableTennis', icon: <TableTennisSvg color='#ffffff' height="16" width='16px' /> },
+        { name: 'Ice Hockey', icon: <IceHockeySvg color='#ffffff' height="16" width='16px' /> },
+        { name: 'eHockey', icon: <EHockey color='#ffffff' height="16" width='16px' /> },
+        { name: 'Volleyball', icon: <VolleyBallSvg color='#ffffff' height="16" width='16px' /> },
+        { name: 'Futsal', icon: <FrustalSvg color='#ffffff' height="16" width='16px' /> },
+        { name: 'Cricket', icon: <CricketSvg color='#ffffff' height="16" width='16px' /> },
+    ];
+    const toggleSelection = (discipline) => {
+        setSelectedDiscipline(prevSelected => {
+            if (prevSelected.includes(discipline)) {
+                return prevSelected.filter(item => item !== discipline);
+            } else {
+                return [...prevSelected, discipline];
+            }
+        });
+    };
 
     const leagueTypeOfJson = [
         {},
     ];
+
 
     return (
         <>
@@ -24,16 +52,16 @@ export default function LiveGames() {
                         <div className="l-selected-head">
                             <div className="l-selected-hleft">
                                 <MenuSvg color='#ffffff' height='15px' width='15px' />
-                                <h3>Selected disciplines: <span>3/14</span></h3>
+                                <h3>Selected disciplines: <span>{selectedDiscipline.length}/{disciplines.length}</span></h3>
                             </div>
                             <div className="l-selected-hright">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3.5" stroke="#ffffff" className="size-6">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="3.5" stroke="#ffffff" className="size-6">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
                                 </svg>
 
                             </div>
                         </div>
-
+                        {/* 
                         <div className="l-selected-body">
                             <div className="l-selected-flex">
                                 <div className="l-selected-each">
@@ -83,6 +111,19 @@ export default function LiveGames() {
                                 <div className="l-selected-each">
                                     <button><CricketSvg color='#ffffff' height="16" width='16px' /><p> Cricket</p> </button>
                                 </div>
+                            </div>
+                        </div> */}
+
+                        <div className="l-selected-body">
+                            <div className="l-selected-flex">
+                                {disciplines.map((discipline, index) => (
+                                    <div key={index} className={`l-selected-each ${selectedDiscipline.includes(discipline.name) ? 'l-selected-mychoice' : ''}`}>
+                                        <button onClick={() => toggleSelection(discipline.name)}>
+                                            {discipline.icon}
+                                            <p>{discipline.name}</p>
+                                        </button>
+                                    </div>
+                                ))}
                             </div>
                         </div>
                     </div>

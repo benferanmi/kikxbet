@@ -38,3 +38,42 @@
   font-weight: 700;
   line-height: 24px;
 }
+
+/* Extra Small Devices (Phones) */
+@media (max-width: 576px) {
+  .hagmel-match {
+    gap: 10px !important;
+  }
+  .hag-odd-each {
+    width: 70px !important;
+    height: 70px;
+  }
+  .hag-odd-each div {
+    gap: 5px;
+    display: flex;
+  }
+  .hag-odd-each div p {
+    line-height: 20px;
+    font-size: 14px;
+  }
+  .hag-odd-each div span {
+    font-size: 16px;
+  }
+  
+}
+
+/* Small Devices (Tablets) */
+@media (min-width: 577px) and (max-width: 768px) {
+}
+
+/* Medium Devices (Tablets in Landscape, Small Laptops) */
+@media (min-width: 769px) and (max-width: 992px) {
+}
+
+/* Large Devices (Desktops) */
+@media (min-width: 993px) and (max-width: 1200px) {
+}
+
+/* Extra Large Devices (Large Desktops) */
+@media (min-width: 1201px) {
+}

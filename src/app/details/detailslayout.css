@@ -192,3 +192,48 @@
   justify-content: center;
   gap: 10px;
 }
+
+/* Extra Small Devices (Phones) */
+@media (max-width: 576px) {
+  .kik-profile-menu {
+    flex-wrap: wrap;
+  }
+  .details_h_tscontent {
+    padding: 0 10px;
+  }
+  .dhtsc-cont-left {
+    height: 90px;
+    width: 90px;
+  }
+  .dhtsc-cont-left img {
+    height: 30px;
+    width: 30px;
+  }
+  .dhtsc-scores span svg {
+    height: 70px;
+    width: 70px;
+  }
+  .dhtsc-scores span h5 {
+    top: 23%;
+    left: 29%;
+  }
+  .dhtsc-result {
+    width: 100px;
+  }
+}
+
+/* Small Devices (Tablets) */
+@media (min-width: 577px) and (max-width: 768px) {
+}
+
+/* Medium Devices (Tablets in Landscape, Small Laptops) */
+@media (min-width: 769px) and (max-width: 992px) {
+}
+
+/* Large Devices (Desktops) */
+@media (min-width: 993px) and (max-width: 1200px) {
+}
+
+/* Extra Large Devices (Large Desktops) */
+@media (min-width: 1201px) {
+}

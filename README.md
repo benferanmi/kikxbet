@@ -1,13 +1,6 @@
-This is a Next.js project that serves as a betting platform called "kikxbet". The project is currently in development and is hosted on Vercel.
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Main Function Points
-This is a Next.js application that provides a betting platform for users.
-The project is currently in the early stages of development.
-The application is hosted on Vercel, a popular platform for deploying Next.js applications.
-Technology Stack
-Next.js: A React framework for building server-rendered applications.
-JavaScript: The primary programming language used in the project.
-CSS: Used for styling the application.
+## Getting Started
 
 First, run the development server:
 

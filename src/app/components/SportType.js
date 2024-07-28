@@ -6,7 +6,6 @@ import OddOutcome from './odd/OddOutcome';
 
 const SportType = ({ leagueName, leagueTypeOfJson, svg }) => {
 
-
     return (
         <div className="hkik-oddlines">
             <div className="hkik-oddline">
@@ -41,8 +40,8 @@ const SportType = ({ leagueName, leagueTypeOfJson, svg }) => {
                                     <div className="hkik-oddline-econts">
                                         <div className="hkik-oddline-econt">
                                             <div className="lst_two hkik-oddline-econt-lefts ">
-                                                <div className="hkik-oddline-econt-left">
-                                                    <span>
+                                                <div className="hkik-oddline-econt-left hkik-oddline-mobile-left">
+                                                    <span className='hkikodeconle-mob-rev'> 
                                                         <p>scotland</p>
                                                         <Image
                                                             src="/assets/scotland.png"
@@ -52,7 +51,7 @@ const SportType = ({ leagueName, leagueTypeOfJson, svg }) => {
                                                         />
                                                     </span>
                                                     <strong>VS</strong>
-                                                    <span>
+                                                    <span className='hkikodeconle-rev'>
                                                         <Image
                                                             src="/assets/wales.png"
                                                             alt="des"

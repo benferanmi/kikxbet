@@ -507,3 +507,94 @@
   display: flex;
   flex: 0.5;
 }
+
+/* Extra Small Devices (Phones) */
+@media (max-width: 576px) {
+  .hero-section {
+    padding-top: 4em;
+  }
+  .hero-content {
+    width: 90%;
+    margin: auto;
+  }
+  .challange,
+  .challange-subs {
+    width: 90%;
+    margin: auto;
+  }
+  .challange-subgrid {
+    justify-content: center;
+    grid-template-columns: repeat(1, 80%);
+  }
+  /*  */
+
+  .step-by {
+    width: 90%;
+    margin: auto;
+  }
+  .stepby-grid {
+    grid-template-columns: repeat(1, 80%);
+    justify-content: center;
+  }
+  .sbyg-icon .arrowUpLongDotted,
+  .sbyg-icon .arrowDownLongDotted {
+    display: none;
+  }
+  .sbyg-cont {
+    padding-right: 15px;
+  }
+
+  /*  */
+  .offer {
+    width: 90%;
+  }
+  .offer-cont {
+    flex-direction: column;
+    display: flex;
+  }
+  .offer-image {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+  }
+
+  /*  */
+  .trading-obj {
+    width: 90%;
+    margin: auto;
+  }
+  .crypto-obj-grid {
+    grid-template-columns: repeat(1, 70%);
+    justify-content: center;
+  }
+  .cryobj-each {
+    height: 230pxm;
+  }
+
+  /*  */
+  .payout-system {
+    width: 90%;
+    margin: auto;
+    height: fit-content;
+  }
+  .payout-system-body {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
+
+/* Small Devices (Tablets) */
+@media (min-width: 577px) and (max-width: 768px) {
+}
+
+/* Medium Devices (Tablets in Landscape, Small Laptops) */
+@media (min-width: 769px) and (max-width: 992px) {
+}
+
+/* Large Devices (Desktops) */
+@media (min-width: 993px) and (max-width: 1200px) {
+}
+
+/* Extra Large Devices (Large Desktops) */
+@media (min-width: 1201px) {
+}

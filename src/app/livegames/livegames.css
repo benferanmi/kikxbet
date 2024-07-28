@@ -28,7 +28,7 @@
 }
 
 .l-selected-hright svg {
-  color: white ;
+  color: white;
   height: 30px;
   width: 30px;
 }
@@ -53,6 +53,8 @@
 
 .l-selected-each {
   display: block;
+  padding: 5px 10px;
+  border-radius: 5px;
 }
 
 .l-selected-each button {
@@ -71,4 +73,29 @@
   font-weight: 600;
   line-height: 19.2px;
   color: #bbbbbb;
+}
+.l-selected-mychoice {
+  background: var(--teal);
+}
+/* Extra Small Devices (Phones) */
+@media (max-width: 576px) {
+ .l-selected-flex {
+  gap: 15px ;
+ }
+}
+
+/* Small Devices (Tablets) */
+@media (min-width: 577px) and (max-width: 768px) {
+}
+
+/* Medium Devices (Tablets in Landscape, Small Laptops) */
+@media (min-width: 769px) and (max-width: 992px) {
+}
+
+/* Large Devices (Desktops) */
+@media (min-width: 993px) and (max-width: 1200px) {
+}
+
+/* Extra Large Devices (Large Desktops) */
+@media (min-width: 1201px) {
 }

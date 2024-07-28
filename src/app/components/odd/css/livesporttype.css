@@ -151,3 +151,58 @@
   justify-content: center;
   align-items: center;
 }
+
+/* Extra Small Devices (Phones) */
+@media (max-width: 576px) {
+  .hkik-oddline-econt-lefts {
+    padding-left: 0;
+  }
+  .hkik-oddline-econt-left {
+    height: 100%;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .hkik-oddecont1-odd {
+    display: none;
+  }
+  .hagmel-match {
+    gap: 10px !important;
+  }
+  .hag-odd-each div {
+    gap: 5px !important;
+  }
+  .hag-odd-each {
+    height: 60px !important;
+    width: 65px !important;
+  }
+  .hkik-ol-eheadl p {
+    font-size: 14px !important;
+  }
+  .hag-odd-each div p {
+    line-height: 20px !important;
+    font-size: 14px !important;
+  }
+  .hag-odd-each div span {
+    font-size: 16px !important;
+  }
+  .hkik-oddecontl-team span p {
+    width: 100px;
+    line-height: 18px;
+  }
+}
+
+/* Small Devices (Tablets) */
+@media (min-width: 577px) and (max-width: 768px) {
+}
+
+/* Medium Devices (Tablets in Landscape, Small Laptops) */
+@media (min-width: 769px) and (max-width: 992px) {
+}
+
+/* Large Devices (Desktops) */
+@media (min-width: 993px) and (max-width: 1200px) {
+}
+
+/* Extra Large Devices (Large Desktops) */
+@media (min-width: 1201px) {
+}

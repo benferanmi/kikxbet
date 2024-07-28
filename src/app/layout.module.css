@@ -10,7 +10,6 @@
   background: #191939;
   height: fit-content;
 }
-
 .plcontent {
   flex: 1;
 }
@@ -22,7 +21,8 @@
   height: fit-content;
 }
 
-@media screen and (max-width: 500px) {
+/* Extra Small Devices (Phones) */
+@media (max-width: 576px) {
   .sidebarLeft,
   .sidebarRight {
     display: none;
@@ -30,4 +30,20 @@
   .plcontainer {
     flex: 1;
   }
+}
+
+/* Small Devices (Tablets) */
+@media (min-width: 577px) and (max-width: 768px) {
+}
+
+/* Medium Devices (Tablets in Landscape, Small Laptops) */
+@media (min-width: 769px) and (max-width: 992px) {
+}
+
+/* Large Devices (Desktops) */
+@media (min-width: 993px) and (max-width: 1200px) {
+}
+
+/* Extra Large Devices (Large Desktops) */
+@media (min-width: 1201px) {
 }

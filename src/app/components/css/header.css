@@ -140,3 +140,78 @@ header {
   background-color: inherit;
   border: 1px solid #ffffff66;
 }
+
+.nav-menu-button {
+  display: none;
+}
+
+.mobile-nav {
+  display: none;
+}
+
+/* Extra Small Devices (Phones) */
+@media (max-width: 576px) {
+  .nav-flex {
+    position: relative;
+  }
+
+  .nav-menu-button {
+    display: block;
+    z-index: 99999;
+    background: none;
+    border: none;
+    outline: none;
+    padding: 5px;
+  }
+  .mobile-nav-active {
+    display: block !important;
+    position: absolute;
+    z-index: 9999;
+    top: 30px;
+    right: -10px;
+    background-color: var(--side-bar-back);
+    padding: 20px 30px;
+  }
+  .nav-menu {
+    width: 100px;
+  }
+  .nav-menu ul {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .navr-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .accessible-each {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .nav-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 30px;
+  } 
+  .signup {
+    margin-left: 0;
+  }
+}
+
+/* Small Devices (Tablets) */
+@media (min-width: 577px) and (max-width: 768px) {
+}
+
+/* Medium Devices (Tablets in Landscape, Small Laptops) */
+@media (min-width: 769px) and (max-width: 992px) {
+}
+
+/* Large Devices (Desktops) */
+@media (min-width: 993px) and (max-width: 1200px) {
+}
+
+/* Extra Large Devices (Large Desktops) */
+@media (min-width: 1201px) {
+}

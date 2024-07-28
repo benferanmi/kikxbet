@@ -1,0 +1,274 @@
+.bankimagecont {
+  width: 78%;
+  margin: auto;
+}
+
+.kikx-rewards {
+  margin-left: 10px;
+  margin-right: 10px;
+  display: block;
+}
+.kikx-reward {
+}
+.kikx-reward-heros {
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.kikx-reward-hero {
+  height: 340px;
+  background: linear-gradient(97.91deg, #1d79d4 5.61%, #89c4ff 96.77%);
+  display: block;
+  position: relative;
+  border-radius: 12px;
+}
+
+.kikx-reward-hero-cont {
+  height: 100%;
+  width: 100%;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+}
+.kikx-rhc-left {
+  height: fit-content;
+  width: 50%;
+}
+.kikx-rhc-left h1 {
+  font-family: "Raleway";
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 56.8px;
+}
+
+.kikx-rhc-right {
+  position: absolute;
+  right: 30px;
+  width: 340px;
+  height: 300px;
+  background: url(/assets/rewardshero.png);
+  top: 10%;
+}
+.kikx-reward-reflinks {
+}
+.kikx-reward-reflink {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  background: var(--teal);
+  height: 95px;
+  padding: 0px 40px;
+  border-radius: 60px;
+}
+.kikx-reward-reflink-cont {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 20px;
+  align-items: center;
+  height: 55px;
+  border: 1px solid #ffffff;
+  border-radius: 60px;
+  background: var(--side-bar-back);
+}
+.kikx-reward-reflink-cleft {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+.kikx-reward-reflink-cleft h2 {
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28.01px;
+}
+
+.kikx-reward-reflink-cleft p {
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24.5px;
+  color: var(--green);
+  text-align: left;
+}
+.kikx-rrcs {
+  background: #5351fb;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.kikx-reward-reflink-cright {
+}
+
+.kikx-reward-reflink-cright button {
+  height: 40px;
+  width: 127px;
+  border-radius: 60px;
+  background: var(--bright-orange);
+}
+
+/*  */
+.kikx-reward-refearned {
+  margin-top: 28px;
+  display: block;
+}
+
+.kikx-reward-refearn {
+  display: block;
+  background: var(--side-bar-back);
+  padding: 30px 0;
+}
+
+.kikx-reward-re-cont {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.kikx-reward-re-eachs {
+  background: #353471;
+  width: 100%;
+}
+.kikx-reward-re-each {
+  height: 120px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #353471;
+  border-radius: 5px;
+}
+.kikx-reward-re-each span {
+  display: flex;
+  gap: 15px;
+  flex-direction: row;
+  align-items: center;
+}
+
+.kikx-reward-re-each span h3 {
+  font-family: "Rubik", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32.57px;
+}
+
+.kikx-reward-re-each span h3 p {
+  color: var(--green);
+  font-family: "Open Sans";
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 28px;
+}
+/*  */
+
+.kikx-reward-myrefs {
+  margin-top: 30px;
+  display: block;
+}
+.kikx-reward-myref {
+  background-color: var(--side-bar-back);
+  padding: 40px 25px;
+}
+.kikx-reward-myref-heads {
+  margin-top: 20px;
+}
+.kikx-reward-myref-head {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.kikx-reward-myref-head h2 {
+  color: #ffffff;
+  font-family: "Rubik", sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 32.57px;
+}
+.kikx-reward-myref-head .kikx-r-my-ref {
+  border: 1px solid #3a3982;
+  background: #2c2c5e;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 60px;
+  padding: 0 30px;
+}
+.dateone-container {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+.ty9kkikkone89,
+.ty9kkikktwo89 {
+  width: 100px;
+  background: none;
+  color: white;
+  outline: none;
+  border: none;
+}
+
+.kikx-calendar-icon {
+  padding-left: 20px;
+}
+
+/*  */
+.kikx-reward-myref-bodys {
+  margin-top: 55px;
+}
+
+.kikx-reward-myref-body {
+  display: block;
+  width: 100%;
+}
+.kikx-remyb-each {
+  display: grid;
+  grid-template-columns: 20% 20% 20% 40%;
+  padding: 12px 0;
+  border-bottom: 1px solid #ffffff66;
+}
+
+.kikx-remyb-each h2 {
+  color: #b0bbde;
+  font-family: "Rubik";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 28px;
+  text-align: center;
+}
+.kikx-remyb-each p {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 28px;
+  color: #d7d9ff;
+  text-align: center;
+}
+.kikx-remyb-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 40px;
+}
+
+.kikx-remyb-button button {
+  font-family: "Open Sans";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 28px;
+  text-align: center;
+  color: var(--bright-orange);
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: none;
+}
