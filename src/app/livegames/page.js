@@ -38,8 +38,8 @@ export default function LiveGames() {
         });
     };
     const handleSelectedDisciplineDropDown = () => {
-        !showDiscipline ? setShowDiscipline(true) : setShowDiscipline(false)
-    }
+        !showDiscipline ? setShowDiscipline(true) : setShowDiscipline(false);
+    };
     const leagueTypeOfJson = [
         {},
     ];
