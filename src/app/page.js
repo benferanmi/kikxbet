@@ -475,8 +475,8 @@ export default function Home() {
                         alt="des"
                         width={15}
                         height={11}
+                        className='hsecfiv-mobile-siz'
                       />
-
                     </div>
 
                     <div className="hsecfivrcont-g-each">
@@ -494,6 +494,7 @@ export default function Home() {
                         alt="des"
                         width={15}
                         height={11}
+                        className='hsecfiv-mobile-siz'
                       />
 
                     </div>
@@ -513,6 +514,7 @@ export default function Home() {
                         alt="des"
                         width={15}
                         height={11}
+                        className='hsecfiv-mobile-siz'
                       />
 
                     </div>

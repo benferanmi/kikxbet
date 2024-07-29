@@ -154,13 +154,18 @@
 
 /* Extra Small Devices (Phones) */
 @media (max-width: 576px) {
+  .hkik-oddlines {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
   .hkik-oddline-econt-lefts {
     padding-left: 0;
   }
   .hkik-oddline-econt-left {
     height: 100%;
-    justify-content: center;
-    align-items: flex-start;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 10px;
   }
   .hkik-oddecont1-odd {
     display: none;
@@ -187,7 +192,8 @@
   }
   .hkik-oddecontl-team span p {
     width: 100px;
-    line-height: 18px;
+    font-size: 13px;
+    line-height: 20px;
   }
 }
 

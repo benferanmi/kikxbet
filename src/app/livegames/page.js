@@ -12,6 +12,7 @@ import './livegames.css';
 
 export default function LiveGames() {
     const [selectedDiscipline, setSelectedDiscipline] = useState([]);
+    const [showDiscipline, setShowDiscipline] = useState(false);
 
     const disciplines = [
         { name: 'Basketball', icon: <BasketballSvg color='#ffffff' height="16" width='16px' /> },
@@ -36,7 +37,9 @@ export default function LiveGames() {
             }
         });
     };
-
+    const handleSelectedDisciplineDropDown = () => {
+        !showDiscipline ? setShowDiscipline(true) : setShowDiscipline(false)
+    }
     const leagueTypeOfJson = [
         {},
     ];
@@ -54,67 +57,15 @@ export default function LiveGames() {
                                 <MenuSvg color='#ffffff' height='15px' width='15px' />
                                 <h3>Selected disciplines: <span>{selectedDiscipline.length}/{disciplines.length}</span></h3>
                             </div>
-                            <div className="l-selected-hright">
+                            <div className="l-selected-hright" onClick={handleSelectedDisciplineDropDown}>
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="3.5" stroke="#ffffff" className="size-6">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
                                 </svg>
 
                             </div>
                         </div>
-                        {/* 
-                        <div className="l-selected-body">
-                            <div className="l-selected-flex">
-                                <div className="l-selected-each">
-                                    <button><BasketballSvg color='#ffffff' height="16" width='16px' /><p> Basketball</p> </button>
-                                </div>
 
-                                <div className="l-selected-each">
-                                    <button><BasketballSvg color='#ffffff' height="16" width='16px' /><p> eBasketball</p> </button>
-                                </div>
-
-                                <div className="l-selected-each">
-                                    <button><CsgoSvg color='#ffffff' height="16" width='16px' /><p> CS:GO</p> </button>
-                                </div>
-
-                                <div className="l-selected-each">
-                                    <button><BaseballSvg color='#ffffff' height="16" width='16px' /><p> BaseBall</p> </button>
-                                </div>
-
-                                <div className="l-selected-each">
-                                    <button><TennisSvg color='#ffffff' height="16" width='16px' /><p> Tennis</p> </button>
-                                </div>
-
-                                <div className="l-selected-each">
-                                    <button><EtennisSvg color='#ffffff' height="16" width='16px' /><p> eTennis</p> </button>
-                                </div>
-
-                                <div className="l-selected-each">
-                                    <button><TableTennisSvg color='#ffffff' height="16" width='16px' /><p> TableTennis</p> </button>
-                                </div>
-
-                                <div className="l-selected-each">
-                                    <button><IceHockeySvg color='#ffffff' height="16" width='16px' /><p> Ice Hockey</p> </button>
-                                </div>
-
-                                <div className="l-selected-each">
-                                    <button><EHockey color='#ffffff' height="16" width='16px' /><p> eHockey</p> </button>
-                                </div>
-
-                                <div className="l-selected-each">
-                                    <button><VolleyBallSvg color='#ffffff' height="16" width='16px' /><p> Volleyball</p> </button>
-                                </div>
-
-                                <div className="l-selected-each">
-                                    <button><FrustalSvg color='#ffffff' height="16" width='16px' /><p> Futsal</p> </button>
-                                </div>
-
-                                <div className="l-selected-each">
-                                    <button><CricketSvg color='#ffffff' height="16" width='16px' /><p> Cricket</p> </button>
-                                </div>
-                            </div>
-                        </div> */}
-
-                        <div className="l-selected-body">
+                        <div className={`l-selected-body ${showDiscipline ? 'showSelectedBody' : 'hideSelectedBody'}`} >
                             <div className="l-selected-flex">
                                 {disciplines.map((discipline, index) => (
                                     <div key={index} className={`l-selected-each ${selectedDiscipline.includes(discipline.name) ? 'l-selected-mychoice' : ''}`}>

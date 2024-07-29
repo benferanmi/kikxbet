@@ -155,11 +155,12 @@
   .testimonial-prove {
     width: 80%;
     margin: auto;
+    padding-top: 30px;
   }
   .testimonial-grid {
     display: flex;
     flex-direction: column;
-    gap: 40px !important;
+    gap: 24px !important;
   }
 }
 

@@ -147,6 +147,7 @@
 .kikx-reward-re-each span {
   display: flex;
   gap: 15px;
+  padding-right: 8px;
   flex-direction: row;
   align-items: center;
 }
@@ -271,4 +272,40 @@
   outline: none;
   cursor: pointer;
   background: none;
+}
+
+/* Extra Small Devices (Phones) */
+@media (max-width: 576px) {
+  .kikx-reward {
+    width: 90%;
+    margin: auto;
+  }
+  .kikx-rhc-left {
+    width: 100%;
+  }
+  .kikx-reward-reflink {
+    padding: 0 10px;
+  }
+  .kikx-reward-reflink-cont {
+    padding: 0 8px;
+  }
+  .kikx-reward-reflink-cright button {
+    width: 100px;
+  }
+}
+
+/* Small Devices (Tablets) */
+@media (min-width: 577px) and (max-width: 768px) {
+}
+
+/* Medium Devices (Tablets in Landscape, Small Laptops) */
+@media (min-width: 769px) and (max-width: 992px) {
+}
+
+/* Large Devices (Desktops) */
+@media (min-width: 993px) and (max-width: 1200px) {
+}
+
+/* Extra Large Devices (Large Desktops) */
+@media (min-width: 1201px) {
 }

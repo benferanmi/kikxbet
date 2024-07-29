@@ -57,7 +57,7 @@ const ReferralPage = () => {
                                     <div className='kikx-rhc-left'>
                                         <h1>Referral a Friend and Earn $6 for 1 Sign-up</h1>
                                     </div>
-                                    <div className='kikx-rhc-right'>
+                                    <div className='mobile-hidden kikx-rhc-right'>
 
                                     </div>
                                 </div>

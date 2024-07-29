@@ -40,7 +40,7 @@ const LiveSportType = ({ leagueName, leagueTypeOfJson, svg }) => {
                                     <div className="hkik-oddline-econts">
                                         <div className="hkik-oddline-econt">
                                             <div className="hkik-oddline-econt-lefts lst_one">
-                                                <div className="hkik-oddline-econt-left">
+                                                <div className="hkik-oddline-econt-left hkik-oecl-mobile">
                                                     <div className="hkik-oddecontl-team">
                                                         <span className="hkoddete-one">
                                                             <Image

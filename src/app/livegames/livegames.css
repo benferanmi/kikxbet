@@ -77,11 +77,17 @@
 .l-selected-mychoice {
   background: var(--teal);
 }
+.showSelectedBody {
+  display: block;
+}
+.hideSelectedBody {
+  display: none;
+}
 /* Extra Small Devices (Phones) */
 @media (max-width: 576px) {
- .l-selected-flex {
-  gap: 15px ;
- }
+  .l-selected-flex {
+    gap: 15px;
+  }
 }
 
 /* Small Devices (Tablets) */

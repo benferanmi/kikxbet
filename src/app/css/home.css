@@ -621,6 +621,9 @@ input[type="date"] {
   background: #7841ee;
   border-radius: 8px;
 }
+.hsecfivrcont-g-each p {
+  text-align: left;
+}
 
 /*  */
 
@@ -784,6 +787,9 @@ input[type="date"] {
   main {
     width: 20em !important;
   }
+  .hsss-fot-leftimg {
+    left: 12% !important;
+  }
 }
 /* Extra Small Devices (Phones) */
 @media (max-width: 576px) {
@@ -816,22 +822,12 @@ input[type="date"] {
     grid-template-columns: repeat(1, 1fr);
     gap: 25px;
   }
-
-  .hagmel-match {
-    gap: 14px !important;
-  }
-  .hag-odd-each {
-    width: 75px !important;
-    height: 80px !important;
-  }
-  .hag-odd-each div {
-    gap: 7px;
-  }
-  .hag-odd-each div p {
-    line-height: 20px !important;
+  .home-secfour-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
   }
   .home-secfour-g-each {
-    height: 135px !important;
+    height: 155px !important;
   }
   .home-sectionfive {
     width: 90%;
@@ -862,6 +858,10 @@ input[type="date"] {
   }
   .hsecfivrcont-g-each {
     height: 135px;
+  }
+  .hsecfiv-mobile-siz {
+    height: 20px;
+    width: 30px;
   }
   .home-main {
     width: 90%;
@@ -904,13 +904,31 @@ input[type="date"] {
   .home-secsix-sub {
     width: 100%;
     z-index: 99;
-    height: 70px;
+    height: 56px;
   }
   .home-secsix-sub form {
-    top: 11%;
+    top: 6%;
   }
   .home-secsix-sub p {
-    top: 12%;
+    top: 5%;
+  }
+  .home-all-games {
+    padding-left: 0px;
+  }
+  .hagmel-m-each {
+    width: 90px;
+  }
+  .hagmellImg {
+    left: -27%;
+  }
+  .hagmel-m-content {
+    left: 7px;
+  }
+  .hagmellImg2 {
+    left: 1%;
+  }
+  .hagmel-m-content2 {
+    left: 10%;
   }
 }
 
