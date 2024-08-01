@@ -18,7 +18,7 @@ const Page = () => {
   });
   const [errors, setErrors] = useState({});
   const [loading, setLoading] = useState(false);
-  const [serverError, setServererror] = useState("");
+  const [serverError, setServererror] = useState('');
 
   const validate = () => {
     let tempErrors = {};
@@ -61,7 +61,7 @@ const Page = () => {
         } else {
           const errorData = await response.json();
           console.log(errorData);
-          console.log("eroorsssss ", errors);
+          console.log('eroorsssss ', errors);
           setServererror(errorData.error.message || { general: 'An error occurred during signup.' });
         }
       } catch (error) {

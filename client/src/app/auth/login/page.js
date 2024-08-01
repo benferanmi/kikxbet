@@ -92,7 +92,7 @@ const Page = () => {
 
           <div className='reg-quests'>
             <div className='reg-reg-question'>
-              <p>Don't have an account?</p> <span><Link href='./signup'>Signup</Link></span>
+              <p>Don&apos;t have an account?</p> <span><Link href='./signup'>Signup</Link></span>
             </div>
           </div>
 
