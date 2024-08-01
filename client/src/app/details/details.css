@@ -67,7 +67,18 @@
 
 /* Extra Small Devices (Phones) */
 @media (max-width: 576px) {
- 
+  .details_h_tscontent {
+    height: 400px;
+  }
+  .details-odcont-head p {
+    font-size: 14px;
+  }
+  .details-odcontent-body p {
+    font-size: 14px;
+  }
+  .details-odcontent-body span h2 {
+    font-size: 12px;
+  }
 }
 
 /* Small Devices (Tablets) */

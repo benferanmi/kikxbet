@@ -197,6 +197,8 @@
 @media (max-width: 576px) {
   .kik-profile-menu {
     flex-wrap: wrap;
+    height: fit-content;
+    padding: 20px 10px;
   }
   .details_h_tscontent {
     padding: 0 10px;
