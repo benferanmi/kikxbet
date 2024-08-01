@@ -232,3 +232,26 @@
 .reg-check-g p a {
   color: var(--bright-orange);
 }
+/*HM CSS*/
+p.error {
+  color: red;
+  margin-top: 10px;
+  font-family: 'Poppins';
+  text-shadow: 0px 0px 8px #ff00007d;
+}
+.auto-main-width{
+  width: auto;
+}
+.custom_btn_flash{
+  cursor: pointer;
+  transition: .3s;
+}
+.custom_btn_flash:hover{
+  box-shadow: 0px 0px 15px 0px #ffffff54;
+}
+.login_btn_custom_spacing{
+  padding: 20px 0px 20px;
+  font-size: 24px;
+  font-weight: 600 !important;
+  font-family: "Poppins", sans-serif;
+}

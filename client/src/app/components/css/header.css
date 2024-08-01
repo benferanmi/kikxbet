@@ -133,12 +133,14 @@ header {
   border: 1px solid var(--side-bar-popup);
   background: #2c2852;
   margin-right: 5px;
+  padding: 10px 20px;
 }
 
 .signup {
   margin-left: 5px;
   background-color: inherit;
   border: 1px solid #ffffff66;
+  padding: 10px 20px;
 }
 
 .nav-menu-button {
@@ -214,4 +216,46 @@ header {
 
 /* Extra Large Devices (Large Desktops) */
 @media (min-width: 1201px) {
+}
+/*HM CSS*/
+.nav-dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 15px;
+  background-color: white;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.dropdown-item {
+  padding: 10px 20px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.dropdown-item:hover {
+  background-color: #f0f0f0;
+}
+.pointer{
+  cursor: pointer;
+}
+.dropdown_item_logout {
+  width: 100px;
+  color: #000;
+  background: #fff;
+  padding: 5px 0 6px;
+  text-align: center;
+  font-family: 'Roboto';
+  font-size: 15px;
+  font-weight: 500;
+  transition: .3s;
+}
+
+.dropdown_item_logout:hover {
+  background: yellow;
 }
