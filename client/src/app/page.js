@@ -11,6 +11,7 @@ import Image from 'next/image';
 import OddOutcome from './components/odd/OddOutcome';
 import { AmericanFootballSvg, ArenaOfValorSvg, BaseballSvg, BasketballSvg, BoxingSvg, CricketSvg, CsgoSvg, DotaSvg, EHockey, EtennisSvg, FootballSvg, FrustalSvg, HandBallSvg, IceHockeySvg, MmaSvg, OwSvg, RainbowSvg, RocketLeagueSvg, RugbySvg, Sc2Svg, StarSvg, TableTennisSvg, TennisSvg, VolleyBallSvg } from './components/Svgs';
 import SportType from './components/SportType';
+import HomeCountDown from '@/app/components/HomeCountDown';
 
 // src/app/promotion/page.js
 export default function Home() {
@@ -168,7 +169,8 @@ export default function Home() {
                           <h2 className="horetextone">NEXT MATCH</h2>
                           <h2 className="horetexttwo">vs Bluebirds FC</h2>
                         </span>
-                        <div className="home-reminder-countdowns">
+                        <HomeCountDown />
+                        {/* <div className="home-reminder-countdowns">
                           <div className="home-reminder-countdown">
                             <div className="home-r-count-each">
                               <span>
@@ -198,7 +200,7 @@ export default function Home() {
                               <p>Secs</p>
                             </div>
                           </div>
-                        </div>
+                        </div> */}
                       </div>
                     </div>
                   </div>
