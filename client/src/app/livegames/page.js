@@ -44,7 +44,6 @@ export default function LiveGames() {
         {},
     ];
 
-
     return (
         <>
             <Header />

@@ -1,6 +1,4 @@
-.hkik-oddline-econt {
-  justify-content: space-between !important;
-}
+
 
 .lst_two {
   flex: 0.4 !important;
@@ -12,9 +10,7 @@
 
 /* Extra Small Devices (Phones) */
 @media (max-width: 576px) {
-  .hkik-oddline-econt-left {
-    align-items: flex-start !important;
-  }
+ 
   .lst_two {
     flex: 0.25 !important;
   }

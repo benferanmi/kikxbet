@@ -44,7 +44,7 @@ const Page = () => {
         if (response.ok) {
           const result = await response.json();
           const { authToken, ...userData } = result.data;
-          
+
           // Save token and user data in cookies
           Cookies.set('authToken', authToken, { expires: 7 });
           Cookies.set('userData', JSON.stringify(userData), { expires: 7 });
@@ -64,7 +64,7 @@ const Page = () => {
   };
 
   return (
-    <main className='auto-main-width'>
+    <section className='auto-main-width'>
       <div className='reg-spec-head'>
         <h2>Login</h2>
       </div>
@@ -131,7 +131,7 @@ const Page = () => {
           </div>
         </form>
       </div>
-    </main>
+    </section>
   );
 };
 

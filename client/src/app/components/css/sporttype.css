@@ -71,9 +71,10 @@
 .hkik-oddline-econt {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   height: inherit;
   flex: 1;
+  gap: 20px;
 }
 
 .hkik-oddline-econt-lefts {
@@ -118,8 +119,12 @@
 
 /* Extra Small Devices (Phones) */
 @media screen and (max-width: 576px) {
+  .hkik-oddlines {
+    margin: 0;
+    padding: 0;
+  }
   .hkik-oddline-econt {
-    padding: 0 20px !important;
+    padding: 0 15px !important;
   }
   .hkik-oddline-econt-lefts {
     align-items: flex-start !important;
@@ -160,15 +165,26 @@
 
 /* Small Devices (Tablets) */
 @media (min-width: 577px) and (max-width: 768px) {
-  .hkik-oddline-econt-left {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    align-items: flex-start;
+  .hkik-oddline-econt-lefts {
     justify-content: flex-start;
+    padding-left: 20px;
   }
   .hkik-oddline-econt-left strong {
     display: none;
+  }
+  .hkik-oddline-econt-left {
+    height: 100%;
+    justify-content: center;
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+  }
+  .hkikodeconle-rev {
+    display: flex;
+    flex-direction: row-reverse !important;
+  }
+  .hag-odd-each {
+    width: 80px !important;
   }
 }
 

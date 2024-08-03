@@ -1,6 +1,5 @@
 
 'use client';
-
 import Link from 'next/link';
 import BankImagesContainer from '../components/BankImagesContainer';
 import Footer from '../components/Footer';
@@ -12,8 +11,12 @@ import { usePathname } from 'next/navigation';
 const ProfileLayout = ({ children }) => {
     const pathname = usePathname();
 
-    return (
+    const handleLogout = () => {
+        
+    };
 
+
+    return (
         <div>
             <Header />
             <PageLayout>
@@ -49,7 +52,7 @@ const ProfileLayout = ({ children }) => {
                                     <div className={`kik-paymid-each ${pathname === '/profile/verification' ? 'kikpfemn' : 'jkkjk'}`}></div>
                                 </span>
 
-                                <span> <Link href='/profile/logout'>Log Out</Link>
+                                <span> <button className='pointer' onClick={handleLogout}>Log Out</button>
                                     <div className={`kik-paymid-each ${pathname === '/logout' ? 'kikpfemn' : 'jkkjk'}`}></div>
                                 </span>
                             </div>

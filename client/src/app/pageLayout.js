@@ -9,7 +9,11 @@ const PageLayout = ({ children }) => {
     return (
         <div className={styles.plcontainer}>
             <aside className={styles.sidebarLeft}><LeftSideBar /></aside>
-            <main className={styles.plcontent}>{children}</main>
+            <main className={styles.plcontent}>
+                <div className={styles.plcont}>
+                    {children}
+                </div>
+            </main>
             <aside className={styles.sidebarRight}><RightSideBar /></aside>
         </div>
     );

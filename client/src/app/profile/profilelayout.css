@@ -20,7 +20,12 @@
 .kik-profile-menu span {
   position: relative;
 }
-
+.kik-profile-menu span button {
+  background: none;
+  border: none;
+  outline: none;
+  color: var(--white);
+}
 .kikpfemn {
   position: absolute;
   bottom: -5px;

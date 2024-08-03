@@ -11,7 +11,11 @@
   height: fit-content;
 }
 .plcontent {
-  flex: 1;
+  display: block;
+  width: 100%;
+  width: 58em;
+}
+.plcont {
 }
 
 .sidebarRight {
@@ -32,18 +36,48 @@
     margin-left: 4px;
     margin-right: 4px;
   }
+  .plcontent {
+    width: 100%;
+  }
 }
 
 /* Small Devices (Tablets) */
 @media (min-width: 577px) and (max-width: 768px) {
+  .plcontent {
+    width: 100%;
+  }
+  .sidebarLeft,
+  .sidebarRight {
+    display: none;
+  }
 }
 
 /* Medium Devices (Tablets in Landscape, Small Laptops) */
-@media (min-width: 769px) and (max-width: 992px) {
+@media (min-width: 769px) and (max-width: 900px) {
+  .sidebarRight {
+    display: none;
+  }
+  .plcontent {
+    width: 39em;
+  }
+}
+@media (min-width: 901px) and (max-width: 1050px) {
+  .sidebarRight {
+    display: none;
+  }
+  .plcontent {
+    width: 45em;
+  }
 }
 
+
+@media (min-width: 1051px) and (max-width: 1150px) {
+  .plcontent {
+    width: 38em;
+  }
+}
 /* Large Devices (Desktops) */
-@media (min-width: 993px) and (max-width: 1200px) {
+@media (min-width: 1151px) and (max-width: 1200px) {
 }
 
 /* Extra Large Devices (Large Desktops) */

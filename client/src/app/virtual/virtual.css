@@ -65,10 +65,16 @@
 
 /* Extra Small Devices (Phones) */
 @media (max-width: 576px) {
- 
- .lst_two {
-  flex: 0.25 !important;
- }
+  .lst_two {
+    flex: 0.25 !important;
+  }
+  .hkik-oecl-mobile {
+    justify-content: center !important;
+    align-items: flex-start !important;
+  }
+  .hkik-oddline-econt-left {
+    justify-content: center;
+  }
 }
 
 /* Small Devices (Tablets) */

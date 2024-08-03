@@ -236,22 +236,67 @@
 p.error {
   color: red;
   margin-top: 10px;
-  font-family: 'Poppins';
+  font-family: "Poppins";
   text-shadow: 0px 0px 8px #ff00007d;
 }
-.auto-main-width{
+.auto-main-width {
   width: auto;
 }
-.custom_btn_flash{
+.custom_btn_flash {
   cursor: pointer;
-  transition: .3s;
+  transition: 0.3s;
 }
-.custom_btn_flash:hover{
+.custom_btn_flash:hover {
   box-shadow: 0px 0px 15px 0px #ffffff54;
 }
-.login_btn_custom_spacing{
+.login_btn_custom_spacing {
   padding: 20px 0px 20px;
   font-size: 24px;
   font-weight: 600 !important;
   font-family: "Poppins", sans-serif;
+}
+
+/* Extra Small Devices (Phones) */
+@media (max-width: 576px) {
+  .reg-spec-head {
+    margin-bottom: 2em;
+  }
+  .reg-input-group input {
+    height: 55px;
+    font-size: 16px;
+  }
+  .reg-input-group label {
+    font-size: 18px;
+  }
+  .reg-forgotpass {
+    margin-top: 14px;
+  } 
+  .login_btn_custom_spacing {
+    padding: 15px 0;
+  }
+  .reg-met-each {
+    height: 50px;
+  }
+  .reg-check-g p {
+    font-size: 16px;
+  }
+  .reg-forgot-cancel button, .regforbut button {
+    height: 50px;
+  }
+}
+
+/* Small Devices (Tablets) */
+@media (min-width: 577px) and (max-width: 768px) {
+}
+
+/* Medium Devices (Tablets in Landscape, Small Laptops) */
+@media (min-width: 769px) and (max-width: 992px) {
+}
+
+/* Large Devices (Desktops) */
+@media (min-width: 993px) and (max-width: 1200px) {
+}
+
+/* Extra Large Devices (Large Desktops) */
+@media (min-width: 1201px) {
 }

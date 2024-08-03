@@ -116,6 +116,12 @@
 
 /* Medium Devices (Tablets in Landscape, Small Laptops) */
 @media (min-width: 769px) and (max-width: 992px) {
+  .faq-hero h2 {
+    width: 70%;
+  }
+  .faq-body {
+    width: 80%;
+  }
 }
 
 /* Large Devices (Desktops) */

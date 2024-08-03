@@ -224,6 +224,13 @@
 
 /* Medium Devices (Tablets in Landscape, Small Laptops) */
 @media (min-width: 769px) and (max-width: 992px) {
+  .pfl-levels p {
+    font-size: 16px;
+    line-height: 25px;
+  }
+  .pfl-levels span button {
+    font-size: 12px;
+  }
 }
 
 /* Large Devices (Desktops) */

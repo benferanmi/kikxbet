@@ -67,10 +67,19 @@
 
 /* Small Devices (Tablets) */
 @media (min-width: 577px) and (max-width: 768px) {
+  .hag-odd-each {
+    width: 80px !important;
+  }
 }
 
 /* Medium Devices (Tablets in Landscape, Small Laptops) */
 @media (min-width: 769px) and (max-width: 992px) {
+  .hag-odd-each {
+    width: 80px !important;
+  }
+  .hagmel-match {
+    gap: 10px !important;
+  }
 }
 
 /* Large Devices (Desktops) */

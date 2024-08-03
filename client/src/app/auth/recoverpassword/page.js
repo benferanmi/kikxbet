@@ -10,7 +10,7 @@ const RecoverPassword = () => {
         router.push('./login');
     };
     return (
-        <main>
+        <section>
             <div className='reg-spec-head'>
                 <h2>Forget Your Password</h2>
             </div>
@@ -34,7 +34,7 @@ const RecoverPassword = () => {
                     </div>
                 </form>
             </div>
-        </main>
+        </section>
     );
 };
 

@@ -166,6 +166,14 @@
 
 /* Small Devices (Tablets) */
 @media (min-width: 577px) and (max-width: 768px) {
+  .testimonial-grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .testimonial-each {
+    width: 260px;
+  }
 }
 
 /* Medium Devices (Tablets in Landscape, Small Laptops) */

@@ -73,7 +73,7 @@ const Page = () => {
   };
 
   return (
-    <main className='auto-main-width'>
+    <section className='auto-main-width'>
       <div className='reg-spec-head'>
         <h2>Signup</h2>
       </div>
@@ -163,7 +163,7 @@ const Page = () => {
           </div>
         </div>
       </div>
-    </main>
+    </section>
   );
 };
 

@@ -1,3 +1,8 @@
+/*  */
+.playstep-grid {
+  gap: 15px !important;
+}
+/*  */
 .hero-sections {
   display: block;
   width: 100%;
@@ -309,6 +314,9 @@
   flex: 1;
   flex-direction: row;
   gap: 3em;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }
 
 .offer-image {
@@ -511,13 +519,20 @@
 /* Extra Small Devices (Phones) */
 @media (max-width: 576px) {
   .hero-section {
-    padding-top: 4em;
+    padding-top: 3em;
+    height: 600px;
+
   }
   .hero-content {
     width: 90%;
     margin: auto;
   }
-  .challange,
+  .challange {
+    width: 100%;
+    padding-left: 3%;
+    padding-right: 3%;
+  }
+
   .challange-subs {
     width: 90%;
     margin: auto;
@@ -564,11 +579,12 @@
     margin: auto;
   }
   .crypto-obj-grid {
-    grid-template-columns: repeat(1, 70%);
+    grid-template-columns: repeat(1, 80%);
     justify-content: center;
   }
   .cryobj-each {
-    height: 230pxm;
+    height: fit-content;
+    padding: 1.8em;
   }
 
   /*  */
@@ -581,14 +597,150 @@
     display: flex;
     flex-direction: column-reverse;
   }
+  .payout-system-image img {
+    height: auto;
+  }
+  .payout-system-content span p {
+    font-size: 18px;
+    line-height: 35px;
+  }
 }
 
 /* Small Devices (Tablets) */
 @media (min-width: 577px) and (max-width: 768px) {
+  .hero-content {
+    width: 80%;
+    margin: auto;
+  }
+  .playstep-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 60%);
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .offer-image img {
+    width: 550px;
+    height: auto;
+  }
+  .challange {
+    width: 100%;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+  .challange-subs {
+    width: 60%;
+    margin: auto;
+    padding: 10px;
+  }
+  .challange-subgrid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .stepby-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .offer-cont {
+    display: flex;
+    flex-direction: column;
+  }
+  .offer-image {
+    justify-content: center;
+    align-items: center;
+  }
+  .crypto-obj-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .payout-system {
+    height: fit-content;
+    padding: 1.5em 0;
+  }
+  .payout-system-body {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .sbyg-icon .arrowDownLongDotted {
+    left: 110%;
+  }
+  .sbyg-icon .arrowUpLongDotted {
+    left: 110%;
+    top: 45px;
+  }
 }
 
 /* Medium Devices (Tablets in Landscape, Small Laptops) */
 @media (min-width: 769px) and (max-width: 992px) {
+  .hero-content {
+    width: 75%;
+    margin: auto;
+  }
+
+  .playstep-grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  .playstep-each {
+    width: 300px;
+  }
+
+  .challange {
+    width: 100%;
+    padding-left: 5%;
+    padding-right: 5%;
+    border-radius: 0;
+  }
+  .challange-subs {
+    width: 90%;
+    margin: auto;
+  }
+  .challange-sub {
+    gap: 30px;
+  }
+  .challange-subgrid {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .stepby-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .sbyg-icon .arrowUpLongDotted {
+    top: 40px;
+  }
+
+  /*  */
+
+  .cryobj-each {
+    height: 280px;
+  }
+
+  .payout-system-image {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .payout-system-image img {
+    height: 400px;
+  }
+  .payout-system-content span h2 {
+    font-size: 52px;
+  }
+
+  /*  */
+  .offer-body {
+    flex: 1;
+  }
+  .faq-body {
+    width: 79%;
+  }
 }
 
 /* Large Devices (Desktops) */

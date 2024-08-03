@@ -68,7 +68,9 @@ header {
 .navr-buttons {
   display: flex;
   flex-direction: row;
-  gap: 2em;
+  gap: 1em;
+  align-items: center;
+
 }
 
 .accessibility {
@@ -116,6 +118,7 @@ header {
 }
 
 .nav-buttons {
+
 }
 
 .nav-button {
@@ -196,7 +199,7 @@ header {
     flex-direction: column;
     gap: 15px;
     margin-top: 30px;
-  } 
+  }
   .signup {
     margin-left: 0;
   }
@@ -204,14 +207,128 @@ header {
 
 /* Small Devices (Tablets) */
 @media (min-width: 577px) and (max-width: 768px) {
+  .nav-flex {
+    position: relative;
+  }
+
+  .nav-menu-button {
+    display: block;
+    z-index: 99999;
+    background: none;
+    border: none;
+    outline: none;
+    padding: 5px;
+  }
+  .mobile-nav-active {
+    display: block !important;
+    position: absolute;
+    z-index: 9999;
+    top: 30px;
+    right: -10px;
+    background-color: var(--side-bar-back);
+    padding: 20px 30px;
+  }
+  .nav-menu {
+    width: 100px;
+  }
+  .nav-menu ul {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .navr-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .accessible-each {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .nav-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 30px;
+  }
+  .signup {
+    margin-left: 0;
+  }
 }
 
 /* Medium Devices (Tablets in Landscape, Small Laptops) */
 @media (min-width: 769px) and (max-width: 992px) {
+  .nav-flex {
+    position: relative;
+  }
+
+  .nav-menu-button {
+    display: block;
+    z-index: 99999;
+    background: none;
+    border: none;
+    outline: none;
+    padding: 5px;
+  }
+  .mobile-nav-active {
+    display: block !important;
+    position: absolute;
+    z-index: 9999;
+    top: 30px;
+    right: -10px;
+    background-color: var(--side-bar-back);
+    padding: 20px 30px;
+  }
+  .nav-menu {
+    width: 100px;
+  }
+  .nav-menu ul {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .navr-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .accessible-each {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .nav-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 30px;
+  }
+  .signup {
+    margin-left: 0;
+  }
 }
 
 /* Large Devices (Desktops) */
 @media (min-width: 993px) and (max-width: 1200px) {
+  .nav-flex {
+    width: 95%;
+  }
+  .navr-buttons {
+    gap: 0.8em;
+  }
+  .accessible-each {
+    display: grid;
+    grid-template-columns: repeat(1, 100px);
+  }
+  .nav-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .signup {
+    margin-top: 5px;
+    margin-left: 0;
+  }
 }
 
 /* Extra Large Devices (Large Desktops) */
@@ -241,7 +358,7 @@ header {
 .dropdown-item:hover {
   background-color: #f0f0f0;
 }
-.pointer{
+.pointer {
   cursor: pointer;
 }
 .dropdown_item_logout {
@@ -250,10 +367,10 @@ header {
   background: #fff;
   padding: 5px 0 6px;
   text-align: center;
-  font-family: 'Roboto';
+  font-family: "Roboto";
   font-size: 15px;
   font-weight: 500;
-  transition: .3s;
+  transition: 0.3s;
 }
 
 .dropdown_item_logout:hover {

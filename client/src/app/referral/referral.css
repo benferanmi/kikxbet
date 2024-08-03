@@ -33,6 +33,7 @@
 .kikx-rhc-left {
   height: fit-content;
   width: 50%;
+  z-index: 99999;
 }
 .kikx-rhc-left h1 {
   font-family: "Raleway";

@@ -167,6 +167,9 @@
     align-items: center;
     padding-left: 10px;
   }
+  .hkik-oecl-mobile {
+    margin-left: 15px;
+  }
   .hkik-oddecont1-odd {
     display: none;
   }
@@ -199,10 +202,16 @@
 
 /* Small Devices (Tablets) */
 @media (min-width: 577px) and (max-width: 768px) {
+  .hkik-oddecont1-odd {
+    display: none;
+  }
 }
 
 /* Medium Devices (Tablets in Landscape, Small Laptops) */
 @media (min-width: 769px) and (max-width: 992px) {
+  .hkik-oddecont1-odd {
+    display: none;
+  }
 }
 
 /* Large Devices (Desktops) */

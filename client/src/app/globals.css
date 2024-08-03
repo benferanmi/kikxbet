@@ -187,10 +187,16 @@ a {
 
 /* Small Devices (Tablets) */
 @media (min-width: 577px) and (max-width: 768px) {
+  .sm-hidden {
+    display: none;
+  }
 }
 
 /* Medium Devices (Tablets in Landscape, Small Laptops) */
 @media (min-width: 769px) and (max-width: 992px) {
+  .md-hidden {
+    display: none;
+  }
 }
 
 /* Large Devices (Desktops) */

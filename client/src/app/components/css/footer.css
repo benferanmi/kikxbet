@@ -97,13 +97,21 @@ footer {
   font-weight: 400;
   line-height: 25.5px;
 }
-
+@media (max-width: 350px) {
+  .fotc-menu {
+    gap: 2.4em;
+  }
+  .copyright {
+    left: 2%;
+  }
+}
 /* Extra Small Devices (Phones) */
-@media (max-width: 576px) {
+@media screen and (max-width: 576px) {
   .fots {
     width: 100%;
     height: fit-content;
-    padding: 2em 1em;
+    padding: 2em 0;
+    margin-top: 20px;
   }
   .fot {
     padding: 4em 0.7em;
@@ -137,12 +145,24 @@ footer {
   }
   .copyright {
     left: 5%;
-    bottom: -30px;
+    bottom: -2%;
   }
 }
 
 /* Medium Devices (Tablets in Landscape, Small Laptops) */
 @media (min-width: 769px) and (max-width: 992px) {
+  .fots {
+    padding: 0;
+    width: 90%;
+    margin: auto;
+  }
+  .fot {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .copyright {
+    bottom: -65px;
+  }
 }
 
 /* Large Devices (Desktops) */

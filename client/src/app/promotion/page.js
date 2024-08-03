@@ -55,7 +55,7 @@ export default function PromotionPage() {
                 <div className="challange-subeach">
                   <div className="cseach">
                     <Image
-                      src="/assets/workericon5.png"
+                      src="/assets/workericon3.png"
                       alt="des"
                       width={335}
                       height={335}
@@ -113,7 +113,7 @@ export default function PromotionPage() {
                 <div className="challange-subeach">
                   <div className="cseach">
                     <Image
-                      src="/assets/workericon2.png"
+                      src="/assets/workericon4.png"
                       alt="des"
                       width={380}
                       height={335}
@@ -127,7 +127,7 @@ export default function PromotionPage() {
                 <div className="challange-subeach">
                   <div className="cseach">
                     <Image
-                      src="/assets/workericon1.png"
+                      src="/assets/workericon5.png"
                       alt="des"
                       width={335}
                       height={335}
