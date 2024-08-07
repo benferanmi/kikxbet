@@ -521,7 +521,6 @@
   .hero-section {
     padding-top: 3em;
     height: 600px;
-
   }
   .hero-content {
     width: 90%;
@@ -531,6 +530,7 @@
     width: 100%;
     padding-left: 3%;
     padding-right: 3%;
+    border-radius: 0;
   }
 
   .challange-subs {
@@ -612,14 +612,6 @@
     width: 80%;
     margin: auto;
   }
-  .playstep-grid {
-    display: grid;
-    grid-template-columns: repeat(1, 60%);
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
-  }
-
   .offer-image img {
     width: 550px;
     height: auto;
@@ -628,6 +620,7 @@
     width: 100%;
     padding-left: 5%;
     padding-right: 5%;
+    border-radius: 0;
   }
   .challange-subs {
     width: 60%;
@@ -676,17 +669,6 @@
   .hero-content {
     width: 75%;
     margin: auto;
-  }
-
-  .playstep-grid {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-  }
-  .playstep-each {
-    width: 300px;
   }
 
   .challange {

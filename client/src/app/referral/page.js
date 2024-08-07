@@ -5,14 +5,14 @@ import BankImagesContainer from '../components/BankImagesContainer';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import PageLayout from '../pageLayout';
-import DatePicker from 'react-datepicker';
+// import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import './referral.css';
 import { useState } from 'react';
 
 const ReferralPage = () => {
-    const [startDate, setStartDate] = useState(null);
-    const [endDate, setEndDate] = useState(null);
+    // const [startDate, setStartDate] = useState(null);
+    // const [endDate, setEndDate] = useState(null);
     const [visibleCount, setVisibleCount] = useState(5);
 
     const data = [
@@ -73,7 +73,7 @@ const ReferralPage = () => {
                                         </svg>
                                         </span>
 
-                                        <h2>Referral Link:</h2> <p>{ }https://www.spovest.com?ardf0u4803</p>
+                                        <h2>Referral Link:</h2> <p className='mobile-hidden'>{ }https://www.spovest.com?ardf0u4803</p>
                                     </div>
                                     <div className='kikx-reward-reflink-cright'>
                                         <button>Copy Link</button>

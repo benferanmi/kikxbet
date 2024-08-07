@@ -106,7 +106,7 @@ export default function Home() {
               <div className="hagmel-m-each">
                 <Image
                   className="hagmellImg2"
-                  src="/assets/spinnerBg.png"
+                  src="/assets/spinnerbg.jpg"
                   alt="des"
                   width={65}
                   height={65}

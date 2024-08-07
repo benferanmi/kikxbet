@@ -99,10 +99,23 @@
     width: 80%;
     margin: auto;
   }
+  .psec h3 {
+    line-height: 27px;
+  }
 }
 
 /* Small Devices (Tablets) */
 @media (min-width: 577px) and (max-width: 768px) {
+  .playstep-grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  .playstep-each {
+    width: 300px;
+  }
 }
 
 /* Medium Devices (Tablets in Landscape, Small Laptops) */

@@ -162,7 +162,7 @@ header {
 
   .nav-menu-button {
     display: block;
-    z-index: 99999;
+    z-index: 9999999;
     background: none;
     border: none;
     outline: none;
@@ -171,7 +171,7 @@ header {
   .mobile-nav-active {
     display: block !important;
     position: absolute;
-    z-index: 9999;
+    z-index: 999999;
     top: 30px;
     right: -10px;
     background-color: var(--side-bar-back);
@@ -213,7 +213,7 @@ header {
 
   .nav-menu-button {
     display: block;
-    z-index: 99999;
+    z-index: 9999999;
     background: none;
     border: none;
     outline: none;
@@ -222,7 +222,7 @@ header {
   .mobile-nav-active {
     display: block !important;
     position: absolute;
-    z-index: 9999;
+    z-index: 999999;
     top: 30px;
     right: -10px;
     background-color: var(--side-bar-back);
@@ -273,7 +273,7 @@ header {
   .mobile-nav-active {
     display: block !important;
     position: absolute;
-    z-index: 9999;
+    z-index: 9999999999999;
     top: 30px;
     right: -10px;
     background-color: var(--side-bar-back);

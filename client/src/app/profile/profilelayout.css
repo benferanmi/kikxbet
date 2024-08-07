@@ -15,6 +15,7 @@
   padding-left: 10px;
   padding-right: 10px;
   border-radius: 5px;
+  margin-bottom: 30px;
 }
 
 .kik-profile-menu span {
@@ -38,6 +39,9 @@
 @media (max-width: 576px) {
   .kik-profile-menu {
     flex-wrap: wrap;
+    height: fit-content;
+    padding: 15px 8px;
+    
   }
 }
 

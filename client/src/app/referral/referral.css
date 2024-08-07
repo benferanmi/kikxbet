@@ -278,7 +278,7 @@
 /* Extra Small Devices (Phones) */
 @media (max-width: 576px) {
   .kikx-reward {
-    width: 90%;
+    width: 100%;
     margin: auto;
   }
   .kikx-rhc-left {
@@ -293,10 +293,32 @@
   .kikx-reward-reflink-cright button {
     width: 100px;
   }
+  .kikx-reward-re-cont {
+    display: flex;
+    gap: 30px ;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+  .kikx-reward-re-eachs {
+    width: 250px;
+    height: 160px;
+  }
 }
 
 /* Small Devices (Tablets) */
 @media (min-width: 577px) and (max-width: 768px) {
+  .kikx-reward-re-cont {
+    display: flex;
+    gap: 30px ;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+  .kikx-reward-re-eachs {
+    width: 250px;
+    height: 170px;
+  }
 }
 
 /* Medium Devices (Tablets in Landscape, Small Laptops) */
