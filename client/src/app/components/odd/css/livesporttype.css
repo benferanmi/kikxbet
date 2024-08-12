@@ -22,11 +22,11 @@
 }
 
 .hkik-oddline-each {
-  height: 180px;
+  height: auto;
 }
 
 .hkik-oddline-eheads {
-  height: 60px;
+  height: auto;
   padding: 0px 12px;
   background-color: var(--side-bar-popup);
 }
@@ -41,7 +41,7 @@
   display: flex;
   flex-direction: row;
   gap: 12px;
-  height: 20px;
+  height: auto;
   align-items: center;
 }
 
@@ -63,7 +63,7 @@
   line-height: 19.2px;
 }
 .hkik-oddline-econts {
-  height: 120px;
+  height: auto;
   background-color: var(--side-bar-back);
   display: block;
 }

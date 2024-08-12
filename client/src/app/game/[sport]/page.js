@@ -13,7 +13,8 @@ import Footer from '@/app/components/Footer';
 const SportPage = () => {
     const params = useParams();
     const { sport } = params;
-
+    const { spid } = params;
+    
     const liveEvents = [
         {}
     ];
@@ -25,17 +26,6 @@ const SportPage = () => {
         {},
         {},
     ];
-
-    // const tomorrowEvents = [
-    //     {},
-    //     {},
-    //     {},
-    //     {},
-    //     {},
-    //     {},
-    //     {},
-    //     {},
-    // ];
 
     return (
         <div>
@@ -55,14 +45,14 @@ const SportPage = () => {
                             <div className="hkik-oddline-head">
                                 <h1>Live Events</h1>
                             </div>
-                            <LiveSportType svg='football' leagueTypeOfJson={liveEvents} leagueName='Cyberhockey. EHC CUP (3x4 MиH.)' />
+                            <LiveSportType svg='football' spid={spid} leagueTypeOfJson={liveEvents} leagueName='Cyberhockey. EHC CUP (3x4 MиH.)' />
                         </div>
 
                         <div>
                             <div className="hkik-oddline-head">
                                 <h1>Today</h1>
                             </div>
-                            <SportType svg='rocketleague' leagueTypeOfJson={todayEvents} leagueName='Saturday Championship League' />
+                            <SportType svg='rocketleague' spid={spid} leagueTypeOfJson={todayEvents} leagueName='Saturday Championship League' />
                         </div>
 
                     </div>

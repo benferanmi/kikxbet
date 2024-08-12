@@ -170,37 +170,6 @@ export default function Home() {
                           <h2 className="horetexttwo">vs Bluebirds FC</h2>
                         </span>
                         <HomeCountDown />
-                        {/* <div className="home-reminder-countdowns">
-                          <div className="home-reminder-countdown">
-                            <div className="home-r-count-each">
-                              <span>
-                                05
-                              </span>
-                              <p>Days</p>
-                            </div>
-
-                            <div className="home-r-count-each">
-                              <span>
-                                12
-                              </span>
-                              <p>Hrs</p>
-                            </div>
-
-                            <div className="home-r-count-each">
-                              <span>
-                                42
-                              </span>
-                              <p>Min</p>
-                            </div>
-
-                            <div className="home-r-count-each">
-                              <span>
-                                10
-                              </span>
-                              <p>Secs</p>
-                            </div>
-                          </div>
-                        </div> */}
                       </div>
                     </div>
                   </div>

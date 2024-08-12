@@ -6,7 +6,7 @@ export default function CountdownTimer() {
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
 
   useEffect(() => {
-    const targetDate = new Date('2024-08-04T00:00:00Z'); // Replace with your target date
+    const targetDate = new Date('2024-08-09T00:00:00Z'); // Replace with your target date
 
     const updateTimer = () => {
       const now = new Date();
