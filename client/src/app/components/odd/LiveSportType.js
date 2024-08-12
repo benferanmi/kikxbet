@@ -5,14 +5,14 @@ import { useEffect, useState } from 'react';
 
 const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
-const LiveSportType = ({ leagueName, leagueTypeOfJson, svg }) => {
+const LiveSportType = ({ spid }) => {
     const [liveEvents, setLiveEvents] = useState([]);
     const [oddsData, setOddsData] = useState({});
 
     useEffect(() => {
         const fetchLiveSports = async () => {
             try {
-                const response = await fetch('https://flashlive-sports.p.rapidapi.com/v1/events/live-list?locale=en_INT&sport_id=1&timezone=3', {
+                const response = await fetch(`https://flashlive-sports.p.rapidapi.com/v1/events/live-list?locale=en_INT&sport_id=${spid}&timezone=3`, {
                     method: 'GET',
                     headers: {
                         'x-rapidapi-key': 'a9c98e38a0mshed7640eccfd80b3p1dc106jsn3b8fba3f46e6',
@@ -78,7 +78,7 @@ const LiveSportType = ({ leagueName, leagueTypeOfJson, svg }) => {
         };
 
         fetchLiveSports();
-    }, []);
+    }, [spid]);
 
     return (
         <div className="hkik-oddlines">
@@ -90,12 +90,12 @@ const LiveSportType = ({ leagueName, leagueTypeOfJson, svg }) => {
                                 <div className="hkik-oddline-ehead">
                                     <div className="hkik-ol-eheadl">
                                         <Image
-                                            src={event.TOURNAMENT_IMAGE}
+                                            src={event.TOURNAMENT_IMAGE || ''}
                                             alt="Tournament"
                                             width={17}
                                             height={17}
                                         />
-                                        <p>{event.NAME}</p>
+                                        <p>{event.NAME || ''}</p>
                                     </div>
                                 </div>
                             </div>
@@ -109,35 +109,34 @@ const LiveSportType = ({ leagueName, leagueTypeOfJson, svg }) => {
                                                     <div className="hkik-oddecontl-team">
                                                         <span className="hkoddete-one">
                                                             <Image
-                                                                src={singleEvent.HOME_IMAGES[0]}
+                                                                src={singleEvent.HOME_IMAGES?.[0] || ''}
                                                                 alt="Home Team"
                                                                 width={26}
                                                                 height={26}
                                                             />
-                                                            <p>{singleEvent.HOME_NAME}</p>
+                                                            <p>{singleEvent.HOME_NAME || ''}</p>
                                                         </span>
                                                         <span>
                                                             <Image
-                                                                src={singleEvent.AWAY_IMAGES[0]}
+                                                                src={singleEvent.AWAY_IMAGES?.[0] || ''}
                                                                 alt="Away Team"
                                                                 width={26}
                                                                 height={26}
                                                             />
-                                                            <p>{singleEvent.AWAY_NAME}</p>
+                                                            <p>{singleEvent.AWAY_NAME || ''}</p>
                                                         </span>
                                                     </div>
                                                     <div className="hkik-oddecont1-odd">
                                                         <div>
-                                                            <span>{(singleEvent.HOME_SCORE_CURRENT) ?? 0}</span>
-                                                            <p>{singleEvent.STAGE_TYPE}</p>
-                                                            <p>{singleEvent.STAGE}</p>
-                                                            <p>{singleEvent.ROUND}</p>
+                                                            <span>{singleEvent.HOME_SCORE_CURRENT ?? 0}</span>
+                                                            <p>{singleEvent.STAGE_TYPE || ''}</p>
+                                                            <p>{singleEvent.STAGE || ''}</p>
+                                                            <p>{singleEvent.ROUND || ''}</p>
                                                         </div>
                                                         <div>
-                                                            <span></span>
-                                                            <p>{(singleEvent.AWAY_SCORE_CURRENT) ?? 0}</p>
-                                                            <p>{singleEvent.HOME_SCORE_FULL}</p>
-                                                            <p>{singleEvent.AWAY_SCORE_FULL}</p>
+                                                            <span>{singleEvent.AWAY_SCORE_CURRENT ?? 0}</span>
+                                                            <p>{singleEvent.HOME_SCORE_FULL ?? 0}</p>
+                                                            <p>{singleEvent.AWAY_SCORE_FULL ?? 0}</p>
                                                         </div>
                                                     </div>
                                                 </div>
