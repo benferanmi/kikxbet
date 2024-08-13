@@ -1,3 +1,4 @@
+'use client';
 import Image from 'next/image';
 import './css/livesporttype.css';
 import OddOutcome from './OddOutcome';
