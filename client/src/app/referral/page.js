@@ -132,14 +132,14 @@ const ReferralPage = () => {
                                     <h2>Date</h2>
                                     <h2>Level</h2>
                                     <h2>Username</h2>
-                                    <h2>Email</h2>
+                                    <h2 className='mobile-hidden'>Email</h2>
                                 </div>
                                 {data.slice(0, visibleCount).map((item, index) => (
                                     <div key={index} className='kikx-remyb-each'>
                                         <p>{item.date}</p>
                                         <p>{item.level}</p>
                                         <p>{item.username}</p>
-                                        <p>{item.email}</p>
+                                        <p className='mobile-hidden'>{item.email}</p>
                                     </div>
                                 ))}
                                 {visibleCount < data.length && (

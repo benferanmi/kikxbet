@@ -1,0 +1,242 @@
+.profile_settings {
+  margin-left: 16px;
+  margin-right: 16px;
+}
+
+.profile_set_lang {
+  height: 106px;
+  width: 100%;
+  padding: 0 25px;
+  background: var(--side-bar-popup);
+  border-radius: 5px;
+}
+
+.profile_set_lang span {
+  height: 100%;
+  display: flex;
+  width: 100%;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: center;
+}
+.profile_set_lang span h2 {
+  font-family: "Roboto", sans-serif;
+  color: var(--white);
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 19.2px;
+  text-align: left;
+}
+.profile_set_lang span select {
+  width: 100px;
+  height: 26px;
+  background: #463e7a;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 19.2px;
+  text-align: left;
+  margin-top: 16px;
+  color: var(--white);
+  border: none;
+  outline: none;
+  padding: 2px 4px;
+}
+.profile_set_oth {
+  margin: 25px 20px;
+  margin-left: 40px;
+}
+.profile_set_not {
+  margin-top: 3em;
+  margin-bottom: 1.5em;
+}
+.psn_head {
+  font-family: "Roboto", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 19.2px;
+  text-align: left;
+  margin-bottom: 1.8em;
+}
+.profile_set_not form {
+  margin-top: 18px;
+}
+.psnf_each {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  height: fit-content;
+  min-height: 24px;
+  align-items: flex-start;
+  margin-top: 21.85px;
+}
+
+.psnf_each label {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 18px;
+  letter-spacing: -0.006em;
+  text-align: left;
+}
+
+.psnf_each label span {
+  color: #c6c6cb;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18.4px;
+  text-align: left;
+}
+.profile_set_social {
+  margin-bottom: 2em;
+  margin-top: 3em;
+}
+
+.profile_set_social h2 {
+  font-family: "Roboto", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 19.2px;
+  margin-bottom: 1.8em;
+  text-align: left;
+  color: var(--white);
+}
+
+.profile_set_social form {
+  margin-top: 17.5px;
+}
+.pss_each {
+  display: flex;
+  flex-direction: row;
+  width: 70%;
+  height: 48px;
+  border: 1px solid #cbd5e1;
+  border-radius: 50px;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 18px;
+  margin-bottom: 2px;
+}
+.psse_hr {
+  display: block;
+  width: 1.5px;
+  height: 100%;
+  background-color: #cbd5e1;
+}
+.pss_each label {
+  width: fit-content;
+  padding-left: 1.8em;
+  padding-right: 3em;
+  background: #463e7a;
+  line-height: 40px;
+  height: 100%;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  border: 1px solid #cbd5e1;
+  font-family: "Plus Jakarta Sans", "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: -0.007em;
+  text-align: left;
+}
+.pss_each input {
+  height: 100%;
+  width: 100%;
+  background: #2c2852;
+  border-top-right-radius: 50px;
+  padding-left: 20px;
+  border: 1px solid #cbd5e1;
+  border-bottom-right-radius: 50px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 22px;
+  letter-spacing: -0.007em;
+  text-align: left;
+  color: white;
+}
+.profile_set_password {
+  margin-top: 4em;
+}
+
+.profile_set_password h2 {
+  font-family: "Roboto", sans-serif;
+  color: var(--white);
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 19.2px;
+  text-align: left;
+}
+.profile_set_password form {
+  margin-top: 1.3em;
+}
+.psp_each {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  margin-bottom: 10px;
+  margin-top: 3px;
+}
+.psp_each label {
+  margin-bottom: 12px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  letter-spacing: -0.006em;
+  text-align: left;
+}
+.psp_each input {
+  height: 48px;
+  padding-left: 20px;
+  line-height: 30px;
+  border-radius: 50px;
+  border: 1px solid #ffffff;
+  background: #2c2852;
+  color: #c6c6cb;
+  font-family: "Plus Jakarta Sans", "Roboto";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22.4px;
+  text-align: left;
+}
+.profile_set_password button {
+  width: fit-content;
+  border-radius: 5px;
+  color: white;
+  padding: 1rem 3em;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19px;
+  border: 1px solid var(--side-bar-popup);
+  background: #2c2852;
+  margin-right: 5px;
+  padding: 10px 20px;
+}
+.profile_set_delete {
+  background-color: var(--side-bar-popup);
+  width: 70%;
+  border-radius: 2px;
+  padding: 0 8px;
+  margin-top: 2em;
+}
+
+.profile_set_delete span {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 3px;
+  padding-right: 3px;
+  height: 28px;
+}
+.profile_set_delete span p {
+  font-family: "Roboto", sans-serif;
+  color: var(--white);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 19.2px;
+  text-align: left;
+}

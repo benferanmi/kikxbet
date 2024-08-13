@@ -13,8 +13,8 @@ const SportPage = () => {
     const searchParams = useSearchParams();
     const sport = params?.sport;
     const spid = searchParams.get('spid');
-    console.log("Sport:", sport);
-    console.log("SPID:", spid);
+    console.log('Sport:', sport);
+    console.log('SPID:', spid);
 
     const liveEvents = [
         {}

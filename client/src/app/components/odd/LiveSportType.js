@@ -31,7 +31,7 @@ const LiveSportType = ({ spid }) => {
                     }
                 }
             } catch (error) {
-                console.error("Failed to fetch live sports data:", error);
+                console.error('Failed to fetch live sports data:', error);
             }
         };
 
@@ -73,7 +73,7 @@ const LiveSportType = ({ spid }) => {
                     }
                 }
             } catch (error) {
-                console.error("Failed to fetch odds:", error);
+                console.error('Failed to fetch odds:', error);
             }
         };
 

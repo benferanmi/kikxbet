@@ -1,9 +1,9 @@
-"use client"
+'use client';
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import './css/leftsidebar.css';
 import Link from 'next/link';
-import { AmericanFootballSvg, ArenaOfValorSvg, BaseballSvg, BasketballSvg, BoxingSvg, CricketSvg, CsgoSvg, DotaSvg, EHockey, EtennisSvg, FootballSvg, FrustalSvg, HandBallSvg, IceHockeySvg, MmaSvg, OwSvg, RainbowSvg, RocketLeagueSvg, RugbySvg, Sc2Svg, StarSvg, TableTennisSvg, TennisSvg, VolleyBallSvg } from './Svgs';
+import { AlpineSkiingIcon, AmericanFootballSvg, AussieRulesIcon, AutoRacingIcon, BadmintonSvg, BandySvg, BaseballSvg, BasketballSvg, BeachSoccerSvg, BeachVolleyBallSvg, BiathlonSvg, BoxingSvg, CricketSvg, CrosscountryIcon, CyclingSvg, DartsSvg, EsportIcon, FieldHockeySvg, FootballSvg, FrustalSvg, GolfSvg, HandBallSvg, HorseRacingSvg, IceHockeySvg, MmaSvg, MotorSportIcon, NetballSvg, PesapalloIcon, RugbySvg, SkiJumpingSvg, SnookerSvg, TableTennisSvg, TennisSvg, VolleyBallSvg, WaterPoloIicon, WintersportIcon } from './Svgs';
 
 const sportIcons = {
   SOCCER: <FootballSvg color="var(--white)" height={22} width={22} />,
@@ -15,37 +15,37 @@ const sportIcons = {
   HANDBALL: <HandBallSvg color="var(--white)" height={22} width={22} />,
   RUGBY_UNION: <RugbySvg color="var(--white)" height={22} width={22} />,
   FLOORBALL: <FrustalSvg color="var(--white)" height={22} width={22} />,
-  BANDY: <FrustalSvg color="var(--white)" height={22} width={22} />, // Use appropriate icon
+  BANDY: <BandySvg color="var(--white)" height={22} width={22} />,
   FUTSAL: <FrustalSvg color="var(--white)" height={22} width={22} />,
   VOLLEYBALL: <VolleyBallSvg color="var(--white)" height={22} width={22} />,
   CRICKET: <CricketSvg color="var(--white)" height={22} width={22} />,
-  DARTS: <FrustalSvg color="var(--white)" height={22} width={22} />, // Use appropriate icon
-  SNOOKER: <FrustalSvg color="var(--white)" height={22} width={22} />, // Use appropriate icon
+  DARTS: <DartsSvg color="var(--white)" height={22} width={22} />,
+  SNOOKER: <SnookerSvg color="var(--white)" height={22} width={22} />,
   BOXING: <BoxingSvg color="var(--white)" height={22} width={22} />,
-  BEACH_VOLLEYBALL: <VolleyBallSvg color="var(--white)" height={22} width={22} />, // Use appropriate icon
-  AUSSIE_RULES: <FootballSvg color="var(--white)" height={22} width={22} />, // Use appropriate icon
+  BEACH_VOLLEYBALL: <BeachVolleyBallSvg color="var(--white)" height={22} width={22} />,
+  AUSSIE_RULES: <AussieRulesIcon color="var(--white)" height={22} width={22} />,
   RUGBY_LEAGUE: <RugbySvg color="var(--white)" height={22} width={22} />,
-  BADMINTON: <FrustalSvg color="var(--white)" height={22} width={22} />, // Use appropriate icon
-  WATER_POLO: <FrustalSvg color="var(--white)" height={22} width={22} />, // Use appropriate icon
-  GOLF: <FrustalSvg color="var(--white)" height={22} width={22} />, // Use appropriate icon
-  FIELD_HOCKEY: <IceHockeySvg color="var(--white)" height={22} width={22} />, // Use appropriate icon
+  BADMINTON: <BadmintonSvg color="var(--white)" height={22} width={22} />,
+  WATER_POLO: <WaterPoloIicon color="var(--white)" height={22} width={22} />,
+  GOLF: <GolfSvg color="var(--white)" height={22} width={22} />,
+  FIELD_HOCKEY: <FieldHockeySvg color="var(--white)" height={22} width={22} />,
   TABLE_TENNIS: <TableTennisSvg color="var(--white)" height={22} width={22} />,
-  BEACH_SOCCER: <FootballSvg color="var(--white)" height={22} width={22} />, // Use appropriate icon
+  BEACH_SOCCER: <BeachSoccerSvg color="var(--white)" height={22} width={22} />,
   MMA: <MmaSvg color="var(--white)" height={22} width={22} />,
-  NETBALL: <FrustalSvg color="var(--white)" height={22} width={22} />, // Use appropriate icon
-  PESAPALLO: <FrustalSvg color="var(--white)" height={22} width={22} />, // Use appropriate icon
-  MOTORSPORT: <FrustalSvg color="var(--white)" height={22} width={22} />, // Use appropriate icon
-  AUTORACING: <FrustalSvg color="var(--white)" height={22} width={22} />, // Use appropriate icon
-  MOTORACING: <FrustalSvg color="var(--white)" height={22} width={22} />, // Use appropriate icon
-  CYCLING: <FrustalSvg color="var(--white)" height={22} width={22} />, // Use appropriate icon
-  HORSE_RACING: <FrustalSvg color="var(--white)" height={22} width={22} />, // Use appropriate icon
-  ESPORTS: <DotaSvg color="var(--white)" height={22} width={22} />, // Use appropriate icon
-  WINTER_SPORTS: <FrustalSvg color="var(--white)" height={22} width={22} />, // Use appropriate icon
-  SKI_JUMPING: <FrustalSvg color="var(--white)" height={22} width={22} />, // Use appropriate icon
-  ALPINE_SKIING: <FrustalSvg color="var(--white)" height={22} width={22} />, // Use appropriate icon
-  CROSS_COUNTRY: <FrustalSvg color="var(--white)" height={22} width={22} />, // Use appropriate icon
-  BIATHLON: <FrustalSvg color="var(--white)" height={22} width={22} />, // Use appropriate icon
-  KABADDI: <FrustalSvg color="var(--white)" height={22} width={22} />, // Use appropriate icon
+  NETBALL: <NetballSvg color="var(--white)" height={22} width={22} />,
+  PESAPALLO: <PesapalloIcon color="var(--white)" height={22} width={22} />,
+  MOTORSPORT: <MotorSportIcon color="var(--white)" height={22} width={22} />,
+  AUTORACING: <AutoRacingIcon color="var(--white)" height={22} width={22} />,
+  MOTORACING: <MotorSportIcon color="var(--white)" height={22} width={22} />,
+  CYCLING: <CyclingSvg color="var(--white)" height={22} width={22} />,
+  HORSE_RACING: <HorseRacingSvg color="var(--white)" height={22} width={22} />,
+  ESPORTS: <EsportIcon color="var(--white)" height={22} width={22} />,
+  WINTER_SPORTS: <WintersportIcon color="var(--white)" height={22} width={22} />,
+  SKI_JUMPING: <SkiJumpingSvg color="var(--white)" height={22} width={22} />,
+  ALPINE_SKIING: <AlpineSkiingIcon color="var(--white)" height={22} width={22} />,
+  CROSS_COUNTRY: <CrosscountryIcon color="var(--white)" height={22} width={22} />,
+  BIATHLON: <BiathlonSvg color="var(--white)" height={22} width={22} />,
+  KABADDI: <FrustalSvg color="var(--white)" height={22} width={22} />,
 };
 
 const LeftSideBar = () => {
@@ -56,11 +56,12 @@ const LeftSideBar = () => {
       const response = await fetch('https://flashlive-sports.p.rapidapi.com/v1/sports/list', {
         method: 'GET',
         headers: {
-          'x-rapidapi-key': 'a9c98e38a0mshed7640eccfd80b3p1dc106jsn3b8fba3f46e6',
+          'x-rapidapi-key': '1b3901337fmsh67b51c6f90922b7p1edff4jsn6862c9feb385',
           'x-rapidapi-host': 'flashlive-sports.p.rapidapi.com'
         }
       });
       const data = await response.json();
+      console.log(data);
       const favoritesData = data.DATA.map(sport => ({
         id: sport.ID,
         imgSrc: sportIcons[sport.NAME],

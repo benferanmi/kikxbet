@@ -32,7 +32,7 @@
   bottom: -5px;
   width: 100%;
   height: 3px;
-  background: linear-gradient(90deg, red, green, blue, orange, yellow);
+  background: linear-gradient(88.89deg, #aaff00 0%, #ffaa1d 100%);
 }
 
 /* Extra Small Devices (Phones) */
@@ -41,7 +41,6 @@
     flex-wrap: wrap;
     height: fit-content;
     padding: 15px 8px;
-    
   }
 }
 

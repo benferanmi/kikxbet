@@ -1,0 +1,46 @@
+.profile_rewards {
+  margin: 0 16px;
+}
+
+.profile_rewards_heads {
+  padding: 10px 20px;
+}
+.profile_rewards_heads {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: flex-start;
+  padding-left: 10px;
+  align-items: center;
+}
+.prhd_image {
+  display: block;
+}
+
+.prhd_image img {
+  border-radius: 50px;
+}
+
+.prhd_cont {
+  display: block;
+  width: 100%;
+}
+
+.prhd_cont h3 {
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 19.2px;
+  text-align: left;
+  color: var(--white);
+  margin-bottom: 10px;
+}
+
+.prhd_cont p {
+  color: #d7d9ff;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 28px;
+  margin-top: 5px;
+}
