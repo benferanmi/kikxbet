@@ -1,7 +1,6 @@
-
 'use client';
 import PageLayout from '@/app/pageLayout';
-import { useParams } from 'next/navigation';
+import { useParams, useSearchParams } from 'next/navigation';
 import BankImagesContainer from '@/app/components/BankImagesContainer';
 import './sport5666.css';
 import LiveSportType from '@/app/components/odd/LiveSportType';
@@ -9,10 +8,13 @@ import SportType from '@/app/components/SportType';
 import Header from '@/app/components/Header';
 import Footer from '@/app/components/Footer';
 
-
 const SportPage = () => {
     const params = useParams();
-    const { sport } = params;
+    const searchParams = useSearchParams();
+    const sport = params?.sport;
+    const spid = searchParams.get('spid');
+    console.log("Sport:", sport);
+    console.log("SPID:", spid);
 
     const liveEvents = [
         {}
@@ -25,17 +27,6 @@ const SportPage = () => {
         {},
         {},
     ];
-
-    // const tomorrowEvents = [
-    //     {},
-    //     {},
-    //     {},
-    //     {},
-    //     {},
-    //     {},
-    //     {},
-    //     {},
-    // ];
 
     return (
         <div>
@@ -55,21 +46,19 @@ const SportPage = () => {
                             <div className="hkik-oddline-head">
                                 <h1>Live Events</h1>
                             </div>
-                            <LiveSportType svg='football' leagueTypeOfJson={liveEvents} leagueName='Cyberhockey. EHC CUP (3x4 MиH.)' />
+                            <LiveSportType spid={spid} />
                         </div>
 
                         <div>
                             <div className="hkik-oddline-head">
                                 <h1>Today</h1>
                             </div>
-                            <SportType svg='rocketleague' leagueTypeOfJson={todayEvents} leagueName='Saturday Championship League' />
+                            <SportType svg='rocketleague' spid={spid} leagueTypeOfJson={todayEvents} leagueName='Saturday Championship League' />
                         </div>
 
                     </div>
                 </main>
-
             </PageLayout>
-
             <BankImagesContainer />
             <Footer />
         </div>

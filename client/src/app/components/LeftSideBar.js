@@ -1,39 +1,77 @@
-
+"use client"
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import './css/leftsidebar.css';
 import Link from 'next/link';
 import { AmericanFootballSvg, ArenaOfValorSvg, BaseballSvg, BasketballSvg, BoxingSvg, CricketSvg, CsgoSvg, DotaSvg, EHockey, EtennisSvg, FootballSvg, FrustalSvg, HandBallSvg, IceHockeySvg, MmaSvg, OwSvg, RainbowSvg, RocketLeagueSvg, RugbySvg, Sc2Svg, StarSvg, TableTennisSvg, TennisSvg, VolleyBallSvg } from './Svgs';
 
+const sportIcons = {
+  SOCCER: <FootballSvg color="var(--white)" height={22} width={22} />,
+  TENNIS: <TennisSvg color="var(--white)" height={22} width={22} />,
+  BASKETBALL: <BasketballSvg color="var(--white)" height={22} width={22} />,
+  HOCKEY: <IceHockeySvg color="var(--white)" height={22} width={22} />,
+  AMERICAN_FOOTBALL: <AmericanFootballSvg color="var(--white)" height={22} width={22} />,
+  BASEBALL: <BaseballSvg color="var(--white)" height={22} width={22} />,
+  HANDBALL: <HandBallSvg color="var(--white)" height={22} width={22} />,
+  RUGBY_UNION: <RugbySvg color="var(--white)" height={22} width={22} />,
+  FLOORBALL: <FrustalSvg color="var(--white)" height={22} width={22} />,
+  BANDY: <FrustalSvg color="var(--white)" height={22} width={22} />, // Use appropriate icon
+  FUTSAL: <FrustalSvg color="var(--white)" height={22} width={22} />,
+  VOLLEYBALL: <VolleyBallSvg color="var(--white)" height={22} width={22} />,
+  CRICKET: <CricketSvg color="var(--white)" height={22} width={22} />,
+  DARTS: <FrustalSvg color="var(--white)" height={22} width={22} />, // Use appropriate icon
+  SNOOKER: <FrustalSvg color="var(--white)" height={22} width={22} />, // Use appropriate icon
+  BOXING: <BoxingSvg color="var(--white)" height={22} width={22} />,
+  BEACH_VOLLEYBALL: <VolleyBallSvg color="var(--white)" height={22} width={22} />, // Use appropriate icon
+  AUSSIE_RULES: <FootballSvg color="var(--white)" height={22} width={22} />, // Use appropriate icon
+  RUGBY_LEAGUE: <RugbySvg color="var(--white)" height={22} width={22} />,
+  BADMINTON: <FrustalSvg color="var(--white)" height={22} width={22} />, // Use appropriate icon
+  WATER_POLO: <FrustalSvg color="var(--white)" height={22} width={22} />, // Use appropriate icon
+  GOLF: <FrustalSvg color="var(--white)" height={22} width={22} />, // Use appropriate icon
+  FIELD_HOCKEY: <IceHockeySvg color="var(--white)" height={22} width={22} />, // Use appropriate icon
+  TABLE_TENNIS: <TableTennisSvg color="var(--white)" height={22} width={22} />,
+  BEACH_SOCCER: <FootballSvg color="var(--white)" height={22} width={22} />, // Use appropriate icon
+  MMA: <MmaSvg color="var(--white)" height={22} width={22} />,
+  NETBALL: <FrustalSvg color="var(--white)" height={22} width={22} />, // Use appropriate icon
+  PESAPALLO: <FrustalSvg color="var(--white)" height={22} width={22} />, // Use appropriate icon
+  MOTORSPORT: <FrustalSvg color="var(--white)" height={22} width={22} />, // Use appropriate icon
+  AUTORACING: <FrustalSvg color="var(--white)" height={22} width={22} />, // Use appropriate icon
+  MOTORACING: <FrustalSvg color="var(--white)" height={22} width={22} />, // Use appropriate icon
+  CYCLING: <FrustalSvg color="var(--white)" height={22} width={22} />, // Use appropriate icon
+  HORSE_RACING: <FrustalSvg color="var(--white)" height={22} width={22} />, // Use appropriate icon
+  ESPORTS: <DotaSvg color="var(--white)" height={22} width={22} />, // Use appropriate icon
+  WINTER_SPORTS: <FrustalSvg color="var(--white)" height={22} width={22} />, // Use appropriate icon
+  SKI_JUMPING: <FrustalSvg color="var(--white)" height={22} width={22} />, // Use appropriate icon
+  ALPINE_SKIING: <FrustalSvg color="var(--white)" height={22} width={22} />, // Use appropriate icon
+  CROSS_COUNTRY: <FrustalSvg color="var(--white)" height={22} width={22} />, // Use appropriate icon
+  BIATHLON: <FrustalSvg color="var(--white)" height={22} width={22} />, // Use appropriate icon
+  KABADDI: <FrustalSvg color="var(--white)" height={22} width={22} />, // Use appropriate icon
+};
+
 const LeftSideBar = () => {
+  const [favorites, setFavorites] = useState([]);
 
-  const favorites = [
-    { id: 1, imgSrc: <FootballSvg color="var(--white)" height={22} width={22} />, text: 'eFootball', url: '/game/efootball' },
-    { id: 2, imgSrc: <CsgoSvg color="var(--white)" height={22} width={22} />, text: 'CS:GO', url: '/game/cs-go' },
-    { id: 3, imgSrc: <BasketballSvg color="var(--white)" height={22} width={22} />, text: 'BasketBall', url: '/game/basketball' },
-    { id: 4, imgSrc: <BasketballSvg color="var(--white)" height={22} width={22} />, text: 'eBasketball', url: '/game/ebasketball' },
-    { id: 5, imgSrc: <TennisSvg color="var(--white)" height={22} width={22} />, text: 'Tennis', url: '/game/tennis' },
-    { id: 6, imgSrc: <EtennisSvg color="var(--white)" height={22} width={22} />, text: 'eTennis', url: '/game/etennis' },
-    { id: 7, imgSrc: <DotaSvg color="var(--white)" height={22} width={22} />, text: 'Dota 2', url: '/game/dota' },
-    { id: 8, imgSrc: <StarSvg color="var(--white)" height={22} width={22} />, text: 'LOL', url: '/game/lol' },
-    { id: 9, imgSrc: <IceHockeySvg color="var(--white)" height={22} width={22} />, text: 'Ice hockey', url: '/game/ice-hockey' },
-    { id: 10, imgSrc: <EHockey color="var(--white)" height={22} width={22} />, text: 'eHockey', url: '/game/ehockey' },
+  useEffect(() => {
+    const fetchSports = async () => {
+      const response = await fetch('https://flashlive-sports.p.rapidapi.com/v1/sports/list', {
+        method: 'GET',
+        headers: {
+          'x-rapidapi-key': 'a9c98e38a0mshed7640eccfd80b3p1dc106jsn3b8fba3f46e6',
+          'x-rapidapi-host': 'flashlive-sports.p.rapidapi.com'
+        }
+      });
+      const data = await response.json();
+      const favoritesData = data.DATA.map(sport => ({
+        id: sport.ID,
+        imgSrc: sportIcons[sport.NAME],
+        text: sport.NAME.replace('_', ' '), // Format name for display
+        url: `/game/${sport.NAME.toLowerCase().replace('_', '-')}`
+      }));
+      setFavorites(favoritesData);
+    };
 
-    { id: 11, imgSrc: <TableTennisSvg color="var(--white)" height={22} width={22} />, text: 'Table Tennis', url: '/game/table-tennis' },
-    { id: 12, imgSrc: <VolleyBallSvg color="var(--white)" height={22} width={22} />, text: 'Volleyball', url: '/game/volleyball' },
-    { id: 13, imgSrc: <BaseballSvg color="var(--white)" height={22} width={22} />, text: 'Baseball', url: '/game/baseball' },
-    { id: 14, imgSrc: <RugbySvg color="var(--white)" height={22} width={22} />, text: 'Rugby', url: '/game/rugby' },
-    { id: 15, imgSrc: <MmaSvg color="var(--white)" height={22} width={22} />, text: 'MMA', url: '/game/mma' },
-    { id: 16, imgSrc: <AmericanFootballSvg color="var(--white)" height={22} width={22} />, text: 'American Football', url: '/game/americanfootball' },
-    { id: 17, imgSrc: <HandBallSvg color="var(--white)" height={22} width={22} />, text: 'Handball', url: '/game/handball' },
-    { id: 18, imgSrc: <RocketLeagueSvg color="var(--white)" height={22} width={22} />, text: 'Rocket League', url: '/game/rocketleague' },
-    { id: 19, imgSrc: <BoxingSvg color="var(--white)" height={22} width={22} />, text: 'Boxing', url: '/game/boxing' },
-    { id: 20, imgSrc: <RainbowSvg color="var(--white)" height={22} width={22} />, text: 'Rainbow 6', url: '/game/rainbow' },
-    { id: 21, imgSrc: <FrustalSvg color="var(--white)" height={22} width={22} />, text: 'Futsal', url: '/game/futsal' },
-    { id: 22, imgSrc: <CricketSvg color="var(--white)" height={22} width={22} />, text: 'Cricket', url: '/game/cricket' },
-    { id: 23, imgSrc: <Sc2Svg color="var(--white)" height={22} width={22} />, text: 'SC 2', url: '/game/sc' },
-    { id: 24, imgSrc: <OwSvg color="var(--white)" height={22} width={22} />, text: 'OW', url: '/game/ow' },
-    { id: 25, imgSrc: <ArenaOfValorSvg color="var(--white)" height={22} width={22} />, text: 'Arena Of Valor', url: '/game/arenaofvalor' },];
-
+    fetchSports();
+  }, []);
 
   return (
     <div className='lsb-bodys'>
@@ -45,7 +83,6 @@ const LeftSideBar = () => {
             <input type='text' placeholder='Search.....' />
           </form>
         </div>
-
 
         <div className='lsb-heads'>
           <div className='lsb-head'>
@@ -86,12 +123,11 @@ const LeftSideBar = () => {
               <h2>Games</h2>
             </div>
 
-
             <div className='lsbh-game-list'>
               {favorites.map(({ id, imgSrc, text, url }) => (
                 <span key={id} className='lsbh-each-game'>
                   {imgSrc}
-                  <Link href={url} className='lshb-text'>{text}</Link>
+                  <Link href={url+'?spid='+id} className='lshb-text'>{text}</Link>
                 </span>
               ))}
             </div>
