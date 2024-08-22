@@ -46,7 +46,7 @@ const SportPage = () => {
                             <div className="hkik-oddline-head">
                                 <h1>Live Events</h1>
                             </div>
-                            <LiveSportType spid={spid} />
+                            <LiveSportType spid={spid} sportName={sport} />
                         </div>
 
                         <div>

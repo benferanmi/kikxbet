@@ -50,13 +50,15 @@ const sportIcons = {
 
 const LeftSideBar = () => {
   const [favorites, setFavorites] = useState([]);
+  const apiUrl = process.env.NEXT_PUBLIC_API_ULR;
+  const apiKey = process.env.NEXT_PUBLIC_API_KEY;
 
   useEffect(() => {
     const fetchSports = async () => {
-      const response = await fetch('https://flashlive-sports.p.rapidapi.com/v1/sports/list', {
+      const response = await fetch(`${apiUrl}/sports/list`, {
         method: 'GET',
         headers: {
-          'x-rapidapi-key': 'a9c98e38a0mshed7640eccfd80b3p1dc106jsn3b8fba3f46e6',
+          'x-rapidapi-key': `${apiKey}`,
           'x-rapidapi-host': 'flashlive-sports.p.rapidapi.com'
         }
       });

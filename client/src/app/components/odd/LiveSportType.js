@@ -5,17 +5,19 @@ import { useEffect, useState } from 'react';
 
 const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
-const LiveSportType = ({ spid }) => {
+const LiveSportType = ({ spid, sport }) => {
     const [liveEvents, setLiveEvents] = useState([]);
     const [oddsData, setOddsData] = useState({});
+    const apiUrl = process.env.NEXT_PUBLIC_API_ULR;
+    const apiKey = process.env.NEXT_PUBLIC_API_KEY;
 
     useEffect(() => {
         const fetchLiveSports = async () => {
             try {
-                const response = await fetch(`https://flashlive-sports.p.rapidapi.com/v1/events/live-list?locale=en_INT&sport_id=${spid}&timezone=3`, {
+                const response = await fetch(`${apiUrl}/events/live-list?locale=en_INT&sport_id=${spid}&timezone=3`, {
                     method: 'GET',
                     headers: {
-                        'x-rapidapi-key': 'a9c98e38a0mshed7640eccfd80b3p1dc106jsn3b8fba3f46e6',
+                        'x-rapidapi-key': `${apiKey}`,
                         'x-rapidapi-host': 'flashlive-sports.p.rapidapi.com'
                     }
                 });
@@ -39,10 +41,10 @@ const LiveSportType = ({ spid }) => {
             if (oddsData[event_id]) return; // Use cached data if available
 
             try {
-                const response = await fetch(`https://flashlive-sports.p.rapidapi.com/v1/events/odds?event_id=${event_id}&locale=en_INT`, {
+                const response = await fetch(`${apiUrl}/events/odds?event_id=${event_id}&locale=en_INT`, {
                     method: 'GET',
                     headers: {
-                        'x-rapidapi-key': 'a9c98e38a0mshed7640eccfd80b3p1dc106jsn3b8fba3f46e6',
+                        'x-rapidapi-key': `${apiKey}`,
                         'x-rapidapi-host': 'flashlive-sports.p.rapidapi.com'
                     }
                 });
