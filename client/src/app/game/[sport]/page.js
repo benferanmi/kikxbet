@@ -8,25 +8,11 @@ import SportType from '@/app/components/SportType';
 import Header from '@/app/components/Header';
 import Footer from '@/app/components/Footer';
 
-const SportPage = () => {
+const SportPage = ({ liveEvents, todayEvents }) => {
     const params = useParams();
     const searchParams = useSearchParams();
     const sport = params?.sport;
     const spid = searchParams.get('spid');
-    console.log('Sport:', sport);
-    console.log('SPID:', spid);
-
-    const liveEvents = [
-        {}
-    ];
-    const todayEvents = [
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-    ];
 
     return (
         <div>
@@ -46,16 +32,15 @@ const SportPage = () => {
                             <div className="hkik-oddline-head">
                                 <h1>Live Events</h1>
                             </div>
-                            <LiveSportType spid={spid} />
+                            <LiveSportType spid={spid} events={liveEvents} />
                         </div>
 
                         <div>
                             <div className="hkik-oddline-head">
                                 <h1>Today</h1>
                             </div>
-                            <SportType svg='rocketleague' spid={spid} leagueTypeOfJson={todayEvents} leagueName='Saturday Championship League' />
+                            <SportType svg='rocketleague' spid={spid} leagueTypeOfJson={todayEvents} />
                         </div>
-
                     </div>
                 </main>
             </PageLayout>

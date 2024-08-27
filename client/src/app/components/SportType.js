@@ -1,81 +1,46 @@
-
-import Image from 'next/image';
+'use client';
 import './css/sporttype.css';
-import OddOutcome from './odd/OddOutcome';
+import useSportType from '@/hooks/useSportType';
 
-
-const SportType = ({ leagueName, leagueTypeOfJson, svg }) => {
+const SportType = ({ spid, svg, leagueName }) => {
+    const {
+        oddsData,
+        currentPage,
+        setCurrentPage,
+        pageSize,
+        loading,
+        leagueTypeOfJson,
+        totalEvents,
+        totalPages,
+        renderEvent,
+        renderLeague,
+        renderContent
+    } = useSportType(spid);
 
     return (
-        <div className="hkik-oddlines">
-            <div className="hkik-oddline">
-
-                <div className="hkik-oddline-body">
-                    {
-                        leagueTypeOfJson.map((list, index) => {
-                            return (
-                                <div key={index} className="hkik-oddline-each">
-                                    <div className="hkik-oddline-eheads">
-                                        <div className="hkik-oddline-ehead">
-                                            <div className="hkik-ol-eheadl">
-                                                <Image
-                                                    src={`/assets/${svg}.png`}
-                                                    alt="des"
-                                                    width={17}
-                                                    height={17}
-                                                />
-                                                <p>{leagueName}</p>
-                                                <Image
-                                                    src="/assets/fireIcon.png"
-                                                    alt="des"
-                                                    width={14}
-                                                    height={15}
-                                                />
-                                            </div>
-                                            <div className="hkik-ol-eheadr">
-                                                <span>Oct 21 00:45</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="hkik-oddline-econts">
-                                        <div className="hkik-oddline-econt">
-                                            <div className="lst_two hkik-oddline-econt-lefts ">
-                                                <div className="hkik-oddline-econt-left hkik-oddline-mobile-left">
-                                                    <span className='hkikodeconle-mob-rev'> 
-                                                        <p>scotland</p>
-                                                        <Image
-                                                            src="/assets/scotland.png"
-                                                            alt="des"
-                                                            width={38}
-                                                            height={38}
-                                                        />
-                                                    </span>
-                                                    <strong>VS</strong>
-                                                    <span className='hkikodeconle-rev'>
-                                                        <Image
-                                                            src="/assets/wales.png"
-                                                            alt="des"
-                                                            width={38}
-                                                            height={38}
-                                                        /> <p>wales</p>
-                                                    </span>
-                                                </div>
-
-                                            </div>
-                                            <div className="hkik-oddline-econt-rights">
-                                                <div className="hkik-oddline-econt-right">
-                                                    <OddOutcome gap={20} draw={3.99} home={1.21} away={3.50} />
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            );
-                        })
-                    }
+        <div className={`hkik-oddlines ${spid === 'someSpecificSportId' ? 'specific-design' : ''}`}>
+            {renderContent()}
+            {totalEvents > pageSize && !loading && (
+                <div className="flex justify-center mt-4">
+                    <button 
+                        onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))} 
+                        className="px-4 py-2 mx-2 text-secondary-white bg-cyber-lime rounded-lg hover:bg-light-cyber-lime disabled:opacity-50" 
+                        disabled={currentPage === 1}
+                    >
+                        Previous
+                    </button>
+                    <span className="flex items-center text-secondary-white">
+                        Page {currentPage} of {totalPages}
+                    </span>
+                    <button 
+                        onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))} 
+                        className="px-4 py-2 mx-2 text-secondary-white bg-cyber-lime rounded-lg hover:bg-light-cyber-lime disabled:opacity-50" 
+                        disabled={currentPage === totalPages}
+                    >
+                        Next
+                    </button>
                 </div>
-            </div>
+            )}
         </div>
     );
 };

@@ -45,9 +45,9 @@ export default function Home() {
   ];
 
   const leagueTypeOfJson = [
-    {},
-    {},
-    {},
+    // {},
+    // {},
+    // {},
   ];
 
   const topPlayersHeaders = ['GAME', 'USERNAME', 'TIME', 'WAGER', 'MULTIPLIER', 'PAYOUT'];
@@ -326,7 +326,7 @@ export default function Home() {
                     <div className="hkik-oddline-head">
                       <h1>Football</h1>
                     </div>
-                    <SportType leagueTypeOfJson={leagueTypeOfJson} svg='ufeaIcon' leagueName='League Nations UEFA' />
+                    <SportType leagueTypeOfJson={leagueTypeOfJson} spid='9' svg='ufeaIcon' leagueName='League Nations UEFA' />
                   </div>
 
 

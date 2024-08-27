@@ -56,13 +56,13 @@ const LeftSideBar = () => {
       const response = await fetch('https://flashlive-sports.p.rapidapi.com/v1/sports/list', {
         method: 'GET',
         headers: {
-          'x-rapidapi-key': '1b3901337fmsh67b51c6f90922b7p1edff4jsn6862c9feb385',
+          'x-rapidapi-key': '24193b4722msh098734db8c9c805p112d8bjsn80d4e3d80b98',
           'x-rapidapi-host': 'flashlive-sports.p.rapidapi.com'
         }
       });
       const data = await response.json();
       console.log(data);
-      const favoritesData = data.DATA.map(sport => ({
+      const favoritesData = data?.DATA?.map(sport => ({
         id: sport.ID,
         imgSrc: sportIcons[sport.NAME],
         text: sport.NAME.replace('_', ' '), // Format name for display
@@ -125,7 +125,7 @@ const LeftSideBar = () => {
             </div>
 
             <div className='lsbh-game-list'>
-              {favorites.map(({ id, imgSrc, text, url }) => (
+              {favorites?.map(({ id, imgSrc, text, url }) => (
                 <span key={id} className='lsbh-each-game'>
                   {imgSrc}
                   <Link href={url+'?spid='+id} className='lshb-text'>{text}</Link>
