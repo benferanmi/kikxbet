@@ -5,7 +5,7 @@ import ProfileLayout from '../ProfileLayout';
 import './mybets.css';
 import Link from 'next/link';
 
-const page = () => {
+const MyBets = () => {
 
     const [dateRange, setDateRange] = useState({ start: '', end: '' });
     const [toggle, setToggle] = useState('all');
@@ -248,4 +248,4 @@ const page = () => {
     );
 };
 
-export default page;
+export default MyBets;

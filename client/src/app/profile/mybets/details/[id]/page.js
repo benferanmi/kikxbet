@@ -6,7 +6,7 @@ import { useParams } from 'next/navigation';
 import { useRouter } from 'next/navigation';
 
 
-const page = () => {
+const BetDetail = () => {
     const [visible, setVisible] = useState(false)
     const [slipResult, setSlipResult] = useState(null)
     const router = useRouter();
@@ -217,7 +217,7 @@ const page = () => {
 
 
 
-    const BetDetails = () => {
+    const BetDetailList = () => {
         return (
             <div className={visible ? 'pbd_visible' : 'pbd_hidden'}>
                 <div className='pbd-layout-mask'>
@@ -380,10 +380,10 @@ const page = () => {
                 </div>
 
 
-                <BetDetails />
+                <BetDetailList />
             </div>
         </ProfileLayout>
     );
 };
 
-export default page;
+export default BetDetail;
