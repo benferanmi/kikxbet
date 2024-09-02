@@ -7,7 +7,7 @@ import Cookies from 'js-cookie';
 import { useRouter } from 'next/navigation';
 
 export default function Header() {
-  const [user, setUser] = useState(true);
+  const [user, setUser] = useState(false);
   const [loading, setLoading] = useState(true);
   const [dropdownVisible, setDropdownVisible] = useState(false);
   const router = useRouter();
