@@ -36,6 +36,10 @@ const ProfileLayout = ({ children }) => {
                                     <div className={`kik-paymid-each ${pathname === '/profile' ? 'kikpfemn' : 'jkkjk'}`}></div>
                                 </span>
 
+                                <span> <Link href='/profile/mybets'>Bet History</Link>
+                                    <div className={`kik-paymid-each ${pathname === '/profile/mybets' ? 'kikpfemn' : 'jkkjk'}`}></div>
+                                </span>
+
                                 <span> <Link href='/profile/settings'>Settings</Link>
                                     <div className={`kik-paymid-each ${pathname === '/profile/settings' ? 'kikpfemn' : 'jkkjk'}`}></div>
                                 </span>

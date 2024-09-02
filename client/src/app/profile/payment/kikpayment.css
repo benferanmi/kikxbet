@@ -2,12 +2,7 @@
 .lsb-bodys {
   width: 100%;
 }
-.fots {
-  width: 100% !important;
-  padding-left: 20px !important;
-  padding-right: 20px !important;
-  height: 280px !important;
-}
+
 .fotc-menu {
   gap: 2em !important;
 }
@@ -39,6 +34,9 @@
   display: flex;
   flex: 0.18;
   background: var(--side-bar-back);
+  height: fit-content;
+  padding-bottom: 28px;
+
 }
 
 .kik-paymid {
@@ -78,6 +76,8 @@
 .kik-payflex-right {
   display: flex;
   background: var(--side-bar-back);
+  height: fit-content;
+  padding-bottom: 30px;
 
   flex: 0.6;
 }

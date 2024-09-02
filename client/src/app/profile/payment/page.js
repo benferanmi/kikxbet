@@ -220,11 +220,13 @@ const PaymentPage = () => {
                                     </button>
                                 </div>
                             </div>
-                            <Footer />
                         </div>
                     </div>
                 </div>
             </div>
+
+            <Footer></Footer>
+
         </main>
     );
 };
