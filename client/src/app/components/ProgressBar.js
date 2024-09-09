@@ -1,6 +1,5 @@
-
-const ProgressBar = ({ progress }) => {
-    const intervals = ['x1.08', 'x1.15', '1.2', 'x1.5'];
+const ProgressBar = ({ progress, intervals = ['x1.08', 'x6', '10', 'x20'] }) => {
+    const intervalWidth = 100 / (intervals.length + 1); // Calculate width for each interval
 
     return (
         <div className='rsb-progress-container'>
@@ -12,7 +11,7 @@ const ProgressBar = ({ progress }) => {
             </div>
             <div className='rsb-p-labels'>
                 {intervals.map((value, index) => (
-                    <span key={value} style={{ left: `${(index + 1) * 25}%` }}>
+                    <span key={value} style={{ left: `${(index + 1) * intervalWidth}%` }}>
                         {value}
                     </span>
                 ))}

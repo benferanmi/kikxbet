@@ -1,6 +1,9 @@
 'use client';
 import './css/sporttype.css';
 import useSportType from '@/hooks/useSportType';
+import OddOutcome from '@/app/components/OddOutcome';
+import Image from 'next/image';
+import { useState, useEffect } from 'react';
 
 const SportType = ({ spid, svg, leagueName }) => {
     const {
@@ -14,12 +17,13 @@ const SportType = ({ spid, svg, leagueName }) => {
         totalPages,
         renderEvent,
         renderLeague,
-        renderContent
+        renderContent,
+        loadMoreBtn
     } = useSportType(spid);
 
     return (
         <div className={`hkik-oddlines ${spid === 'someSpecificSportId' ? 'specific-design' : ''}`}>
-            {renderContent()}
+            {renderContent()}    
             {totalEvents > pageSize && !loading && (
                 <div className="flex justify-center mt-4">
                     <button 

@@ -1,160 +1,31 @@
-
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import ProfileLayout from '../ProfileLayout';
 import './mybets.css';
 import Link from 'next/link';
+import Cookies from 'js-cookie'; // Make sure to import Cookies
 
 const MyBets = () => {
 
     const [dateRange, setDateRange] = useState({ start: '', end: '' });
     const [toggle, setToggle] = useState('all');
+    const [jsonData, setJsonData] = useState([]); // State to hold fetched data
+    const [oddData, setOddData] = useState([]); // State to hold odd data
 
-    const jsonData = [
-        {
-            id: 1,
-            type: 'settled',
-            date: '2024-08-01',
-            method: 'single',
-            result: 'win',
-            time: '14:30',
-            totalStake: 100,
-            totalReturn: '0.00',
-            item: {
-                outcome: 'won',
-                games: [
-                    {
-                        homeTeam: 'Team A',
-                        awayTeam: 'Team B',
-                        homeTeamScore: 2,
-                        awayTeamScore: 1,
-                        picks: ['Team A to win', 'Over 2.5 goals'],
-                        market: 'Match Result',
-                    },
-                    {
-                        homeTeam: 'Team C',
-                        awayTeam: 'Team D',
-                        homeTeamScore: 3,
-                        awayTeamScore: 0,
-                        picks: ['Team C to win', 'Both teams to score'],
-                        market: 'Match Result',
-                    },
-                    {
-                        homeTeam: 'Team E',
-                        awayTeam: 'Team F',
-                        homeTeamScore: 1,
-                        awayTeamScore: 1,
-                        picks: ['Draw', 'Under 3.5 goals'],
-                        market: 'Match Result',
-                    },
-                    {
-                        homeTeam: 'Team G',
-                        awayTeam: 'Team H',
-                        homeTeamScore: 4,
-                        awayTeamScore: 2,
-                        picks: ['Team G to win', 'Over 3.5 goals'],
-                        market: 'Match Result',
-                    },
-                    {
-                        homeTeam: 'Team I',
-                        awayTeam: 'Team J',
-                        homeTeamScore: 0,
-                        awayTeamScore: 0,
-                        picks: ['Draw', 'No goals'],
-                        market: 'Match Result',
-                    },
-                ],
-            },
-        },
-        {
-            id: 2,
-            type: 'unsettled',
-            date: '2024-08-05',
-            method: 'multiple',
-            result: 'lost',
-            time: '09:15',
-            totalStake: 50,
-            totalReturn: '0.00',
-            item: {
-                outcome: 'lost',
-                games: [
-                    {
-                        homeTeam: 'Team K',
-                        awayTeam: 'Team L',
-                        homeTeamScore: 1,
-                        awayTeamScore: 3,
-                        picks: ['Team K to win', 'Over 2.5 goals'],
-                        market: 'Match Result',
-                    },
-                    {
-                        homeTeam: 'Team M',
-                        awayTeam: 'Team N',
-                        homeTeamScore: 2,
-                        awayTeamScore: 2,
-                        picks: ['Draw', 'Both teams to score'],
-                        market: 'Match Result',
-                    },
-                    {
-                        homeTeam: 'Team O',
-                        awayTeam: 'Team P',
-                        homeTeamScore: 0,
-                        awayTeamScore: 1,
-                        picks: ['Team O to win', 'Under 1.5 goals'],
-                        market: 'Match Result',
-                    },
-                ],
-            },
-        },
-        {
-            id: 3,
-            type: 'settled',
-            date: '2024-08-10',
-            method: 'single',
-            result: 'ongoing',
-            time: '18:45',
-            totalStake: 200,
-            totalReturn: '0.00',
-            item: {
-                outcome: 'ongoing',
-                games: [
-                    {
-                        homeTeam: 'Team Q',
-                        awayTeam: 'Team R',
-                        homeTeamScore: 0,
-                        awayTeamScore: 0,
-                        picks: ['Draw', 'No goals'],
-                        market: 'Match Result',
-                    },
-                    {
-                        homeTeam: 'Team S',
-                        awayTeam: 'Team T',
-                        homeTeamScore: 1,
-                        awayTeamScore: 2,
-                        picks: ['Team S to win', 'Over 2.5 goals'],
-                        market: 'Match Result',
-                    },
-                    {
-                        homeTeam: 'Team U',
-                        awayTeam: 'Team V',
-                        homeTeamScore: 2,
-                        awayTeamScore: 1,
-                        picks: ['Team U to win', 'Both teams to score'],
-                        market: 'Match Result',
-                    },
-                    {
-                        homeTeam: 'Team W',
-                        awayTeam: 'Team X',
-                        homeTeamScore: 3,
-                        awayTeamScore: 0,
-                        picks: ['Team W to win', 'Over 3.5 goals'],
-                        market: 'Match Result',
-                    },
-                ],
-            },
-        },
-        // Add more data as needed
-    ];
+    useEffect(() => {
+        const fetchBets = async () => {
+            const response = await fetch(`http://localhost:6020/dev/kikxbet/api/v1/dashboard/get-user-bets?userId=${JSON.parse(Cookies.get('userData')).id}`);
+            const result = await response.json();
+            if (result.status === 200) {
+                setJsonData(result.data.bets); // Set jsonData to the bets array from the response
+                setOddData(result.data.oddData); // Set oddData to the odd data from the response
+            } else {
+                console.error('Error fetching bets:', result.message);
+            }
+        };
 
+        fetchBets();
+    }, []);
 
     const handleDateChange = (e) => {
         const { name, value } = e.target;
@@ -162,7 +33,7 @@ const MyBets = () => {
     };
 
     const filteredData = jsonData.filter(item => {
-        const date = new Date(`${item.date}T${item.time}`);
+        const date = new Date(item.createdAt); // Use createdAt for date filtering
         const startDate = new Date(dateRange.start);
         const endDate = new Date(dateRange.end);
         return (
@@ -172,9 +43,7 @@ const MyBets = () => {
         );
     });
 
-    const totalStake = filteredData.reduce((totalStake, item) => totalStake + item.totalStake, 0);
-
-
+    const totalStake = filteredData.reduce((totalStake, item) => totalStake + item.base_amount, 0); // Use base_amount for total stake
 
     return (
         <ProfileLayout>
@@ -203,43 +72,49 @@ const MyBets = () => {
                         </div>
                         <div className="pmybets-total-stake">Total Amount Staked: ${totalStake}</div>
                         <div className="pmybets-bet-list">
-                            {filteredData.map(item => (
-                                <div key={item.id} className="pmybets-bet-item">
-
-                                    <div className='pmyb-item'>
-                                        <div className='pmyb-date'>Date: {item.date} Time: {item.time}</div>
-                                        <div className='pmyb-results'>
-                                            <div className='pmyb-result'>
-                                                <span>{item.method}</span>
-                                                <span> <Link href={`/profile/mybets/details/${item.id}`}> {item.result} <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" height={18} width={18}>
-                                                    <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
-                                                </svg>
-                                                </Link>
-                                                </span>
-                                            </div>
-                                        </div>
-
-
-                                        <div className='pmyb-stakes'>
-                                            <div className='pmyb-stake'>
-                                                <div>
-                                                    <span className='pmyb-stake-item'>
-                                                        <p style={{ fontSize: '12px', color: '' }}>Total Stake</p>
-                                                        <p>{item.totalStake}</p>
-                                                    </span>
-
-                                                    <span className='pmyb-stake-item'>
-                                                        <p style={{ fontSize: '12px', color: '' }}>Total Return</p>
-                                                        <p>{item.totalReturn}</p>
+                            {filteredData.map(item => {
+                                const oddInfo = oddData.find(odd => odd.id === item.activeOddId) || {};
+                                return (
+                                    <div key={item.id} className="pmybets-bet-item">
+                                        <div className='pmyb-item'>
+                                            <div className='pmyb-date'>Date: {new Date(item.createdAt).toLocaleDateString()} Time: {new Date(item.createdAt).toLocaleTimeString()}</div>
+                                            <div className='pmyb-results'>
+                                                <div className='pmyb-result'>
+                                                    <span>{item.bet_on}</span>
+                                                    <span> <Link href={`/profile/mybets/details/${item.id}`}> {item.result} <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" height={18} width={18}>
+                                                        <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                                    </svg>
+                                                    </Link>
                                                     </span>
                                                 </div>
                                             </div>
+
+                                            <div className='pmyb-stakes'>
+                                                <div className='pmyb-stake'>
+                                                    <div>
+                                                        <span className='pmyb-stake-item'>
+                                                            <p style={{ fontSize: '12px', color: '' }}>Total Stake</p>
+                                                            <p>{item.base_amount}</p> {/* Use base_amount for total stake */}
+                                                        </span>
+
+                                                        <span className='pmyb-stake-item'>
+                                                            <p style={{ fontSize: '12px', color: '' }}>Quantity</p>
+                                                            <p>{item.quantity}</p> {/* Display quantity */}
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            {oddInfo.odds_data && (
+                                                <div className='pmyb-odd-details'>
+                                                    <p>Match: {oddInfo.home_team_display} vs {oddInfo.away_team_display}</p>
+                                                    <p>League: {oddInfo.league_id}</p>
+                                                    <p>Status: {oddInfo.status}</p>
+                                                </div>
+                                            )}
                                         </div>
                                     </div>
-
-
-                                </div>
-                            ))}
+                                );
+                            })}
                         </div>
                     </div>
                 </div>

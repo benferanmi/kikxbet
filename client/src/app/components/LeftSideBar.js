@@ -53,21 +53,19 @@ const LeftSideBar = () => {
 
   useEffect(() => {
     const fetchSports = async () => {
-      const response = await fetch('https://flashlive-sports.p.rapidapi.com/v1/sports/list', {
-        method: 'GET',
-        headers: {
-          'x-rapidapi-key': '24193b4722msh098734db8c9c805p112d8bjsn80d4e3d80b98',
-          'x-rapidapi-host': 'flashlive-sports.p.rapidapi.com'
-        }
+      const response = await fetch(`${process.env.NEXT_PUBLIC_PROD_API_URL}/live-events/get-sports`, {
+        method: 'GET'
       });
       const data = await response.json();
-      console.log(data);
-      const favoritesData = data?.DATA?.map(sport => ({
-        id: sport.ID,
-        imgSrc: sportIcons[sport.NAME],
-        text: sport.NAME.replace('_', ' '), // Format name for display
-        url: `/game/${sport.NAME.toLowerCase().replace('_', '-')}`
-      }));
+      const favoritesData = data.data.reduce((acc, sport) => {
+        acc[sport.name] = {
+          id: sport.id,
+          imgSrc: sportIcons[sport.id.toUpperCase()], // Use the id to get the icon
+          text: sport.name, // Use the name for display
+          url: `/game/${sport.id}`,
+        };
+        return acc;
+      }, {});
       setFavorites(favoritesData);
     };
 
@@ -90,7 +88,7 @@ const LeftSideBar = () => {
             <span className='lsbh-home'>
               <Image
                 src="/assets/homeIcon.png"
-                alt="des"
+                alt="Home Icon"
                 width={20}
                 height={20}
               />
@@ -99,7 +97,7 @@ const LeftSideBar = () => {
             <span className='lsbh-live'>
               <Image
                 src="/assets/liveIcon.png"
-                alt="des"
+                alt="Live Icon"
                 width={20}
                 height={20}
               />
@@ -108,7 +106,7 @@ const LeftSideBar = () => {
             <span className='lsbh-favorite'>
               <Image
                 src="/assets/solidStarwhiteIcon.png"
-                alt="des"
+                alt="Favorite Icon"
                 width={22}
                 height={20}
               />
@@ -125,12 +123,14 @@ const LeftSideBar = () => {
             </div>
 
             <div className='lsbh-game-list'>
-              {favorites?.map(({ id, imgSrc, text, url }) => (
-                <span key={id} className='lsbh-each-game'>
-                  {imgSrc}
-                  <Link href={url+'?spid='+id} className='lshb-text'>{text}</Link>
-                </span>
-              ))}
+              {Object.entries(favorites).map(([group, sports]) => {
+                return (
+                  <div key={group} className='lsbh-each-game'>
+                    {sports.imgSrc} {/* Display the sport icon */}
+                    <Link href={`${sports.url}?spid=${sports.id}`} className='lshb-text'>{sports.text}</Link> {/* Display the sport name */}
+                  </div>
+                );
+              })}
             </div>
 
           </div>

@@ -1,246 +1,278 @@
 'use client';
-import OddOutcome from "@/app/components/OddOutcome";
-import { getTimezoneOffset } from "@/utils/timeutils";
-import Image from "next/image";
-import { useEffect, useState, useRef } from "react";
+import OddOutcome from '@/app/components/OddOutcome';
+import Image from 'next/image';
+import moment from 'moment-timezone'; // Ensure moment-timezone is imported
+import { useState, useEffect } from 'react';
+import { useOddsStore } from '@/utils/oddsstore';
 
-const useLiveSportType = (spid, proevents) => {
-    const [liveEvents, setLiveEvents] = useState(proevents || []);
+// Function to convert UTC time to client's local time
+const convertUtcToLocalTime = (utcTime) => {
+    return utcTime ? moment.utc(utcTime).local().format('YYYY-MM-DD hh:mm:ss A') : '';
+};
+
+const useLiveSportType = (spid) => {
     const [oddsData, setOddsData] = useState([]);
-    const [currentPage, setCurrentPage] = useState(1);
-    const [pageSize] = useState(5); // Number of events to fetch per page
+    const [realOdds, setRealOdds] = useState([]);
+    const [oddsDataChunk, setOddsDataChunk] = useState([]);
     const [loading, setLoading] = useState(true); // Set loading to true initially
-    const [currentEvents, setCurrentEvents] = useState([]);
-    const [bettingType, setBettingType] = useState('*1X2'); // State to hold the selected betting type
+    const [leagueTypeOfJson, setLeagueTypeOfJson] = useState([]); // State to hold league data
+    const [currentPage, setCurrentPage] = useState(1); // State to manage current page
+    const [pageSize] = useState(10); // Number of events to load per page
+    const [totalEvents, setTotalEvents] = useState(0); // State to hold total number of events
+    const [tornamentIds, setTornamentIds] = useState([]);
+    const { selectedOdds, setSelectedOdds, clearSelectedOdds } = useOddsStore();
+    console.log(spid, 'spid', loading, 'loading');
 
-    const clientTimezone = getTimezoneOffset();
-    console.log(clientTimezone);
-
-    const fetchOdds = useRef(async (eventIds, bookIds) => {
-        try {
-            const promises = eventIds.map(async (event_id, index) => {
-                const book_id = bookIds[index];
-                console.log(event_id, book_id);
-                const response = await fetch(`https://flashlive-sports.p.rapidapi.com/v1/events/live-odds?locale=en_INT&event_id=${event_id}&book_id=${book_id}`, {
-                    method: 'GET',
-                    headers: {
-                        'x-rapidapi-key': '24193b4722msh098734db8c9c805p112d8bjsn80d4e3d80b98',
-                        'x-rapidapi-host': 'flashlive-sports.p.rapidapi.com'
-                    }
-                });
-                const data = await response.json();
-                const bets = data.DATA;
-
-                // Process the odds data
-                if (data && data.LAST_CHANGE_KEY) {
-                    console.log(bets);
-                    const oddsData = {
-                        event_id: event_id,
-                        ODD_BOOKMAKER_ID: bets.ODD_BOOKMAKER_ID,
-                        BOOKMAKER_NAME: bets.BOOKMAKER_NAME,
-                        ODD_1_1: bets.ODD_1_1,
-                        ODD_1_1_AVAILABLE: bets.ODD_1_1_AVAILABLE,
-                        ODD_0: bets.ODD_0,
-                        ODD_0_AVAILABLE: bets.ODD_0_AVAILABLE,
-                        ODD_2_1: bets.ODD_2_1,
-                        ODD_2_1_AVAILABLE: bets.ODD_2_1_AVAILABLE
-                    };
-                    console.log(oddsData, event_id, book_id, 'bi');
-                    setOddsData(prevOddsData => [...prevOddsData, oddsData]);
-                }
-            });
-            await Promise.all(promises);
-        } catch (error) {
-            console.error('Failed to fetch odds:', error);
-        }
-    });
-
-    const fetchLiveSports = async () => {
-        if (!proevents) {
-            try {
-                const response = await fetch(`${process.env.NEXT_PUBLIC_PROD_API_URL}/live-events/get-live-events?spid=${spid}`, {
-                    method: 'GET',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    }
-                });
-                const data = await response.json();
-                const liveEvents = data.DATA || [];
-                if (liveEvents.length === 0) {
-                    setLoading(false);
-                }
-                console.log(liveEvents, 'liveEvents');
-                setLiveEvents(liveEvents);
-            } catch (error) {
-                console.error('Failed to fetch live sports data:', error);
+    const fetchOddsFromApi = async (fixtureId) => {
+        const url = `${process.env.NEXT_PUBLIC_BASE_API_URL}/fixtures/odds?sportsbook=1xbet&fixture_id=${fixtureId.join('&fixture_id=')}&market=Moneyline&odds_format=decimal`;
+        const options = {
+            method: 'GET',
+            headers: {
+                accept: 'application/json',
+                'X-Api-Key': process.env.NEXT_PUBLIC_API_KEY
             }
-        } else {
-            setLoading(false); // If proevents are provided, set loading to false
-        }
-    };
+        };
 
-    const loadOddsForPage = () => {
-        if (liveEvents.length === 0) {
-            console.error('No live events available');
-            return; // Handle the case where liveEvents is empty
-        }
-
-        const startIndex = (currentPage - 1) * pageSize;
-        const endIndex = startIndex + pageSize;
-
-        const eventIds = [];
-        const bookIds = [];
-        liveEvents.slice(startIndex, endIndex).forEach(event => {
-            event.EVENTS.forEach(e => {
-                eventIds.push(e.EVENT_ID);
-                bookIds.push(e.BOOKMAKERS_WITH_LIVE_IN_OFFER ? e.BOOKMAKERS_WITH_LIVE_IN_OFFER[0] : e.LIVE_IN_OFFER_BOOKMAKER_ID);
-            });
-        });
-        console.log(eventIds, bookIds, 'eventIds and bookIds');
-        if (eventIds.length > 0) {
-            fetchOdds.current(eventIds, bookIds);
-        }
-    };
-
-    const fetchLocalOdds = async (spid) => {
         try {
-            const response = await fetch(`${process.env.NEXT_PUBLIC_PROD_API_URL}/live-events/get-live-odds?spid=${spid}`, {
+            const response = await fetch(url, options);
+            if (!response.ok) throw new Error(`Error fetching odds: ${response.statusText}`);
+            const data = await response.json();
+
+            // Arrange odds for home and away team
+            const odds = data.data.map(fixture => {
+                const homeOdds = fixture.odds.find(odds => odds.selection === fixture.home_team_display);
+                const awayOdds = fixture.odds.find(odds => odds.selection === fixture.away_team_display);
+                
+                return {
+                    fixtureId: fixture.id,
+                    homeTeam: {
+                        name: fixture.home_team_display,
+                        odds: homeOdds ? homeOdds.price : null
+                    },
+                    awayTeam: {
+                        name: fixture.away_team_display,
+                        odds: awayOdds ? awayOdds.price : null
+                    }
+                };
+            });
+
+            return odds;
+        } catch (err) {
+            console.error('Error fetching odds:', err);
+            return null;
+        }
+    };
+
+    const fetchTournaments = async () => {
+        try {
+            const response = await fetch(`http://localhost:6020/dev/kikxbet/api/v1/live-events/get-tournaments?spid=${spid}&is_live=true`, {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
                 }
             });
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
             const data = await response.json();
-            console.log(data, 'localOdds');
-            setOddsData(data);
+            setTotalEvents(data.tournaments.length); // Set total events based on fetched data
+            const tournamentIds = data.tournaments.flatMap(item => item.tournaments.map(tournament => ({
+                id: tournament.id
+            })));
+            setTornamentIds(tournamentIds); // Store tournament IDs in state
+            setRealOdds(data.odds.map(fixture => ({
+                id: fixture.id,
+                status: fixture.status,
+                homeTeam: {
+                    id: fixture.home_competitors[0].id,
+                    name: fixture.home_team_display,
+                    price: fixture.odds.find(odds => odds.selection === fixture.home_team_display)?.price || 0 // Ensure price is a number
+                },
+                awayTeam: {
+                    id: fixture.away_competitors[0].id,
+                    name: fixture.away_team_display,
+                    price: fixture.odds.find(odds => odds.selection === fixture.away_team_display)?.price || 0 // Ensure price is a number
+                },
+                odds: fixture.odds
+            })));
+
+            // Fetch odds for tournaments in chunks
+            if (tournamentIds.length > 0) {
+                const chunkSize = 5; // Define the size of each chunk
+                const chunks = [];
+                for (let i = 0; i < tournamentIds.length; i += chunkSize) {
+                    chunks.push(tournamentIds.slice(i, i + chunkSize));
+                }
+
+                const allOddsData = [];
+                for (const chunk of chunks) {
+                    const oddsData = await fetchOddsFromApi(chunk.map(tournament => tournament.id));
+                    if (oddsData) {
+                        allOddsData.push(...oddsData); // Collect all fetched odds data
+                    }
+                }
+                setOddsData(allOddsData); // Store all fetched odds data in state
+            }
+            return data.tournaments; // Return the data directly as it matches the expected format
         } catch (error) {
-            console.error('Failed to fetch local odds:', error);
+            console.error('Failed to fetch tournaments:', error);
+            return [];
         } finally {
-            setLoading(false); // Set loading to false after fetching
+            setLoading(false); // End loading odds
         }
     };
 
+    
+    const handleTournamentSelect = (tournament) => {
+        console.log(tournament, 'tournament');
+        setSelectedOdds(tournament); // Set the selected tournament
+    };
+
+    const clearSelection = () => {
+        setSelectedOdds(null); // Clear the selected tournament
+    };
     useEffect(() => {
-        setLoading(true); // Start loading
-        fetchLiveSports();
-        fetchLocalOdds(spid);
-    }, [spid, proevents]);
+        const loadEvents = async () => {
+            setLoading(true); // Start loading
+            const tournaments = await fetchTournaments();
+            if (tournaments.length > 0 && tournaments.length < 100) {
+                setLeagueTypeOfJson(tournaments); // Set league data from fetched tournaments
+            } else if (tournaments.length > 100) {
+                const firstChunk = tournaments.slice(0, 100); // Get the first 100 tournaments
+                console.log(firstChunk, 'firstChunk');
+                const remainingTournaments = tournaments.slice(100); // Get the remaining tournaments
+                setLeagueTypeOfJson(firstChunk); // Set the first chunk to state
+                console.log('Remaining tournaments:', remainingTournaments);
+            }
+        };
+        loadEvents();
+    }, [spid]);
 
-    useEffect(() => {
-        if (liveEvents.length > 0) {
-            const startIndex = (currentPage - 1) * pageSize;
-            const endIndex = startIndex + pageSize;
-            setCurrentEvents(liveEvents.slice(startIndex, endIndex));
-            loadOddsForPage(); // Load odds for the current page
-        }
-    }, [liveEvents, currentPage]);
+    const loadMoreEvents = () => {
+        setCurrentPage((prevPage) => prevPage + 1); // Increment the current page
+    };
 
-    const totalEvents = liveEvents.reduce((total, event) => total + (event.EVENTS?.length || 0), 0);
-    const totalPages = Math.ceil(totalEvents / pageSize);
+    const renderEvent = (tournament, eventIndex) => {
+        const homeTeam = tournament.home_competitors[0]?.name || 'Unknown';
+        const awayTeam = tournament.away_competitors[0]?.name || 'Unknown';
+        const homeLogo = tournament.home_competitors[0]?.logo || '/assets/teams/home/default.png';
+        const awayLogo = tournament.away_competitors[0]?.logo || '/assets/teams/away/default.png';
+        const odd = realOdds.find(odds => odds.id === tournament.id);
+        
+        const handleClick = () => {
+            if (odd && odd.id) {
+                handleTournamentSelect({...tournament, odd}); // Add click handler for selection only if odd is not null
+            }
+        };
 
-    const renderEvent = (event, eventIndex) => {
-        const {odds, event_id} = oddsData.find(odds => odds.event_id === event.EVENT_ID) || {};
-        if (!odds) {
-            return null;
-        }
-        console.log(odds, event_id, 'odds');
         return (
-            <div key={eventIndex} className="hkik-oddline-econts">
-                <div className="hkik-oddline-econt">
-                    <div className="hkik-oddline-econt-lefts lst_one">
-                        <div className="hkik-oddline-econt-left hkik-oecl-mobile">
-                            <div className="hkik-oddecontl-team">
-                                <span className="hkoddete-one">
-                                    <Image
-                                        src={event.HOME_IMAGES?.[0] || ''}
-                                        alt="Home Team"
-                                        width={26}
-                                        height={26}
-                                    />
-                                    <p>{event.HOME_NAME || ''}</p>
-                                </span>
-                                <span>
-                                    <Image
-                                        src={event.AWAY_IMAGES?.[0] || ''}
-                                        alt="Away Team"
-                                        width={26}
-                                        height={26}
-                                    />
-                                    <p>{event.AWAY_NAME || ''}</p>
-                                </span>
-                            </div>
-                            <div className="hkik-oddecont1-odd">
-                                <div>
-                                    <span>{event.HOME_SCORE_CURRENT ?? 0}</span>
-                                    <p>{event.STAGE_TYPE || ''}</p>
-                                    <p>{event.STAGE?.replace('_', ' ') || ''}</p>
-                                    <p>{event.ROUND || ''}</p>
-                                </div>
-                                <div>
-                                    <span>{event.AWAY_SCORE_CURRENT ?? 0}</span>
-                                    <p>{event.HOME_SCORE_FULL ?? 0}</p>
-                                    <p>{event.AWAY_SCORE_FULL ?? 0}</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="hkik-oddline-econt-rights">
-                        <div className="hkik-oddline-econt-right">
-                            <OddOutcome
-                                home={odds?.odd_0?.replace('d' || 'u', '') || 0}
-                                draw={odds?.odd_0_available?.replace('d' || 'u', '') || 0}
-                                away={odds?.odd_2_1?.replace('u', '') || 0}
-                                gap={20}
+            <div 
+                className={`flex flex-col p-4 rounded-lg transition duration-300 ease-in-out ${selectedOdds?.id === tournament.id ? 'bg-blue-200 border-2 border-blue-600 shadow-lg' : ''}`} 
+                onClick={handleClick} // Add click handler for selection
+                onDoubleClick={clearSelection} // Clear selection on double click
+            >
+                <div key={eventIndex} className="hkik-oddline-econt block">
+                    <div className="lst_two hkik-oddline-econt-lefts">
+                    <div className="hkik-oddline-econt-left hkik-oddline-mobile-left">
+                        <span className='hkikodeconle-mob-rev'>
+                            <p className={`font-medium ${selectedOdds?.id === tournament.id ? 'text-gray-700' : ''}`}>{homeTeam}</p>
+                            <Image
+                                src={homeLogo.includes('unknown') ? '/assets/teams/home/default.png' : homeLogo} // Fallback to default if logo is unknown
+                                alt={homeTeam}
+                                width={38}
+                                height={38}
                             />
-                        </div>
+                        </span>
+                        <strong className="text-xl mx-2">VS</strong>
+                        <span className='hkikodeconle-rev'>
+                            <Image
+                                src={awayLogo.includes('unknown') ? '/assets/teams/away/default.png' : awayLogo} // Fallback to default if logo is unknown
+                                alt={awayTeam}
+                                width={38}
+                                height={38}
+                            />
+                            <p className={`font-medium ${selectedOdds?.id === tournament.id ? 'text-gray-700' : ''}`}>{awayTeam}</p>
+                        </span>
                     </div>
                 </div>
+                <div className="hkik-oddline-econt-rights">
+                    <div className="hkik-oddline-econt-right">
+                        <OddOutcome 
+                            gap={20} 
+                            home={odd ? odd.homeTeam.price : 0} // Placeholder for home odds
+                            away={odd ? odd.awayTeam.price : 0} // Placeholder for away odds
+                        />
+                    </div>
+                </div>
+            </div>
             </div>
         );
     };
 
-    const renderLeague = (league, leagueIndex) => {
-        const leagueEvents = league.EVENTS?.filter(event => {
-            const odds = oddsData.find(odds => odds.event_id === event.EVENT_ID);
-            return odds && odds.event_id; // Ensure odds is not null and has event_id
-        }) || [];
-        if (leagueEvents.length === 0) {
-            return null;
-        }
+    const renderLeague = (league, index) => {
+        const tournamentsInLeague = league.tournaments.slice(0, currentPage * pageSize); // Limit tournaments based on current page
+        if (tournamentsInLeague.length === 0) return null; // Skip rendering if no tournaments in league
+
         return (
-            <div key={leagueIndex} className="hkik-oddline-each">
+            <div key={index} className="hkik-oddline-each">
                 <div className="hkik-oddline-eheads">
                     <div className="hkik-oddline-ehead">
                         <div className="hkik-ol-eheadl">
-                            <Image
-                                src={league.TOURNAMENT_IMAGE || ''}
-                                alt="Tournament"
-                                width={17}
-                                height={17}
-                            />
-                            <p>{league.NAME || ''}</p>
+                            <p>{league.league}</p>
                         </div>
                     </div>
                 </div>
-                {leagueEvents.map(renderEvent)}
+                <div className="hkik-oddline-econts">
+                    {tournamentsInLeague.map((tournament, eventIndex) => renderEvent(tournament, eventIndex))} {/* Render tournaments based on current page */}
+                </div>
             </div>
         );
     };
 
+    const renderContent = () => {
+        if (loading) {
+            return (
+                <div className="flex justify-center items-center h-64">
+                    <div className="loader border-t-4 border-b-4 border-cyber-lime rounded-full w-16 h-16 animate-spin"></div>
+                </div>
+            );
+        }
+
+        const allTournamentsEmpty = leagueTypeOfJson.every(league => league.tournaments?.length === 0);
+        if (allTournamentsEmpty) {
+            return (
+                <div className="no-data">
+                    <p>No events available for this league.</p>
+                </div>
+            );
+        }
+
+        console.log(leagueTypeOfJson, 'leagueTypeOfJson');
+        return leagueTypeOfJson.map((league, index) => renderLeague(league, index));
+    };
+
+    const loadMoreBtn = () => {
+        if (totalEvents > currentPage * pageSize && !loading) {
+            return (
+                <button 
+                    onClick={loadMoreEvents} 
+                    className="px-4 py-2 mx-2 text-secondary-white bg-cyber-lime rounded-lg hover:bg-light-cyber-lime disabled:opacity-50"
+                >
+                    Load More
+                </button>
+            );
+        }
+        return null; // Ensure the function returns null if the button is not rendered
+    };
+
     return {
-        liveEvents,
         oddsData,
-        currentPage,
-        setCurrentPage,
-        pageSize,
-        loading, // Update loading state
-        currentEvents,
-        totalPages,
-        bettingType,
-        setBettingType,
-        renderLeague,
+        loading,
+        leagueTypeOfJson,
         renderEvent,
-        proevents
+        renderLeague,
+        renderContent,
+        loadMoreBtn
     };
 };
 
