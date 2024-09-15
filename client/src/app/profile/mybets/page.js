@@ -14,7 +14,7 @@ const MyBets = () => {
 
     useEffect(() => {
         const fetchBets = async () => {
-            const response = await fetch(`http://localhost:6020/dev/kikxbet/api/v1/dashboard/get-user-bets?userId=${JSON.parse(Cookies.get('userData')).id}`);
+            const response = await fetch(`${process.env.NEXT_PUBLIC_PROD_API_URL}/dashboard/get-user-bets?userId=${JSON.parse(Cookies.get('userData')).id}`);
             const result = await response.json();
             if (result.status === 200) {
                 setJsonData(result.data.bets); // Set jsonData to the bets array from the response

@@ -65,7 +65,7 @@ const useLiveSportType = (spid) => {
 
     const fetchTournaments = async () => {
         try {
-            const response = await fetch(`http://localhost:6020/dev/kikxbet/api/v1/live-events/get-tournaments?spid=${spid}&is_live=true`, {
+            const response = await fetch(`${process.env.NEXT_PUBLIC_PROD_API_URL}/live-events/get-tournaments?spid=${spid}&is_live=true`, {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',

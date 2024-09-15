@@ -23,7 +23,7 @@ export async function middleware(req) {
     if (!token) {
       return NextResponse.redirect(new URL('/auth/login', req.url));
     }
-    const res = await fetch(`http://localhost:6020/dev/kikxbet/api/v1/auth/validate-token?token=${token.value}`);
+    const res = await fetch(`${process.env.NEXT_PUBLIC_PROD_API_URL}/auth/validate-token?token=${token.value}`);
     if (!res.ok) {
       return NextResponse.redirect(new URL('/auth/login', req.url));
     }

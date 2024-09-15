@@ -189,7 +189,7 @@ const RightSideBar = () => {
   const handlePlaceBet = async () => {
 
     try {
-      const response = await fetch(`http://localhost:6020/dev/kikxbet/api/v1/dashboard/place-bet`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_PROD_API_URL}/dashboard/place-bet`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

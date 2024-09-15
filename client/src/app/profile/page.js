@@ -25,7 +25,7 @@ const ProfilePage = () => {
     useEffect(() => {
         const fetchUserData = async () => {
             try {
-                const response = await fetch(`http://localhost:6020/dev/kikxbet/api/v1/dashboard/get-user?userId=${JSON.parse(Cookies.get('userData')).id}`);
+                const response = await fetch(`${process.env.NEXT_PUBLIC_PROD_API_URL}/dashboard/get-user?userId=${JSON.parse(Cookies.get('userData')).id}`);
                 const result = await response.json();
                 if (result.status === 200) {
                     setUserData(result.data);

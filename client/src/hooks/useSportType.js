@@ -24,7 +24,7 @@ const useSportType = (spid) => {
     console.log(realOdds)
     const fetchTournaments = async () => {
         try {
-            const response = await fetch(`http://localhost:6020/dev/kikxbet/api/v1/live-events/get-tournaments?spid=${spid}&isLive=false`, {
+            const response = await fetch(`${process.env.NEXT_PUBLIC_PROD_API_URL}/live-events/get-tournaments?spid=${spid}&isLive=false`, {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
