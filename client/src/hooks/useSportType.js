@@ -93,10 +93,15 @@ const useSportType = (spid) => {
         const startTime = convertUtcToLocalTime(tournament.start_date); // Convert start date to local time
         const odd = realOdds.find(odds => odds.id === tournament.id);
 
+        const handleClick = () => {
+            if (odd && odd.id && odd.homeTeam.price && odd.awayTeam.price) {
+                handleTournamentSelect({...tournament, odd}); // Add click handler for selection only if odd is not null
+            }
+        };
         return (
             <div 
                 className={`flex flex-col p-4 rounded-lg transition duration-300 ease-in-out ${selectedOdds?.id === tournament.id ? 'bg-blue-200 border-2 border-blue-600 shadow-lg' : ''}`} 
-                onClick={() => handleTournamentSelect({...tournament, odd})} // Add click handler for selection
+                onClick={() =>  handleClick()} // Add click handler for selection
                 onDoubleClick={clearSelection} // Clear selection on double click
             >
                 <p className="ml-2 text-lg font-semibold text-gray-800">{startTime}</p> {/* Display start time with enhanced styling */}

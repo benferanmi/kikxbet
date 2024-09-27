@@ -20,7 +20,8 @@ export default function Header() {
       const userData = Cookies.get('userData');
 
       if (token && userData) {
-        setUser(JSON.parse(userData));
+        console.log(userData);
+        setUser(userData);
       }
       setLoading(false);
     };

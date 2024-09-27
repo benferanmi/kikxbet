@@ -105,12 +105,12 @@ const useLiveSportType = (spid) => {
                 }
 
                 const allOddsData = [];
-                for (const chunk of chunks) {
-                    const oddsData = await fetchOddsFromApi(chunk.map(tournament => tournament.id));
-                    if (oddsData) {
-                        allOddsData.push(...oddsData); // Collect all fetched odds data
-                    }
-                }
+                // for (const chunk of chunks) {
+                //     const oddsData = await fetchOddsFromApi(chunk.map(tournament => tournament.id));
+                //     if (oddsData) {
+                //         allOddsData.push(...oddsData); // Collect all fetched odds data
+                //     }
+                // }
                 setOddsData(allOddsData); // Store all fetched odds data in state
             }
             return data.tournaments; // Return the data directly as it matches the expected format

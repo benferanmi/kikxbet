@@ -1,6 +1,5 @@
-
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import BankImagesContainer from '../components/BankImagesContainer';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
@@ -9,25 +8,43 @@ import { BaseballSvg, BasketballSvg, CricketSvg, CsgoSvg, EHockey, EtennisSvg, F
 import PageLayout from '../pageLayout';
 import './livegames.css';
 
+const sportIcons = {
+    BASKETBALL: <BasketballSvg color='#ffffff' height="16" width='16px' />,
+    E_BASKETBALL: <BasketballSvg color='#ffffff' height="16" width='16px' />,
+    CS_GO: <CsgoSvg color='#ffffff' height="16" width='16px' />,
+    BASEBALL: <BaseballSvg color='#ffffff' height="16" width='16px' />,
+    TENNIS: <TennisSvg color='#ffffff' height="16" width='16px' />,
+    E_TENNIS: <EtennisSvg color='#ffffff' height="16" width='16px' />,
+    TABLE_TENNIS: <TableTennisSvg color='#ffffff' height="16" width='16px' />,
+    ICE_HOCKEY: <IceHockeySvg color='#ffffff' height="16" width='16px' />,
+    E_HOCKEY: <EHockey color='#ffffff' height="16" width='16px' />,
+    VOLLEYBALL: <VolleyBallSvg color='#ffffff' height="16" width='16px' />,
+    FUTSAL: <FrustalSvg color='#ffffff' height="16" width='16px' />,
+    CRICKET: <CricketSvg color='#ffffff' height="16" width='16px' />,
+};
 
 export default function LiveGames() {
     const [selectedDiscipline, setSelectedDiscipline] = useState([]);
     const [showDiscipline, setShowDiscipline] = useState(false);
+    const [disciplines, setDisciplines] = useState([]);
 
-    const disciplines = [
-        { name: 'Basketball', icon: <BasketballSvg color='#ffffff' height="16" width='16px' /> },
-        { name: 'eBasketball', icon: <BasketballSvg color='#ffffff' height="16" width='16px' /> },
-        { name: 'CS:GO', icon: <CsgoSvg color='#ffffff' height="16" width='16px' /> },
-        { name: 'BaseBall', icon: <BaseballSvg color='#ffffff' height="16" width='16px' /> },
-        { name: 'Tennis', icon: <TennisSvg color='#ffffff' height="16" width='16px' /> },
-        { name: 'eTennis', icon: <EtennisSvg color='#ffffff' height="16" width='16px' /> },
-        { name: 'TableTennis', icon: <TableTennisSvg color='#ffffff' height="16" width='16px' /> },
-        { name: 'Ice Hockey', icon: <IceHockeySvg color='#ffffff' height="16" width='16px' /> },
-        { name: 'eHockey', icon: <EHockey color='#ffffff' height="16" width='16px' /> },
-        { name: 'Volleyball', icon: <VolleyBallSvg color='#ffffff' height="16" width='16px' /> },
-        { name: 'Futsal', icon: <FrustalSvg color='#ffffff' height="16" width='16px' /> },
-        { name: 'Cricket', icon: <CricketSvg color='#ffffff' height="16" width='16px' /> },
-    ];
+    useEffect(() => {
+        const fetchDisciplines = async () => {
+            const response = await fetch(`${process.env.NEXT_PUBLIC_PROD_API_URL}/live-events/get-sports`, {
+                method: 'GET'
+            });
+            const data = await response.json();
+            const disciplinesData = data.data.map(discipline => ({
+                name: discipline.name,
+                id: discipline.id,
+                icon: sportIcons[discipline.id.toUpperCase()]
+            }));
+            setDisciplines(disciplinesData);
+        };
+
+        fetchDisciplines();
+    }, []);
+
     const toggleSelection = (discipline) => {
         setSelectedDiscipline(prevSelected => {
             if (prevSelected.includes(discipline)) {
@@ -37,19 +54,16 @@ export default function LiveGames() {
             }
         });
     };
+
     const handleSelectedDisciplineDropDown = () => {
-        !showDiscipline ? setShowDiscipline(true) : setShowDiscipline(false);
+        setShowDiscipline(prevShowDiscipline => !prevShowDiscipline);
     };
-    const leagueTypeOfJson = [
-        {},
-    ];
 
     return (
         <>
             <Header />
             <PageLayout >
                 <main>
-
                     <div className="l-selected-dis">
                         <div className="l-selected-head">
                             <div className="l-selected-hleft">
@@ -60,15 +74,14 @@ export default function LiveGames() {
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="3.5" stroke="#ffffff" className="size-6">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
                                 </svg>
-
                             </div>
                         </div>
 
                         <div className={`l-selected-body ${showDiscipline ? 'showSelectedBody' : 'hideSelectedBody'}`} >
                             <div className="l-selected-flex">
                                 {disciplines.map((discipline, index) => (
-                                    <div key={index} className={`l-selected-each ${selectedDiscipline.includes(discipline.name) ? 'l-selected-mychoice' : ''}`}>
-                                        <button onClick={() => toggleSelection(discipline.name)}>
+                                    <div key={index} className={`l-selected-each ${selectedDiscipline.includes(discipline) ? 'l-selected-mychoice' : ''}`}>
+                                        <button onClick={() => toggleSelection(discipline)}>
                                             {discipline.icon}
                                             <p>{discipline.name}</p>
                                         </button>
@@ -77,52 +90,19 @@ export default function LiveGames() {
                             </div>
                         </div>
                     </div>
-                    <div>
-                        <div className="hkik-oddline-head">
-                            <h1>eBasketball</h1>
-                        </div>
-                        <LiveSportType svg='basketball' leagueTypeOfJson={leagueTypeOfJson} leagueName='Australian Championship. NBL' />
-                        <LiveSportType svg='basketball' leagueTypeOfJson={leagueTypeOfJson} leagueName='Championship of the Philippines. UAAP' />
-                        <LiveSportType svg='basketball' leagueTypeOfJson={leagueTypeOfJson} leagueName='Championship of the Turkey. UAAP' />
-                        <LiveSportType svg='basketball' leagueTypeOfJson={leagueTypeOfJson} leagueName='Championship of the Philippines. UAAP' />
-                        <LiveSportType svg='basketball' leagueTypeOfJson={leagueTypeOfJson} leagueName='Championship of Turkey. BSL' />
-                    </div>
 
-                    <div>
-                        <div className="hkik-oddline-head">
-                            <h1>eHockey</h1>
-                        </div>
-                        <LiveSportType svg='ehockey' leagueTypeOfJson={leagueTypeOfJson} leagueName='Cyberhockey. EHC CUP (3x4 MиH.)' />
-                        <LiveSportType svg='ehockey' leagueTypeOfJson={leagueTypeOfJson} leagueName='Basketball. NBA (5x5)' />
-                        <LiveSportType svg='ehockey' leagueTypeOfJson={leagueTypeOfJson} leagueName='Football. UEFA Champions League (11x11)' />
-                        <LiveSportType svg='ehockey' leagueTypeOfJson={leagueTypeOfJson} leagueName='Cyberhockey. EHC CUP (3x4 MиH.)' />
-                        <LiveSportType svg='ehockey' leagueTypeOfJson={leagueTypeOfJson} leagueName='Cyberhockey. EHC CUP (3x4 MиH.)' />
-                        <LiveSportType svg='ehockey' leagueTypeOfJson={leagueTypeOfJson} leagueName='Cyberhockey. EHC CUP (3x4 MиH.)' />
+                    <div className="flex flex-col space-y-4">
+                        {selectedDiscipline.length === 0 ? (
+                            <p className="text-white text-center text-2xl font-bold pt-12">No disciplines selected</p>
+                        ) : (
+                            selectedDiscipline.map(discipline => (
+                                <div key={discipline.id} className="">
+                                    <h4 className="text-xl font-bold text-white mb-4 pl-4 pt-4">{discipline.name}</h4>
+                                    <LiveSportType spid={discipline.id} svg={discipline.icon} />
+                                </div>
+                            ))
+                        )}
                     </div>
-                    <div>
-                        <div className="hkik-oddline-head">
-                            <h1>eFootball</h1>
-                        </div>
-                        <LiveSportType svg='football' leagueTypeOfJson={leagueTypeOfJson} leagueName='Cyberhockey. EHC CUP (3x4 MиH.)' />
-                        <LiveSportType svg='football' leagueTypeOfJson={leagueTypeOfJson} leagueName='Basketball. NBA (5x5)' />
-                        <LiveSportType svg='football' leagueTypeOfJson={leagueTypeOfJson} leagueName='Football. UEFA Champions League (11x11)' />
-                        <LiveSportType svg='football' leagueTypeOfJson={leagueTypeOfJson} leagueName='Cyberhockey. EHC CUP (3x4 MиH.)' />
-                        <LiveSportType svg='football' leagueTypeOfJson={leagueTypeOfJson} leagueName='Cyberhockey. EHC CUP (3x4 MиH.)' />
-                        <LiveSportType svg='football' leagueTypeOfJson={leagueTypeOfJson} leagueName='Cyberhockey. EHC CUP (3x4 MиH.)' />
-                    </div>
-
-                    <div>
-                        <div className="hkik-oddline-head">
-                            <h1>Cricket</h1>
-                        </div>
-                        <LiveSportType svg='cricket' leagueTypeOfJson={leagueTypeOfJson} leagueName='Cyberhockey. EHC CUP (3x4 MиH.)' />
-                        <LiveSportType svg='cricket' leagueTypeOfJson={leagueTypeOfJson} leagueName='Basketball. NBA (5x5)' />
-                        <LiveSportType svg='cricket' leagueTypeOfJson={leagueTypeOfJson} leagueName='Football. UEFA Champions League (11x11)' />
-                        <LiveSportType svg='cricket' leagueTypeOfJson={leagueTypeOfJson} leagueName='Cyberhockey. EHC CUP (3x4 MиH.)' />
-                        <LiveSportType svg='cricket' leagueTypeOfJson={leagueTypeOfJson} leagueName='Cyberhockey. EHC CUP (3x4 MиH.)' />
-                        <LiveSportType svg='cricket' leagueTypeOfJson={leagueTypeOfJson} leagueName='Cyberhockey. EHC CUP (3x4 MиH.)' />
-                    </div>
-
 
                     <BankImagesContainer />
                 </main>

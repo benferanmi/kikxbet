@@ -72,6 +72,19 @@ const Page = () => {
     }
   };
 
+  const handleSocialLogin = (type) => {
+    switch (type) {
+      case 'google':
+        window.location.href = `${process.env.NEXT_PUBLIC_PROD_API_URL}/auth/google`;
+        break;
+      case 'facebook':
+        window.location.href = `${process.env.NEXT_PUBLIC_PROD_API_URL}/auth/facebook`;
+        break;
+      default:
+        break;
+    }
+  };
+
   return (
     <section className='auto-main-width'>
       <div className='reg-spec-head'>
@@ -131,7 +144,7 @@ const Page = () => {
 
         <div className='reg-other-methods'>
           <div className='reg-methods'>
-            <div className='reg-met-each'>
+            <div className='reg-met-each' onClick={() => handleSocialLogin('google')}>
               <Image
                 src='/assets/google.png'
                 height={20}
@@ -141,7 +154,7 @@ const Page = () => {
               <p> Google</p>
             </div>
 
-            <div className='reg-met-each' style={{ background: 'var(--teal)' }}>
+            <div className='reg-met-each' style={{ background: 'var(--teal)' }} onClick={() => handleSocialLogin('facebook')}>
               <Image
                 src='/assets/facebook.png'
                 height={20}
@@ -151,7 +164,7 @@ const Page = () => {
               <p style={{ color: 'white' }}> Facebook</p>
             </div>
 
-            <div className='reg-met-each'>
+            <div className='reg-met-each' onClick={() => handleSocialLogin('apple')}>
               <Image
                 src='/assets/apple.png'
                 height={32}
